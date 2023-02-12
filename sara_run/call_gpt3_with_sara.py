@@ -7,7 +7,7 @@ DEBUG_ONCE = False
 
 parser = argparse.ArgumentParser(description='Call GPT3 with 4-shot dynamic prompts for SARA')
 parser.add_argument('--letsthink', required=True, choices=["Yes", "no"],
-                    help='Whether to add *Lets think step by step.* per Kojima et al 2022')
+                    help='Whether to add "Lets think step by step." per Kojima et al 2022')
 parser.add_argument('--withstatute', required=True, choices=["Yes", "no"],
                     help='Whether to include the relevant statute at the top of the prompt')
 parser.add_argument('--ptype', required=True, choices=["0shot", "4shot", "chainofthought"],
