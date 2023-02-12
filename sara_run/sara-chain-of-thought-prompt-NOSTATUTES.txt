@@ -1,0 +1,39 @@
+Premise: Bob is Alice's brother since April 15th, 2014.
+Hypothesis: Alice bears a relationship to Bob under I.R.C. section 152(d)(2)(B) for the year 2015.
+Answer: Alice is a sister of Bob since 2014, so Alice is a sister of Bob in 2015. Therefore, the answer is Entailment.
+
+Premise: Charlie is Alice's father since April 15th, 2014. Bob is Charlie's brother since October 12th, 1992.
+Hypothesis: Alice bears a relationship to Bob under I.R.C. section 152(d)(2)(D) for the year 2018.
+Answer: In 2018, Alice is the daughter of Charlie. Charlie is Bob's brother. So, Alice is Bob's niece, and Alice is not Bob's stepmother. Therefore, the answer is Contradiction.
+
+Premise: Alice and Bob got married on Feb 3rd, 1992. Alice and Bob have a child, Charlie, born October 9th, 2000. Alice died on July 9th, 2014. From 2004 to 2019, Bob furnished 40% of the costs of maintaining the home where he and Charlie lived during that time. Charlie is not the dependent of Bob under I.R.C. section 152(b)(2).
+Hypothesis: I.R.C. section 2(b)(1)(A) applies to Bob in 2018.
+Answer: In 2018, Bob furnished 40% of the costs of maintaining the home where he lived. 40% is less than one half, so for the purposes of I.R.C. section 2(b)(1), Bob did not maintain a household for 2018. Therefore, the answer is Contradiction.
+
+Premise: Alice and Bob got married on Feb 3rd, 1992. Alice and Bob have a child, Charlie, born October 9th, 2000. Alice died on July 9th, 2014. From 2004 to 2019, Bob furnished the costs of maintaining the home where he and Charlie lived during that time. Charlie was a qualifying child of Bob under I.R.C. section 152(c) from 2004 to 2019.
+Hypothesis: I.R.C. section 2(b)(1)(A) applies to Bob in 2018.
+Answer: In 2018, Bob maintained the home he lived in. Charlie also lives in that home. In 2018, Charlie was a qualifying of Bob under I.R.C. section 152(c). In addition, Charlie is not married in 2018, nor does I.R.C. section 152(b)(2) apply. Thus, I.R.C. section 2(b)(1)(A)(i) applies to Bob with Charlie as the qualifying child. Therefore, the answer is Entailment.
+
+Premise: Alice has paid wages of $3200 to Bob for work done from Feb 1st, 2017 to Sep 2nd, 2017. Bob has paid wages of $4500 to Alice for work done from Apr 1st, 2017 to Sep 2nd, 2018.
+Hypothesis: Under I.R.C. section 3306(a)(1)(A), Alice is an employer for the year 2017.
+Answer: In 2017, Alice has paid wages of $3,200. $3,200 is greater than $1,500. Therefore, the answer is Entailment.
+
+Premise: Alice has paid $3200 to Bob for domestic service done from Feb 1st, 2017 to Sep 2nd, 2017. Bob has paid $4500 to Alice for work done from Apr 1st, 2017 to Sep 2nd, 2018.
+Hypothesis: Alice is an employer under I.R.C. section 3306(a)(1) for the year 2018.
+Answer: In 2017, Alice has paid wages for domestic service. For the purposes of I.R.C. section 3306(a)(1), wages for domestic service are not taken into account. So, for the purposes of I.R.C. section 3306(a)(1), Alice has not paid any wages nor employed anyone in either 2017 of 2018. Therefore, the answer is Contradiction.
+
+Premise: In 2017, Alice was paid $33200. For the year 2017, Alice is allowed a basic standard deduction under I.R.C. section 63(c)(2) of $2000 and an additional standard deduction of $3000 under I.R.C. section 63(c)(3) for the year 2017.
+Hypothesis: Under I.R.C. section 63(c)(1), Alice's standard deduction in 2017 is equal to $5000.
+Answer: In 2017, Alice's basic standard deduction is $2000. In 2017, Alice's additional standard deduction is $3000. So, Alice's standard deduction in 2017 is $5000. Therefore, the answer is Entailment.
+
+Premise: In 2017, Alice was paid $33200. Alice and Bob have been married since Feb 3rd, 2017. Bob and Alice file a joint return for 2017.
+Hypothesis: I.R.C. section 63(c)(6)(A) applies to Alice for 2017.
+Answer: In 2017, Alice is married to Bob, and files a joint return with her spouse. Therefore, the answer is Contradiction.
+
+Premise: Alice and Bob got married on April 5th, 2012. Alice and Bob have a son, Charlie, who was born on September 16th, 2017. Alice and Charlie live in a home maintained by Alice since September 16th, 2017. Alice is entitled to a deduction for Charlie under I.R.C. section 151(c) for the years 2017 to 2019. Alice and Bob file a joint return for the years 2017 to 2019.
+Hypothesis: I.R.C. section 7703(b)(1) applies to Alice for the year 2018.
+Answer: In 2018, Alice files a joint return with Bob. Therefore, the answer is Contradiction.
+
+Premise: Alice and Bob got married on April 5th, 2012. Alice and Bob have a son, Charlie, who was born on September 16th, 2017. Alice and Charlie live in a home maintained by Alice since September 16th, 2017. Alice is entitled to a deduction for Charlie under I.R.C. section 151(c) for the years 2017 to 2019. Alice files a separate return.
+Hypothesis: I.R.C. section 7703(b)(1) applies to Alice for the year 2018.
+Answer: In 2018, Alice is married and files a joint return. In 2018, Alice maintains the home she lives in. Charlie also lives in that home in 2018. Charlie is Alice's child, and Alice is entitled to a deduction for Charlie in 2018 under I.R.C. section 151(c). Therefore, the answer is Entailment.

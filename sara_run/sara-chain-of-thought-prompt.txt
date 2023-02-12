@@ -1,0 +1,144 @@
+§2. Definitions and special rules
+(b) Definition of head of household
+  (1) In general
+  An individual shall be considered a head of a household if, and only if, such individual is not married at the close of his taxable year, is not a surviving spouse (as defined in subsection (a)), and either-
+    (A) maintains as his home a household which constitutes for more than one-half of such taxable year the principal place of abode, as a member of such household, of-
+      (i) a qualifying child of the individual (as defined in section 152(c)), but not if such child-
+        (I) is married at the close of the taxpayer's taxable year, and
+        (II) is not a dependent of such individual by reason of section 152(b)(2) or
+      (ii) any other person who is a dependent of the taxpayer, if the taxpayer is entitled to a deduction for the taxable year for such person under section 151, or
+    (B) maintains a household which constitutes for such taxable year the principal place of abode of the father or mother of the taxpayer, if the taxpayer is entitled to a deduction for the taxable year for such father or mother under section 151.
+  For purposes of this paragraph, an individual shall be considered as maintaining a household only if over half of the cost of maintaining the household during the taxable year is furnished by such individual.
+  (2) Determination of status
+  Notwithstanding paragraph (1),
+    (A) an individual who is legally separated from his spouse under a decree of divorce or of separate maintenance shall not be considered as married;
+    (B) a taxpayer shall be considered as not married at the close of his taxable year if at any time during the taxable year his spouse is a nonresident alien; and
+    (C) a taxpayer shall be considered as married at the close of his taxable year if his spouse (other than a spouse described in subparagraph (B)) died during the taxable year.
+  (3) Limitations
+  Notwithstanding paragraph (1), for purposes of this subtitle a taxpayer shall not be considered to be a head of a household-
+    (A) if at any time during the taxable year he is a nonresident alien; or
+    (B) by reason of an individual who would not be a dependent for the taxable year but for subparagraph (H) of section 152(d)(2).
+
+§63. Taxable income defined
+(c) Standard deduction
+For purposes of this subtitle-
+  (1) In general
+  Except as otherwise provided in this subsection, the term "standard deduction" means the sum of-
+    (A) the basic standard deduction, and
+    (B) the additional standard deduction.
+  (6) Certain individuals, etc., not eligible for standard deduction
+  In the case of-
+    (A) a married individual filing a separate return where either spouse itemizes deductions,
+    (B) a nonresident alien individual, or
+    (D) an estate or trust, common trust fund, or partnership,
+  the standard deduction shall be zero.
+
+§152. Dependent defined
+(a) In general
+For purposes of this subtitle, the term "dependent" means-
+  (1) a qualifying child, or
+  (2) a qualifying relative.
+(b) Exceptions
+For purposes of this section-
+  (1) Dependents ineligible
+  If an individual is a dependent of a taxpayer for any taxable year of such taxpayer beginning in a calendar year, such individual shall be treated as having no dependents for any taxable year of such individual beginning in such calendar year.
+  (2) Married dependents
+  An individual shall not be treated as a dependent of a taxpayer under subsection (a) if such individual has made a joint return with the individual's spouse for the taxable year beginning in the calendar year in which the taxable year of the taxpayer begins.
+(c) Qualifying child
+For purposes of this section-
+  (1) In general
+  The term "qualifying child" means, with respect to any taxpayer for any taxable year, an individual-
+    (A) who bears a relationship to the taxpayer described in paragraph (2),
+    (B) who has the same principal place of abode as the taxpayer for more than one-half of such taxable year,
+    (C) who meets the age requirements of paragraph (3), and
+    (E) who has not filed a joint return (other than only for a claim of refund) with the individual's spouse for the taxable year beginning in the calendar year in which the taxable year of the taxpayer begins.
+  (2) Relationship
+  For purposes of paragraph (1)(A), an individual bears a relationship to the taxpayer described in this paragraph if such individual is-
+    (A) a child of the taxpayer or a descendant of such a child, or
+    (B) a brother, sister, stepbrother, or stepsister of the taxpayer or a descendant of any such relative.
+  (3) Age requirements
+  For purposes of paragraph (1)(C), an individual meets the requirements of this paragraph if such individual is younger than the taxpayer claiming such individual as a qualifying child and is less than 25 years old at the end of the taxable year.
+(d) Qualifying relative
+For purposes of this section-
+  (1) In general
+  The term "qualifying relative" means, with respect to any taxpayer for any taxable year, an individual-
+    (A) who bears a relationship to the taxpayer described in paragraph (2),
+    (B) who has no income for the calendar year in which such taxable year begins, and
+    (D) who is not a qualifying child of such taxpayer or of any other taxpayer for any taxable year beginning in the calendar year in which such taxable year begins.
+  (2) Relationship
+  For purposes of paragraph (1)(A), an individual bears a relationship to the taxpayer described in this paragraph if the individual is any of the following with respect to the taxpayer:
+    (A) A child or a descendant of a child.
+    (B) A brother, sister, stepbrother, or stepsister.
+    (C) The father or mother, or an ancestor of either.
+    (D) A stepfather or stepmother.
+    (E) A son or daughter of a brother or sister of the taxpayer.
+    (F) A brother or sister of the father or mother of the taxpayer.
+    (G) A son-in-law, daughter-in-law, father-in-law, mother-in-law, brother-in-law, or sister-in-law.
+    (H) An individual (other than an individual who at any time during the taxable year was the spouse, determined without regard to section 7703, of the taxpayer) who, for the taxable year of the taxpayer, has the same principal place of abode as the taxpayer and is a member of the taxpayer's household.
+
+§3306. Definitions
+(a) Employer
+  (1) In general
+  The term "employer" means, with respect to any calendar year, any person who-
+    (A) during the calendar year or the preceding calendar year paid wages of $1,500 or more, or
+    (B) on each of some 10 days during the calendar year or during the preceding calendar year, each day being in a different calendar week, employed at least one individual in employment for some portion of the day.
+  For purposes of this paragraph, there shall not be taken into account any wages paid to, or employment of, an employee performing domestic services referred to in paragraph (3).
+  (2) Agricultural labor
+  In the case of agricultural labor, the term "employer" means, with respect to any calendar year, any person who-
+    (A) during the calendar year or the preceding calendar year paid wages of $20,000 or more for agricultural labor, or
+    (B) on each of some 10 days during the calendar year or during the preceding calendar year, each day being in a different calendar week, employed at least 5 individuals in employment in agricultural labor for some portion of the day.
+  (3) Domestic service
+  In the case of domestic service in a private home, local college club, or local chapter of a college fraternity or sorority, the term "employer" means, with respect to any calendar year, any person who during the calendar year or the preceding calendar year paid wages in cash of $1,000 or more for such service.
+  (4) Special rule
+  A person treated as an employer under paragraph (3) shall not be treated as an employer with respect to wages paid for any service other than domestic service referred to in paragraph (3) unless such person is treated as an employer under paragraph (1) or (2) with respect to such other service.
+
+§7703. Determination of marital status
+(a) General rule
+  (1) the determination of whether an individual is married shall be made as of the close of his taxable year; except that if his spouse dies during his taxable year such determination shall be made as of the time of such death; and
+  (2) an individual legally separated from his spouse under a decree of divorce or of separate maintenance shall not be considered as married.
+(b) Certain married individuals living apart
+For purposes of those provisions of this title which refer to this subsection, if-
+  (1) an individual who is married (within the meaning of subsection (a)) and who files a separate return maintains as his home a household which constitutes for more than one-half of the taxable year the principal place of abode of a child with respect to whom such individual is entitled to a deduction for the taxable year under section 151,
+  (2) such individual furnishes over one-half of the cost of maintaining such household during the taxable year, and
+  (3) during the last 6 months of the taxable year, such individual's spouse is not a member of such household,
+such individual shall not be considered as married.
+
+Premise: Bob is Alice's brother since April 15th, 2014.
+Hypothesis: Alice bears a relationship to Bob under section 152(d)(2)(B) for the year 2015.
+Answer: Alice is a sister of Bob since 2014, so Alice is a sister of Bob in 2015. Therefore, the answer is Entailment.
+
+Premise: Charlie is Alice's father since April 15th, 2014. Bob is Charlie's brother since October 12th, 1992.
+Hypothesis: Alice bears a relationship to Bob under section 152(d)(2)(D) for the year 2018.
+Answer: In 2018, Alice is the daughter of Charlie. Charlie is Bob's brother. So, Alice is Bob's niece, and Alice is not Bob's stepmother. Therefore, the answer is Contradiction.
+
+Premise: Alice and Bob got married on Feb 3rd, 1992. Alice and Bob have a child, Charlie, born October 9th, 2000. Alice died on July 9th, 2014. From 2004 to 2019, Bob furnished 40% of the costs of maintaining the home where he and Charlie lived during that time. Charlie is not the dependent of Bob under section 152(b)(2).
+Hypothesis: Section 2(b)(1)(A) applies to Bob in 2018.
+Answer: In 2018, Bob furnished 40% of the costs of maintaining the home where he lived. 40% is less than one half, so for the purposes of section 2(b)(1), Bob did not maintain a household for 2018. Therefore, the answer is Contradiction.
+
+Premise: Alice and Bob got married on Feb 3rd, 1992. Alice and Bob have a child, Charlie, born October 9th, 2000. Alice died on July 9th, 2014. From 2004 to 2019, Bob furnished the costs of maintaining the home where he and Charlie lived during that time. Charlie was a qualifying child of Bob under section 152(c) from 2004 to 2019.
+Hypothesis: Section 2(b)(1)(A) applies to Bob in 2018.
+Answer: In 2018, Bob maintained the home he lived in. Charlie also lives in that home. In 2018, Charlie was a qualifying of Bob under section 152(c). In addition, Charlie is not married in 2018, nor does section 152(b)(2) apply. Thus, section 2(b)(1)(A)(i) applies to Bob with Charlie as the qualifying child. Therefore, the answer is Entailment.
+
+Premise: Alice has paid wages of $3200 to Bob for work done from Feb 1st, 2017 to Sep 2nd, 2017. Bob has paid wages of $4500 to Alice for work done from Apr 1st, 2017 to Sep 2nd, 2018.
+Hypothesis: Under section 3306(a)(1)(A), Alice is an employer for the year 2017.
+Answer: In 2017, Alice has paid wages of $3,200. $3,200 is greater than $1,500. Therefore, the answer is Entailment.
+
+Premise: Alice has paid $3200 to Bob for domestic service done from Feb 1st, 2017 to Sep 2nd, 2017. Bob has paid $4500 to Alice for work done from Apr 1st, 2017 to Sep 2nd, 2018.
+Hypothesis: Alice is an employer under section 3306(a)(1) for the year 2018.
+Answer: In 2017, Alice has paid wages for domestic service. For the purposes of section 3306(a)(1), wages for domestic service are not taken into account. So, for the purposes of section 3306(a)(1), Alice has not paid any wages nor employed anyone in either 2017 of 2018. Therefore, the answer is Contradiction.
+
+Premise: In 2017, Alice was paid $33200. For the year 2017, Alice is allowed a basic standard deduction under section 63(c)(2) of $2000 and an additional standard deduction of $3000 under section 63(c)(3) for the year 2017.
+Hypothesis: Under section 63(c)(1), Alice's standard deduction in 2017 is equal to $5000.
+Answer: In 2017, Alice's basic standard deduction is $2000. In 2017, Alice's additional standard deduction is $3000. So, Alice's standard deduction in 2017 is $5000. Therefore, the answer is Entailment.
+
+Premise: In 2017, Alice was paid $33200. Alice and Bob have been married since Feb 3rd, 2017. Bob and Alice file a joint return for 2017.
+Hypothesis: Section 63(c)(6)(A) applies to Alice for 2017.
+Answer: In 2017, Alice is married to Bob, and files a joint return with her spouse. Therefore, the answer is Contradiction.
+
+Premise: Alice and Bob got married on April 5th, 2012. Alice and Bob have a son, Charlie, who was born on September 16th, 2017. Alice and Charlie live in a home maintained by Alice since September 16th, 2017. Alice is entitled to a deduction for Charlie under section 151(c) for the years 2017 to 2019. Alice and Bob file a joint return for the years 2017 to 2019.
+Hypothesis: Section 7703(b)(1) applies to Alice for the year 2018.
+Answer: In 2018, Alice files a joint return with Bob. Therefore, the answer is Contradiction.
+
+Premise: Alice and Bob got married on April 5th, 2012. Alice and Bob have a son, Charlie, who was born on September 16th, 2017. Alice and Charlie live in a home maintained by Alice since September 16th, 2017. Alice is entitled to a deduction for Charlie under section 151(c) for the years 2017 to 2019. Alice files a separate return.
+Hypothesis: Section 7703(b)(1) applies to Alice for the year 2018.
+Answer: In 2018, Alice is married and files a joint return. In 2018, Alice maintains the home she lives in. Charlie also lives in that home in 2018. Charlie is Alice's child, and Alice is entitled to a deduction for Charlie in 2018 under section 151(c). Therefore, the answer is Entailment.
