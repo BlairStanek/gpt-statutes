@@ -1,4 +1,3 @@
-# Created 6 Feb 2023
 # Probes whether GPT3 can *identify* arbitrary sections of the U.S. Code based on their text.
 
 import xml.etree.ElementTree as ET

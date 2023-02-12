@@ -1,4 +1,3 @@
-# Created 8 Feb 2023
 # Probes whether GPT3 can *recite* arbitrary sections of the U.S. Code based on the cite.
 import numpy
 

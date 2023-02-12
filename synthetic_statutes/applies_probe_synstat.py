@@ -1,4 +1,3 @@
-# Created 3 Feb 2023; copied from reasoning_probe_synstat.py and adapted appropriately
 # Tests the ability of GPT3 to answer "does section ____ apply to ___"  over statutory text
 # versus over non-statutory text with the same semantic meaning.
 

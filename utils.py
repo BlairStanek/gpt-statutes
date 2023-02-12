@@ -188,16 +188,16 @@ def remove_statute_whitespace(orig_text) -> str:
     rv = orig_text.replace("\n\n", "\n")
     return rv
 
-if __name__ == "__main__":
-    print("TEST")
-    tests = get_cases("test", True)
-    for t in tests:
-        print(t)
-        assert t[2].endswith("Contradiction") or t[2].endswith("Entailment")
-    print("TRAIN")
-    train = get_cases("train", True)
-    for t in train:
-        print(t)
-        assert t[2].endswith("Contradiction") or t[2].endswith("Entailment")
-
-    print_case_breakdown()
+# if __name__ == "__main__":
+#     print("TEST")
+#     tests = get_cases("test", True)
+#     for t in tests:
+#         print(t)
+#         assert t[2].endswith("Contradiction") or t[2].endswith("Entailment")
+#     print("TRAIN")
+#     train = get_cases("train", True)
+#     for t in train:
+#         print(t)
+#         assert t[2].endswith("Contradiction") or t[2].endswith("Entailment")
+#
+#     print_case_breakdown()

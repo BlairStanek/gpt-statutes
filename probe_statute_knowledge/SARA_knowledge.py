@@ -1,4 +1,3 @@
-# Created 6 Feb 2023
 # Aims to probe whether GPT3 knows about the statutes in SARA
 
 import sys, os

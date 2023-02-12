@@ -1,4 +1,3 @@
-# Created 2 Feb 2023
 # Generates synethetic statutes as well as semantically-identical prose equivalents
 
 import random

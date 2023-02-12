@@ -1,4 +1,3 @@
-# Created 9 Feb 2023
 # Aims to find tiny sections of the U.S. Code
 
 import xml.etree.ElementTree as ET
