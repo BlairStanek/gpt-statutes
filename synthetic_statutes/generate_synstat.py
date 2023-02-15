@@ -10,7 +10,7 @@ class statute_part:
         self.children = None # starts out as none; add later using function below
         self.stat_used = None # e.g. 1001(a)(3)(A)
         self.stat_defined = None # e.g. 1001(a)(3)(A)(iii)
-        self.prose_sent_defined = None # int.  useful for creating numbered prose sentences.
+        self.sentence_num = None # int.  useful for creating numbered prose sentences.
 
     def add_child(self, new_child):
         if new_child is None:
@@ -51,20 +51,6 @@ class statute_part:
     def print_statute_info(self):
         print("{0:<25s} {1:<25s}".format("stat_used", "stat_defined"))
         self.print_statute_info_recursive()
-
-    def print_sent_nums_recursive(self):
-        prose_sent_defined = "--"
-        if not self.prose_sent_defined is None:
-            prose_sent_defined = str(self.prose_sent_defined)
-
-        print("{0:<10s}".format(prose_sent_defined), self.term)
-        if not self.children is None:
-            for child in self.children:
-                child.print_sent_nums_recursive()
-
-    def print_sent_nums(self):
-        print("prose_sent_defined")
-        self.print_sent_nums_recursive()
 
     def get_level(self):
         if self.parent is None:
@@ -215,13 +201,15 @@ def abstract_to_statute(abst, level = 0, context = None) -> str:
     return rv
 
 # This will produce text in a non-statutory format to use as a benchmark
-def abstract_to_prose(abst, sentence_num_format=None, num_sentence=1):
+# Also sets the sentence numbers
+def abstract_to_sentences(abst, sentence_num_format=None, num_sentence=1):
+    assert (num_sentence != 1) or (abst.parent is None)
     prose_text = ""
     if not sentence_num_format is None:
         prose_text += sentence_num_format.format(num_sentence)
 
     prose_text += "The term \"" + abst.term.lower() + "\" means "
-    abst.prose_sent_defined = num_sentence # save for creating probes
+    abst.sentence_num = num_sentence # save for creating probes
 
     num_sentence += 1
     for i, child in enumerate(abst.children):
@@ -236,7 +224,7 @@ def abstract_to_prose(abst, sentence_num_format=None, num_sentence=1):
 
     if abst.has_grandchildren():
         for child in abst.children:
-            text_back, num_sentence = abstract_to_prose(child, sentence_num_format, num_sentence)
+            text_back, num_sentence = abstract_to_sentences(child, sentence_num_format, num_sentence)
             prose_text += text_back
 
     return prose_text, num_sentence
@@ -245,15 +233,15 @@ def abstract_to_prose(abst, sentence_num_format=None, num_sentence=1):
 # are defined in that sentence
 def get_dict_of_sentence_definitions(abst):
     rv = dict()
-    if not abst.prose_sent_defined is None:
-        rv[abst.prose_sent_defined] = abst
+    if not abst.sentence_num is None:
+        rv[abst.sentence_num] = abst
     if abst.has_children():
         for child in abst.children:
             rv.update(get_dict_of_sentence_definitions(child))
     return rv
 
 
-# This can be used for the output of abstract_to_prose to number the lines, to
+# This can be used for the output of abstract_to_sentences to number the lines, to
 # allow references for precise reasoning.
 def add_line_numbers(text:str) -> str:
     rv = ""
@@ -298,9 +286,8 @@ if __name__ == "__main__":
     abst = generate_abstract(nonce_list, 3, 3)
     print(abstract_to_statute(abst))
     abst.print_statute_info()
-    print("\n" + abstract_to_prose(abst, "Sentence {:d}: ")[0])
+    print("\n" + abstract_to_sentences(abst, "Sentence {:d}: ")[0])
     abst.print_sent_nums()
-    # print(add_line_numbers(abstract_to_prose(abst)))
 
     for num, part in get_dict_of_sentence_definitions(abst).items():
         print(num, part.term)
@@ -313,5 +300,5 @@ if __name__ == "__main__":
     # for stat, auncles in auncles:
     #     print("{:<15s}  auncles:".format(stat.term), end=" ")
     #     for auncle in auncles:
-    #         print("{:<15s} {:<20s} sent{:3d}".format(auncle.term, auncle.stat_defined, auncle.prose_sent_defined), end=" ")
+    #         print("{:<15s} {:<20s} sent{:3d}".format(auncle.term, auncle.stat_defined, auncle.sentence_num), end=" ")
     #     print("")
