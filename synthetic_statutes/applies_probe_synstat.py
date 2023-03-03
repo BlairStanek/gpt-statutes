@@ -1,5 +1,6 @@
-# Tests the ability of GPT3 to answer "does section ____ apply to ___"  over statutory text
-# versus over non-statutory text with the same semantic meaning.
+# Tests the ability of GPT3 to answer "does section ____ apply to ___"  over statutory text.
+# Has several variations, including comparing to non-statutory versions (i.e. numbered sentences),
+# N-shot, etc.  
 
 import generate_synstat
 from generate_synstat import statute_part
