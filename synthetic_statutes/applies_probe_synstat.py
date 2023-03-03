@@ -1,6 +1,6 @@
 # Tests the ability of GPT3 to answer "does section ____ apply to ___"  over statutory text.
 # Has several variations, including comparing to non-statutory versions (i.e. numbered sentences),
-# N-shot, etc.  
+# N-shot, etc.
 
 import generate_synstat
 from generate_synstat import statute_part
@@ -28,8 +28,6 @@ parser.add_argument('--termtype', required=True, choices=["nonces", "ids"],
                     help='These are the basic types of prompting we handle')
 parser.add_argument('--numruns', required=True, type=int,
                     help='These are the basic types of prompting we handle')
-parser.add_argument('--fulloutput', action="store_true",
-                    help='whether to output everything rather than a matrix, errors, and stats')
 parser.add_argument('--statuteonly', action="store_true",
                     help='whether to do only statutes, leaving off the semantically identical sentences')
 parser.add_argument('--noGPT', action="store_true",
@@ -138,23 +136,19 @@ def write_Nshot_prompt(args, applies_target, Alice_type, all_parts) -> str:
 
         # We want the example to be as far as possible from both Alice's type and the target section
         candidate_subsections = select_furthest_items(candidate_subsections, Alice_type, applies_target)
-        if args.fulloutput:
-            print("For alice=", Alice_type.term, "and ", applies_target.stat_defined,
-                  "candidates:", [x.term + ":" + x.stat_defined for x in candidate_subsections])
+        print("For alice=", Alice_type.term, "and ", applies_target.stat_defined,
+              "candidates:", [x.term + ":" + x.stat_defined for x in candidate_subsections])
 
         # choose the statute to be used in the few shots
         target_subsection = Nshot_random.choice(candidate_subsections)
         already_used_subsections.add(target_subsection)
-        if args.fulloutput:
-            print("  chosen=", target_subsection.term + ":" + target_subsection.stat_defined)
+        print("  chosen=", target_subsection.term + ":" + target_subsection.stat_defined)
 
         # choose the true target
         candidates_true = select_furthest_items(target_subsection.get_all_descendants(), Alice_type)
-        if args.fulloutput:
-            print("true target candidates are:", [x.term + ":" + x.stat_used for x in candidates_true])
+        print("true target candidates are:", [x.term + ":" + x.stat_used for x in candidates_true])
         true_item = Nshot_random.choice(candidates_true)
-        if args.fulloutput:
-            print("  true_item chosen=", true_item.term + ":" + true_item.stat_used)
+        print("  true_item chosen=", true_item.term + ":" + true_item.stat_used)
         assert does_A_apply_to_anyB(target_subsection, true_item) == True
         assert does_A_apply_to_anyB(applies_target, true_item) == False
         assert applies_target != true_item
@@ -171,8 +165,7 @@ def write_Nshot_prompt(args, applies_target, Alice_type, all_parts) -> str:
             candidates_false = ideal_candidate_subsections_false
         print("false target candidates are:", [x.term + ":" + x.stat_used for x in candidates_false])
         false_item = Nshot_random.choice(candidates_false)
-        if args.fulloutput:
-            print("  false_item=", false_item.term + ":" + false_item.stat_used)
+        print("  false_item=", false_item.term + ":" + false_item.stat_used)
         assert does_A_apply_to_anyB(target_subsection, false_item) == False
         assert does_A_apply_to_anyB(applies_target, false_item) == False or (args.width == 2)
         assert applies_target != false_item
@@ -256,10 +249,10 @@ for run_num in range(args.numruns):
     print(statute)
     print("")
 
-    prose, num_sentences = generate_synstat.abstract_to_sentences(abst, "Sentence {:d}: ")
+    sentences_form, num_sentences = generate_synstat.abstract_to_sentences(abst, "Sentence {:d}: ")
 
     if not args.statuteonly:
-        print(prose)
+        print(sentences_form)
         print("")
 
     all_parts = generate_synstat.extract_all_used_parts(abst)
@@ -268,11 +261,9 @@ for run_num in range(args.numruns):
 
     statute_results = {"True Positive": 0, "True Negative": 0,
                        "False Positive":0, "False Negative": 0, "unclear":0}
-    string_statute_errors = ""
 
     sentence_results = {"True Positive": 0, "True Negative": 0,
                      "False Positive":0, "False Negative": 0, "unclear":0}
-    string_sentence_errors = ""
 
     num_this_run = 0
 
@@ -282,40 +273,27 @@ for run_num in range(args.numruns):
         parts_to_test = [p for p in all_parts if (not p.sentence_num is None) and (p.sentence_num >= 2) ]
 
     for Alice_type in all_parts: # iterate over all the possible types for Alice
-        if not args.fulloutput:
-            print("{:<17s}".format(Alice_type.term), end="") # start printing summary, table format
-
         # iterate over all subsections that we might ask if it applies to Alice
         for applies_target in parts_to_test:
             if 0 < args.max_num <= total_num:
                 assert total_num == args.max_num, "should never go over"
                 break # if we go over the total number allowed, stop further calls
 
-            if not args.fulloutput:
-                if not args.leavesonly:
-                    print(applies_target.sentence_num,end="")
             groundtruth = does_A_apply_to_anyB(applies_target, Alice_type)
 
             assert args.leavesonly != applies_target.has_children()
 
-            if groundtruth == None:
-                if not args.fulloutput:
-                    print("_        ", end="") # no GPT-3 call to make
-            else:
+            if not groundtruth is None:
                 if skip_random.random() < args.skip_percent/100.0:
                     print("SKIPPING ", end="")
                     continue
 
-                if groundtruth:
-                    if not args.fulloutput:
-                        print("Y ", end="")
-                else:
-                    if not args.fulloutput:
-                        print("n ", end="")
+                print("++++++++++++++++++++++++++++++")
 
                 examples = "" # If doing 2-shot we have work to do to create the examples
                 if args.Nshot > 0:
                     examples = write_Nshot_prompt(args, applies_target, Alice_type, all_parts)
+                    print("-----")
 
                 # Build the question to pass into GPT-3
                 statute_question = examples + \
@@ -326,14 +304,12 @@ for run_num in range(args.numruns):
                                  " Does sentence " + str(applies_target.sentence_num) + " apply to Alice?"
                 sentence_question += " Let's think step by step."
                 statute_prompt = statute + "\n" + statute_question
-                sentence_prompt = prose + "\n" + sentence_question
+                sentence_prompt = sentences_form + "\n" + sentence_question
 
                 SECOND_PROMPT = "\nTherefore, the answer (Yes or No) is"  # cf. Kojima et al. 2022 appendix A.5
 
-                if args.fulloutput:
-                    print("++++++++++++++++++++++++++++++")
-                    print(statute_question)
-                    print("-----")
+                print(statute_question)
+                print("-----")
 
                 # Make the GPT-3 calls for the statutory reasoning version
                 if not args.noGPT:
@@ -349,107 +325,60 @@ for run_num in range(args.numruns):
                 if utils.is_yes(second_statute_response):
                     if groundtruth:
                         statute_result = "True Positive"
-                        if not args.fulloutput:
-                            print("sY ", end="")
                     else:
                         statute_result = "False Positive"
-                        if not args.fulloutput:
-                            print("sY*", end="")
                 elif utils.is_no(second_statute_response):
                     if groundtruth:
                         statute_result = "False Negative"
-                        if not args.fulloutput:
-                            print("sn*", end="")
                     else:
                         statute_result = "True Negative"
-                        if not args.fulloutput:
-                            print("sn ", end="")
-                else:
-                    if not args.fulloutput:
-                        print("s? ", end="")
                 statute_results[statute_result] += 1
 
-                if not statute_result.startswith("True"):
-                    string_statute_errors += statute_result + "\n" + \
-                                             statute_question + "\n[prompt above/first response below]\n" + \
-                                             statute_response + "\n" + SECOND_PROMPT + "\n " + \
-                                             second_statute_response + \
-                                             "\n****************************\n"
-
-                if args.fulloutput:
-                    print(statute_response)
-                    print("-----")
-                    print(second_statute_response)
-                    print("-----")
-                    print("Correct is", groundtruth, "so this case is a", statute_result)
-                    print("-----")
+                print(statute_response)
+                print("-----")
+                print(second_statute_response)
+                print("-----")
+                print("Groundtruth=", groundtruth, "so this is:", statute_result)
+                print("-----")
 
                 if not args.statuteonly:
-                    if args.fulloutput:
-                        print(sentence_question)
-                        print("-----")
+                    print(sentence_question)
+                    print("-----")
 
                     if not args.noGPT:
-                        # Make the GPT-3 calls for the PROSE reasoning version
-                        utils.add_comment("Synthetic applies probe PROSE VERSION in " + __file__ + " Alice_type=" + Alice_type.term + " sent_num=" + str(sent_num))
+                        # Make the GPT-3 calls for the SENTENCE reasoning version
+                        utils.add_comment("Synthetic applies probe SENTENCE VERSION in " + __file__ + " Alice_type=" + Alice_type.term + " sent_num=" + str(sent_num))
                         sentence_response = utils.call_gpt3_withlogging(sentence_prompt, "text-davinci-003", max_tokens=2000)
-                        utils.add_comment("Synthetic applies probe PROSE VERSION in " + __file__ + " SECOND PROMPT")
+                        utils.add_comment("Synthetic applies probe SENTENCE VERSION in " + __file__ + " SECOND PROMPT")
                         second_sentence_prompt = sentence_prompt + sentence_response + SECOND_PROMPT
                         second_sentence_response = utils.call_gpt3_withlogging(second_sentence_prompt, "text-davinci-003", max_tokens=2000)
                     else:
                         sentence_response = second_sentence_response = statute_response
 
-                    # now check PROSE response
+                    # now check SENTENCE response
                     sentence_result = "unclear"
                     if utils.is_yes(second_sentence_response):
                         if groundtruth:
                             sentence_result = "True Positive"
-                            if not args.fulloutput:
-                                print("pY ", end="")
                         else:
                             sentence_result = "False Positive"
-                            if not args.fulloutput:
-                                print("pY*", end="")
                     elif utils.is_no(second_sentence_response):
                         if groundtruth:
                             sentence_result = "False Negative"
-                            if not args.fulloutput:
-                                print("pn*", end="")
                         else:
                             sentence_result = "True Negative"
-                            if not args.fulloutput:
-                                print("pn ", end="")
-                    else:
-                        if not args.fulloutput:
-                            print("p? ", end="")
                     sentence_results[sentence_result] += 1
 
-                    if not sentence_result.startswith("True"):
-                        string_sentence_errors += sentence_question + "\n[prompt above/first response below]\n" + \
-                                                 sentence_response + "\n" + SECOND_PROMPT + "\n " + \
-                                                 second_sentence_response + \
-                                                 "\n****************************\n"
-
-                    if args.fulloutput:
-                        print(sentence_response)
-                        print("-----")
-                        print(second_sentence_response)
-                        print("-----")
-                        print("Correct is", groundtruth, "so this case is a", sentence_result)
-                        print("-----")
-                    else:
-                        print(" ", end="", flush=True)
+                    print(sentence_response)
+                    print("-----")
+                    print(second_sentence_response)
+                    print("-----")
+                    print("Groundtruth=", groundtruth, "so this is:", sentence_result)
+                    print("-----")
 
                 num_this_run += 1
                 total_num += 1
         print("")
-
-    if not args.fulloutput: # if we did the full output above, we don't need it all again now
-        print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
-        print("This run STATUTE ERRORS:+++++++++++++++++++++++++++++++++\n", string_statute_errors)
-        if not args.statuteonly:
-            print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
-            print("This run PROSE ERRORS:\n", string_sentence_errors)
 
     print("num_this_run=", num_this_run)
     print("This run statute_results:" , statute_results)
@@ -471,7 +400,7 @@ for run_num in range(args.numruns):
     if not args.statuteonly:
         print("so-far total_sentence_results=", total_sentence_results)
         sentence_correct = (total_sentence_results['True Positive'] + total_sentence_results['True Negative'])
-        print("so-far prose accuracy: {:.2f}".format(sentence_correct / float(total_num)),
+        print("so-far sentence accuracy: {:.2f}".format(sentence_correct / float(total_num)),
               "(" + str(sentence_correct) + "/" + str(total_num) + ")")
 
 
@@ -488,7 +417,6 @@ suggested_filename += ".txt"
 end = datetime.now()
 print("End=", end)
 print("Time taken=", end-start)
-
 
 print("Suggested filename:", suggested_filename)
 print('\a\a\a\a\a\a') # play sounds
