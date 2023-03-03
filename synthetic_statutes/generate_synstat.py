@@ -1,8 +1,5 @@
 # Generates synethetic statutes as well as semantically-identical prose equivalents
 
-import random
-random.seed(42) # ensure reproducible
-
 class statute_part:
     def __init__(self, term:str):
         self.term = term  # e.g. "vilihick" -- the term being referenced
@@ -125,12 +122,12 @@ def read_nonces() -> list:
     return rv
 
 # This generates a random set of names like "M11" and "Z66"
-def generate_systematic() -> list:
+def generate_systematic(rand_gen) -> list:
     rv = []
     for idx_letter in range(26):
         for idx_num in range(10):
             rv.append(chr(ord('A')+idx_letter) + str(idx_num) + str(idx_num))
-    random.shuffle(rv)
+    rand_gen.shuffle(rv)
     return rv
 
 # Used to generate roman numerals, which are used for clause and subclause numbering
@@ -282,12 +279,14 @@ def get_auncles(abst, siblings=None):
 
 
 if __name__ == "__main__":
-    nonce_list = read_nonces() # generate_systematic()
+    nonce_list = read_nonces()
+    import random
+    rand_gen = random.Random(42)
+    rand_gen.shuffle(nonce_list)
     abst = generate_abstract(nonce_list, 3, 3)
     print(abstract_to_statute(abst))
     abst.print_statute_info()
     print("\n" + abstract_to_sentences(abst, "Sentence {:d}: ")[0])
-    abst.print_sent_nums()
 
     for num, part in get_dict_of_sentence_definitions(abst).items():
         print(num, part.term)

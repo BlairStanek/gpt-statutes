@@ -12,7 +12,11 @@ from datetime import datetime
 start = datetime.now()
 print("Start=", start)
 
-random.seed(42)
+# To prevent weird reproducability issues, we need separate random number generators for different purposes
+# when one option may be on while the other may be turned off
+statute_random = random.Random(42) # used for shuffling to get the statute
+Nshot_random = random.Random(42) # used for generating the N-shot prompts
+skip_random = random.Random(42) # when running a percentage of a run, this is used
 
 parser = argparse.ArgumentParser(description='Generate synthetic statutes and questions to pass to GPT3')
 parser.add_argument('--width', required=True, type=int,
@@ -33,6 +37,8 @@ parser.add_argument('--Nshot', required=False, type=int, default=0,
                     help='Allows for N shot with N examples (must be EVEN)')
 parser.add_argument('--skip_percent', type=float, default=0.0,
                     help='randomly skips this percent of all valid queries on a statute')
+parser.add_argument('--max_num', type=int, default=0,
+                    help='stop after this number of queries; often combined with a skip_percent>0')
 parser.add_argument('--leavesonly', action="store_true",
                     help='if set, we only run tests against leaves (otherwise we do *only* NON-leaves)')
 
@@ -103,66 +109,85 @@ NAMES = ["Bob", "Charlie", "Dan", "Eve", "Frank", "Grace", "Heidi", "Ivan",
          "Rupert", "Sam", "Ted", "Usama", "Victor", "Xavier", "Yolanda"]
 
 def write_Nshot_prompt(args, applies_target, Alice_type, all_parts) -> str:
-    # Both Yes and No questions will be based on the same reference section
-    # We randomly choose the reference section.
-    example_level = args.depth - 1
-    candidates = []
-    for x in all_parts:
-        if x.get_level() == example_level:
-            if False == does_A_apply_to_anyB(applies_target, x) and \
-                    False == does_A_apply_to_anyB(x, applies_target):
-                candidates.append(x)
+    assert args.Nshot <= len(NAMES)
+    assert (args.Nshot % 2) == 0
+    already_used_subsections = set()
+    rv = ""
 
-    # We ideally want an example section that doesn't apply to Alice
-    ideal_candidates = [x for x in candidates if False == does_A_apply_to_anyB(x, Alice_type)]
-    if len(ideal_candidates) > 0:
-        candidates = ideal_candidates
-    else:
-        assert args.width == 2, "When else would this happen?"
+    for i in range(args.Nshot, 0, -2):
+        name1 = NAMES[i-1]
+        name2 = NAMES[i-2]
 
-    # We want the example to be as far as possible from both Alice's type and the target section
-    candidates = select_furthest_items(candidates, Alice_type, applies_target)
-    if args.fulloutput:
-        print("For alice=", Alice_type.term, "and ", applies_target.stat_defined,
-              "candidates:", [x.term + ":" + x.stat_defined for x in candidates])
+        # Both Yes and No questions will be based on the same reference section
+        # We randomly choose the reference section.
+        example_level = args.depth - 1
+        candidate_subsections = []
+        for x in all_parts:
+            if x.get_level() == example_level:
+                if False == does_A_apply_to_anyB(applies_target, x) and \
+                        False == does_A_apply_to_anyB(x, applies_target) and \
+                        not x in already_used_subsections:
+                    candidate_subsections.append(x)
+        assert len(candidate_subsections) > 0, "Too few subsections for N shot with N=" + str(args.Nshot)
 
-    # choose the statute to be used in the few shots
-    example_statute = random.choice(candidates)
+        # We ideally want an example section that doesn't apply to Alice
+        ideal_candidate_subsections = [x for x in candidate_subsections if False == does_A_apply_to_anyB(x, Alice_type)]
+        if len(ideal_candidate_subsections) > 0:
+            candidate_subsections = ideal_candidate_subsections
 
-    # choose the true target
-    candidates_true = select_furthest_items(example_statute.get_all_descendants(), Alice_type)
-    if args.fulloutput:
-        print("true target candidates are:", [x.term + ":" + x.stat_used for x in candidates_true])
-    true_item = random.choice(candidates_true)
-    assert does_A_apply_to_anyB(example_statute, true_item) == True
-    assert does_A_apply_to_anyB(applies_target, true_item) == False
+        # We want the example to be as far as possible from both Alice's type and the target section
+        candidate_subsections = select_furthest_items(candidate_subsections, Alice_type, applies_target)
+        if args.fulloutput:
+            print("For alice=", Alice_type.term, "and ", applies_target.stat_defined,
+                  "candidates:", [x.term + ":" + x.stat_defined for x in candidate_subsections])
 
-    # choose the false target from valid ones, so that it is farthest from Alice and applies target
-    candidates_false = []
-    for x in all_parts:
-        if False == does_A_apply_to_anyB(example_statute, x):
-            candidates_false.append(x)
-    assert len(candidates_false) > 0
-    candidates_false = select_furthest_items(candidates_false, Alice_type, applies_target)
-    ideal_candidates_false = [x for x in candidates_false if False == does_A_apply_to_anyB(applies_target, x)]
-    if len(ideal_candidates_false) > 0:
-        candidates_false = ideal_candidates_false
-    print("false target candidates are:", [x.term + ":" + x.stat_used for x in candidates_false])
-    false_item = random.choice(candidates_false)
-    assert does_A_apply_to_anyB(example_statute, false_item) == False
-    assert does_A_apply_to_anyB(applies_target, false_item) == False or (args.width == 2)
+        # choose the statute to be used in the few shots
+        target_subsection = Nshot_random.choice(candidate_subsections)
+        already_used_subsections.add(target_subsection)
+        if args.fulloutput:
+            print("  chosen=", target_subsection.term + ":" + target_subsection.stat_defined)
 
-    # Generate the actual text.  With 50% probability, the false one comes first, second only second
-    if random.random() < 0.5:
-        rv = write_statute_facts_question("Charlie", false_item, example_statute)
-        rv += write_explanation_false("Charlie", example_statute)
-        rv += write_statute_facts_question("Bob", true_item, example_statute)
-        rv += write_explanation_true("Bob", true_item, example_statute)
-    else:
-        rv  = write_statute_facts_question("Charlie", true_item, example_statute)
-        rv += write_explanation_true("Charlie", true_item, example_statute)
-        rv += write_statute_facts_question("Bob", false_item, example_statute)
-        rv += write_explanation_false("Bob", example_statute)
+        # choose the true target
+        candidates_true = select_furthest_items(target_subsection.get_all_descendants(), Alice_type)
+        if args.fulloutput:
+            print("true target candidates are:", [x.term + ":" + x.stat_used for x in candidates_true])
+        true_item = Nshot_random.choice(candidates_true)
+        if args.fulloutput:
+            print("  true_item chosen=", true_item.term + ":" + true_item.stat_used)
+        assert does_A_apply_to_anyB(target_subsection, true_item) == True
+        assert does_A_apply_to_anyB(applies_target, true_item) == False
+        assert applies_target != true_item
+
+        # choose the false target from valid ones, so that it is farthest from Alice and applies target
+        candidates_false = []
+        for x in all_parts:
+            if False == does_A_apply_to_anyB(target_subsection, x):
+                candidates_false.append(x)
+        assert len(candidates_false) > 0
+        candidates_false = select_furthest_items(candidates_false, Alice_type, applies_target)
+        ideal_candidate_subsections_false = [x for x in candidates_false if False == does_A_apply_to_anyB(applies_target, x)]
+        if len(ideal_candidate_subsections_false) > 0:
+            candidates_false = ideal_candidate_subsections_false
+        print("false target candidates are:", [x.term + ":" + x.stat_used for x in candidates_false])
+        false_item = Nshot_random.choice(candidates_false)
+        if args.fulloutput:
+            print("  false_item=", false_item.term + ":" + false_item.stat_used)
+        assert does_A_apply_to_anyB(target_subsection, false_item) == False
+        assert does_A_apply_to_anyB(applies_target, false_item) == False or (args.width == 2)
+        assert applies_target != false_item
+
+        # Generate the actual text.  With 50% probability, the false one comes first, second only second
+        if Nshot_random.random() < 0.5:
+            rv += write_statute_facts_question(name1, false_item, target_subsection)
+            rv += write_explanation_false(name1, target_subsection)
+            rv += write_statute_facts_question(name2, true_item, target_subsection)
+            rv += write_explanation_true(name2, true_item, target_subsection)
+        else:
+            rv += write_statute_facts_question(name1, true_item, target_subsection)
+            rv += write_explanation_true(name1, true_item, target_subsection)
+            rv += write_statute_facts_question(name2, false_item, target_subsection)
+            rv += write_explanation_false(name2, target_subsection)
+
     return rv
 
 def write_out_sentence(statute):
@@ -202,9 +227,9 @@ def write_statute_facts_question(person_name, person_type, target_section) -> st
 
 
 if args.termtype == "nonces":
-    raw_nonce_list =  generate_synstat.read_nonces()
+    raw_nonce_list = generate_synstat.read_nonces()
 else:
-    raw_nonce_list =  generate_synstat.generate_systematic()
+    raw_nonce_list = generate_synstat.generate_systematic(statute_random)
 
 total_statute_results = {"True Positive": 0, "True Negative": 0,
                          "False Positive": 0, "False Negative": 0, "unclear":0}
@@ -213,12 +238,16 @@ total_sentence_results = {"True Positive": 0, "True Negative": 0,
 total_num = 0
 
 for run_num in range(args.numruns):
+    if 0 < args.max_num <= total_num:
+        assert total_num == args.max_num, "should never go over"
+        break  # if we go over the total number allowed, stop further calls
+
     print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
     print("run_num=", run_num)
 
-    random.seed(run_num) # re-seeding right before new shuffle fixes unexpected-reshuffling issues
     nonce_list = raw_nonce_list.copy()
-    random.shuffle(nonce_list)
+    statute_random.seed(run_num) # re-seeding right before new shuffle fixes unexpected-reshuffling issues
+    statute_random.shuffle(nonce_list)
 
     abst = generate_synstat.generate_abstract(nonce_list, args.depth, args.width)
 
@@ -255,20 +284,24 @@ for run_num in range(args.numruns):
         if not args.fulloutput:
             print("{:<17s}".format(Alice_type.term), end="") # start printing summary, table format
 
-        # iterate over all the definitions, which are sentences in prose and subsections, etc. in statutory form
-        # We always skip sentence 1, since it always applies, due to the definition.
-        for applies_target in parts_to_test: # sent_num in range(2, num_sentences):
-            # applies_target = dict_sentence_defs[sent_num]
+        # iterate over all subsections that we might ask if it applies to Alice
+        for applies_target in parts_to_test:
+            if 0 < args.max_num <= total_num:
+                assert total_num == args.max_num, "should never go over"
+                break # if we go over the total number allowed, stop further calls
+
             if not args.fulloutput:
                 if not args.leavesonly:
                     print(applies_target.sentence_num,end="")
             groundtruth = does_A_apply_to_anyB(applies_target, Alice_type)
 
+            assert args.leavesonly != applies_target.has_children()
+
             if groundtruth == None:
                 if not args.fulloutput:
                     print("_        ", end="") # no GPT-3 call to make
             else:
-                if random.random() < args.skip_percent/100.0:
+                if skip_random.random() < args.skip_percent/100.0:
                     print("SKIPPING ", end="")
                     continue
 
@@ -407,6 +440,7 @@ for run_num in range(args.numruns):
                         print(" ", end="", flush=True)
 
                 num_this_run += 1
+                total_num += 1
         print("")
 
     if not args.fulloutput: # if we did the full output above, we don't need it all again now
@@ -421,7 +455,6 @@ for run_num in range(args.numruns):
     if not args.statuteonly:
         print("This run sentence_results: ", sentence_results)
 
-    total_num += num_this_run
     check_sum = 0
     for t in total_statute_results.keys():
         total_statute_results[t] += statute_results[t]
