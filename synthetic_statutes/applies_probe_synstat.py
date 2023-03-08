@@ -140,17 +140,18 @@ def write_multistatute_Nshot_prompt(args, applies_target, Nshot_statutes, names_
     used_sec_nums = {1001}
 
     for abst in Nshot_statutes:
-        # append the statute to the prompt
+        # randomly generate a statute
         sec_num = None
         while sec_num is None or sec_num in used_sec_nums:
             sec_num = Nshot_random.randint(1010, 9999)
         used_sec_nums.add(sec_num)
+
+        # append the statute to the prompt
         rv += generate_synstat.abstract_to_statute(abst, sec_num=sec_num) + "\n"
 
         all_parts = generate_synstat.extract_all_used_parts(abst)
 
-        name1 = names_set.pop() # the names set was already randomly shuffled
-        name2 = names_set.pop()
+        name = names_set.pop() # the names set was already randomly shuffled
 
         # both questions will have the same applies-to-target.
         if args.Nshot_type == "many_statute_same_pos":
@@ -163,25 +164,21 @@ def write_multistatute_Nshot_prompt(args, applies_target, Nshot_statutes, names_
                 possible_target_subsection = [p for p in all_parts if p.has_children() and not p.parent is None]
             elif args.subdivs == "both":
                 possible_target_subsection = [p for p in all_parts if not p.parent is None]
+            else:
+                assert False, "not implemented"
             target_subsection = Nshot_random.choice(possible_target_subsection)
 
-            # randomly choose a valid False and True example
-            true_type = \
-                Nshot_random.choice([p for p in all_parts if True == does_A_apply_to_anyB(target_subsection, p)])
-            false_type = \
-                Nshot_random.choice([p for p in all_parts if False == does_A_apply_to_anyB(target_subsection, p)])
-
-            # Generate the actual text.  With 50% probability, the false one comes first, second only second
+            # Generate a true example with 50% chance
             if Nshot_random.random() < 0.5:
-                rv += write_statute_facts_question(name1, false_type, target_subsection)
-                rv += write_explanation_false(name1, target_subsection)
-                rv += write_statute_facts_question(name2, true_type, target_subsection)
-                rv += write_explanation_true(name2, true_type, target_subsection)
+                true_type = \
+                    Nshot_random.choice([p for p in all_parts if True == does_A_apply_to_anyB(target_subsection, p)])
+                rv += write_statute_facts_question(name, true_type, target_subsection)
+                rv += write_explanation_true(name, true_type, target_subsection)
             else:
-                rv += write_statute_facts_question(name1, true_type, target_subsection)
-                rv += write_explanation_true(name1, true_type, target_subsection)
-                rv += write_statute_facts_question(name2, false_type, target_subsection)
-                rv += write_explanation_false(name2, target_subsection)
+                false_type = \
+                    Nshot_random.choice([p for p in all_parts if False == does_A_apply_to_anyB(target_subsection, p)])
+                rv += write_statute_facts_question(name, false_type, target_subsection)
+                rv += write_explanation_false(name, target_subsection)
     return rv
 
 def write_1statute_Nshot_prompt(args, applies_target, person_type, all_parts) -> str:
@@ -383,6 +380,8 @@ for run_num in range(args.numruns):
         parts_to_test = [p for p in all_parts if p.has_children() and not p.parent is None]
     elif args.subdivs == "both":
         parts_to_test = [p for p in all_parts if not p.parent is None]
+    else:
+        assert False, "not implemented"
 
     for person_type in all_parts: # iterate over all the possible types for the person
         # iterate over all subsections that we might ask if it applies to the person
@@ -452,6 +451,7 @@ for run_num in range(args.numruns):
                     else:
                         statute_result = "True Negative"
                 statute_results[statute_result] += 1
+                utils.add_comment("RESULT is " + statute_result)
 
                 print(statute_response)
                 print("-----")
@@ -493,6 +493,7 @@ for run_num in range(args.numruns):
                         else:
                             sentence_result = "True Negative"
                     sentence_results[sentence_result] += 1
+                    utils.add_comment("RESULT is " + sentence_result)
 
                     print(sentence_response)
                     print("-----")
