@@ -168,11 +168,11 @@ def sep(index, len_list) -> str:
 
 # Takes an abstract representation and creates a statute (recursively)
 # Also fills in the citation
-def abstract_to_statute(abst, level = 0, context = None) -> str:
+def abstract_to_statute(abst, level = 0, context = None, sec_num = 1001) -> str:
     rv = ""
     if level == 0:
-        rv  = "Section 1001.  Definition of " + abst.term +".\n"
-        context = "section 1001"
+        rv  = "Section " + str(sec_num) + ".  Definition of " + abst.term +".\n"
+        context = "section " + str(sec_num)
     if not abst.has_grandchildren(): # simple; definition in terms of leaf nodes
         rv += "  " * (level-1) + "The term \"" + abst.term.lower() + "\" means-\n"
         abst.stat_defined = context
@@ -260,23 +260,6 @@ def get_article(word):
     else:
         assert False, "not implemented"
     return "a" # the default
-
-# This returns a list of 2-tuples of (statute_part, list(auncles))
-# Note: auncle is the gender-neutral version of aunt or uncle (i.e. sibling of a parent)
-def get_auncles(abst, siblings=None):
-    rv = []
-    for child in abst.children:
-        if not siblings is None:
-            rv.append((child, siblings))
-        if child.has_children():
-            childs_siblings = []
-            for child2 in abst.children:
-                if child2 != child:
-                    childs_siblings.append(child2)
-            rv.extend(get_auncles(child, childs_siblings))
-    return rv
-
-
 
 if __name__ == "__main__":
     nonce_list = read_nonces()
