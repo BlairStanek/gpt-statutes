@@ -71,6 +71,19 @@ class statute_part:
             self_count += 1
         assert False, "Got two that are not in the same tree"
 
+    # Find the item in the other_statute that is in the exact same position
+    # as self.  The assumption is that the source statute for self is
+    # different from other_statute; otherwise, it just returns self.
+    def get_analogous_item(self, other_statute):
+        tree_branches = []
+        x = self
+        while x.parent is not None:
+            tree_branches.append(x.parent.children.index(x))
+            x = x.parent
+        y = other_statute
+        while len(tree_branches) > 0:
+            y = y.children[tree_branches.pop()]
+        return y
 
 # This generates the abstract representation of the synthetic statute.
 def generate_abstract(stack_names:list, tree_depth:int, branch_factor:int, cur_depth=0):

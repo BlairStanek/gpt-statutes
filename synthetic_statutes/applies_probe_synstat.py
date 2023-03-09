@@ -34,7 +34,7 @@ parser.add_argument('--noGPT', action="store_true",
                     help='for debugging; if passed, just generate statutes but do not actually call GPT')
 parser.add_argument('--Nshot', required=False, type=int, default=0,
                     help='Allows for N shot with N examples (must be EVEN, so positive and negative balanced)')
-parser.add_argument('--Nshot_type', choices=["1statute", "many_statute", "many_statute_same_pos"],
+parser.add_argument('--Nshot_type', choices=["1", "N", "N_samepos", "N/2", "N/2_samepos"],
                     help='whether to do N-shot with N questions or N statutes (including same position)')
 parser.add_argument('--skip_percent', type=float, default=0.0,
                     help='randomly skips this percent of all valid queries on a statute')
@@ -48,7 +48,8 @@ parser.add_argument('--model', default="text-davinci-003",
 
 args = parser.parse_args()
 
-if args.Nshot % 2 == 1:
+if args.Nshot_type in ["1", "N/2", "N/2_samepos"] and \
+    args.Nshot % 2 == 1:
     print("Nshot was set to", args.Nshot, "but it must be even")
     exit(0)
 
@@ -135,9 +136,21 @@ NAMES = [   "Liam", "Olivia",
             "Jacob", "Ella"]
 
 
-def write_multistatute_Nshot_prompt(args, applies_target, Nshot_statutes, names_set) -> str:
+def write_multistatute_Nshot_prompt(args, Nshot_statutes, names_set, test_applies_to, test_person_type) -> str:
+    if not args.Nshot_type in ["N_samepos", "N/2_samepos"]:
+        test_applies_to = test_person_type = None # ensures not used if not appropriate
+
     rv = ""
-    used_sec_nums = {1001}
+    used_sec_nums = set()
+
+    # to ensure balance (not too many false examples or too many true examples)
+    # we generate a balanced list of positives and negatives and then randomly shuffle
+    list_positive = [True] * int(len(Nshot_statutes) / 2)
+    list_positive.extend([False] * int(len(Nshot_statutes) / 2))
+    if len(Nshot_statutes) % 2 == 1:
+        list_positive.append(Nshot_random.random() < 0.5)
+    Nshot_random.shuffle(list_positive)
+    assert -1 <= (len([x for x in list_positive if x]) - len([x for x in list_positive if not x])) <= 1
 
     for abst in Nshot_statutes:
         # randomly generate a statute
@@ -151,13 +164,13 @@ def write_multistatute_Nshot_prompt(args, applies_target, Nshot_statutes, names_
 
         all_parts = generate_synstat.extract_all_used_parts(abst)
 
-        name = names_set.pop() # the names set was already randomly shuffled
+        name1 = names_set.pop() # the names set was already randomly shuffled
+        name2 = names_set.pop()
 
         # both questions will have the same applies-to-target.
-        if args.Nshot_type == "many_statute_same_pos":
-            assert False, "not yet implemented"
-        else:
-            # choose an applies-to target of a type that might have been chosen
+        if args.Nshot_type in ["N_samepos", "N/2_samepos"]:
+            target_subsection = test_applies_to.get_analogous_item(abst)
+        else: # choose an applies-to target of a type that might be chosen for actual test case
             if args.subdivs == "leavesonly":
                 possible_target_subsection = [p for p in all_parts if not p.has_children()]
             elif args.subdivs == "noleaves":  # we are doing it by numbered sentence, so just store the sentence nums
@@ -168,28 +181,45 @@ def write_multistatute_Nshot_prompt(args, applies_target, Nshot_statutes, names_
                 assert False, "not implemented"
             target_subsection = Nshot_random.choice(possible_target_subsection)
 
-            # Generate a true example with 50% chance
-            if Nshot_random.random() < 0.5:
-                true_type = \
-                    Nshot_random.choice([p for p in all_parts if True == does_A_apply_to_anyB(target_subsection, p)])
-                rv += write_statute_facts_question(name, true_type, target_subsection)
-                rv += write_explanation_true(name, true_type, target_subsection)
+        true_type = \
+            Nshot_random.choice([p for p in all_parts if True == does_A_apply_to_anyB(target_subsection, p)])
+        false_type = \
+            Nshot_random.choice([p for p in all_parts if False == does_A_apply_to_anyB(target_subsection, p)])
+
+        if args.Nshot_type in ["N_samepos", "N/2_samepos"]: # exactly match in position to test type
+            if does_A_apply_to_anyB(test_applies_to, test_person_type):
+                true_type = test_person_type.get_analogous_item(abst)
             else:
-                false_type = \
-                    Nshot_random.choice([p for p in all_parts if False == does_A_apply_to_anyB(target_subsection, p)])
-                rv += write_statute_facts_question(name, false_type, target_subsection)
-                rv += write_explanation_false(name, target_subsection)
+                false_type = test_person_type.get_analogous_item(abst)
+
+        # For N-statute N-shot, generate a true example with 50% chance
+        # For N/2-statute N-shot, generate the true example first with 50% chance
+        if list_positive.pop():
+            rv += write_statute_facts_question(name1, true_type, target_subsection)
+            rv += write_explanation_true(name1, true_type, target_subsection)
+            if args.Nshot_type.startswith("N/2"): # now generate a false example
+                rv += write_statute_facts_question(name2, false_type, target_subsection)
+                rv += write_explanation_false(name2, target_subsection)
+        else:
+            rv += write_statute_facts_question(name1, false_type, target_subsection)
+            rv += write_explanation_false(name1, target_subsection)
+            if args.Nshot_type.startswith("N/2"): # now generate a true example
+                rv += write_statute_facts_question(name2, true_type, target_subsection)
+                rv += write_explanation_true(name2, true_type, target_subsection)
+
+    assert len(list_positive) == 0, "Should have exactly used up our list of positives or negatives"
     return rv
 
-def write_1statute_Nshot_prompt(args, applies_target, person_type, all_parts) -> str:
-    assert args.Nshot <= len(NAMES)
+# This is used for the N-shot prompting where we have a single statute (which is used for test as well)
+# and create N questions (half yes, half no) that come right before the test question.
+def write_1statute_Nshot_prompt(args, names_set, test_applies_to, test_person_type, all_parts) -> str:
     assert (args.Nshot % 2) == 0
     already_used_subsections = set()
     rv = ""
 
-    for i in range(args.Nshot, 0, -2):
-        name1 = NAMES[i-1]
-        name2 = NAMES[i-2]
+    for i in range(0, args.Nshot, 2): # do in pairs
+        name1 = names_set.pop()
+        name2 = names_set.pop()
 
         # Both Yes and No questions will be based on the same reference section
         # We randomly choose the reference section.
@@ -197,20 +227,20 @@ def write_1statute_Nshot_prompt(args, applies_target, person_type, all_parts) ->
         candidate_subsections = []
         for x in all_parts:
             if x.get_level() == example_level:
-                if False == does_A_apply_to_anyB(applies_target, x) and \
-                        False == does_A_apply_to_anyB(x, applies_target) and \
+                if False == does_A_apply_to_anyB(test_applies_to, x) and \
+                        False == does_A_apply_to_anyB(x, test_applies_to) and \
                         not x in already_used_subsections:
                     candidate_subsections.append(x)
         assert len(candidate_subsections) > 0, "Too few subsections for N shot with N=" + str(args.Nshot)
 
         # We ideally want an example section that doesn't apply to the person type
-        ideal_candidate_subsections = [x for x in candidate_subsections if False == does_A_apply_to_anyB(x, person_type)]
+        ideal_candidate_subsections = [x for x in candidate_subsections if False == does_A_apply_to_anyB(x, test_person_type)]
         if len(ideal_candidate_subsections) > 0:
             candidate_subsections = ideal_candidate_subsections
 
         # We want the example to be as far as possible from both the person type and the target section
-        candidate_subsections = select_furthest_items(candidate_subsections, person_type, applies_target)
-        print("For person_type=", person_type.term, "and ", applies_target.stat_defined,
+        candidate_subsections = select_furthest_items(candidate_subsections, test_person_type, test_applies_to)
+        print("For test_person_type=", test_person_type.term, "and ", test_applies_to.stat_defined,
               "candidates:", [x.term + ":" + x.stat_defined for x in candidate_subsections])
 
         # choose the statute to be used in the few shots
@@ -219,30 +249,30 @@ def write_1statute_Nshot_prompt(args, applies_target, person_type, all_parts) ->
         print("  chosen=", target_subsection.term + ":" + target_subsection.stat_defined)
 
         # choose the true target
-        candidates_true = select_furthest_items(target_subsection.get_all_descendants(), person_type)
+        candidates_true = select_furthest_items(target_subsection.get_all_descendants(), test_person_type)
         print("true target candidates are:", [x.term + ":" + x.stat_used for x in candidates_true])
         true_item = Nshot_random.choice(candidates_true)
         print("  true_item chosen=", true_item.term + ":" + true_item.stat_used)
         assert does_A_apply_to_anyB(target_subsection, true_item) == True
-        assert does_A_apply_to_anyB(applies_target, true_item) == False
-        assert applies_target != true_item
+        assert does_A_apply_to_anyB(test_applies_to, true_item) == False
+        assert test_applies_to != true_item
 
-        # choose the false target from valid ones, so that it is farthest from the person type and applies target
+        # choose the false target from valid ones, so that it is farthest from the test person type and test applies to
         candidates_false = []
         for x in all_parts:
             if False == does_A_apply_to_anyB(target_subsection, x):
                 candidates_false.append(x)
         assert len(candidates_false) > 0
-        candidates_false = select_furthest_items(candidates_false, person_type, applies_target)
-        ideal_candidate_subsections_false = [x for x in candidates_false if False == does_A_apply_to_anyB(applies_target, x)]
+        candidates_false = select_furthest_items(candidates_false, test_person_type, test_applies_to)
+        ideal_candidate_subsections_false = [x for x in candidates_false if False == does_A_apply_to_anyB(test_applies_to, x)]
         if len(ideal_candidate_subsections_false) > 0:
             candidates_false = ideal_candidate_subsections_false
         print("false target candidates are:", [x.term + ":" + x.stat_used for x in candidates_false])
         false_item = Nshot_random.choice(candidates_false)
         print("  false_item=", false_item.term + ":" + false_item.stat_used)
         assert does_A_apply_to_anyB(target_subsection, false_item) == False
-        assert does_A_apply_to_anyB(applies_target, false_item) == False or (args.width == 2)
-        assert applies_target != false_item
+        assert does_A_apply_to_anyB(test_applies_to, false_item) == False or (args.width == 2)
+        assert test_applies_to != false_item
 
         # Generate the actual text.  With 50% probability, the false one comes first, second only second
         if Nshot_random.random() < 0.5:
@@ -353,8 +383,12 @@ for run_num in range(args.numruns):
 
     # if we are doing many-statute N-shot prompting, we need to generate the N statutes
     Nshot_statutes = []
-    if args.Nshot > 0 and args.Nshot_type in ["many_statute", "many_statute_same_pos"]:
-        for i in range(args.Nshot):
+    if args.Nshot > 0 and args.Nshot_type in ["N", "N_samepos", "N/2", "N/2_samepos"]:
+        num_statutes = args.Nshot
+        if args.Nshot_type in ["N/2", "N/2_samepos"]:
+            num_statutes = int(args.Nshot / 2)
+
+        for i in range(num_statutes):
             # note that the nonce_list items are .pop()'ed, which prevents reuse
             extra_abstract = generate_synstat.generate_abstract(nonce_list, args.depth, args.width)
             Nshot_statutes.append(extra_abstract)
@@ -369,8 +403,7 @@ for run_num in range(args.numruns):
     statute_results = {"True Positive": 0, "True Negative": 0,
                        "False Positive":0, "False Negative": 0, "unclear":0}
 
-    sentence_results = {"True Positive": 0, "True Negative": 0,
-                     "False Positive":0, "False Negative": 0, "unclear":0}
+    sentence_results = statute_results.copy()
 
     num_this_run = 0
 
@@ -410,19 +443,23 @@ for run_num in range(args.numruns):
 
                 # Build the question to pass into GPT-3
                 statute_prompt = ""
-                if args.Nshot > 0 and args.Nshot_type in ["many_statute", "many_statute_same_pos"]:
-                    statute_prompt = write_multistatute_Nshot_prompt(args, applies_target, Nshot_statutes, names_set)
+                if args.Nshot > 0 and args.Nshot_type.startswith("N"):
+                    statute_prompt = write_multistatute_Nshot_prompt(args,
+                                                                     Nshot_statutes,
+                                                                     names_set,
+                                                                     applies_target,
+                                                                     person_type)
                 statute_prompt += curr_statute
 
-                if args.Nshot > 0 and args.Nshot_type == "1statute":
-                    examples = write_1statute_Nshot_prompt(args, applies_target, person_type, all_parts)
-                    statute_prompt += examples
+                if args.Nshot > 0 and args.Nshot_type == "1":
+                    examples = write_1statute_Nshot_prompt(args, names_set, applies_target, person_type, all_parts)
+                    statute_prompt += "\n" + examples
                     print("-----")
 
                 statute_question = write_statute_facts_question(person_name, person_type, applies_target)
                 if args.Nshot == 0: # We don't add this if we already have examples
                     statute_question += " Let's think step by step."
-                statute_prompt += "\n" + statute_question
+                statute_prompt = statute_prompt.rstrip() + "\n\n" + statute_question
 
                 SECOND_PROMPT = "\nTherefore, the answer (Yes or No) is"  # cf. Kojima et al. 2022 appendix A.5
 
@@ -432,10 +469,28 @@ for run_num in range(args.numruns):
                 # Make the GPT-3 calls for the statutory reasoning version
                 if not args.noGPT:
                     utils.add_comment("Synthetic applies probe in " + __file__)
-                    statute_response = utils.call_gpt3_withlogging(statute_prompt, args.model, max_tokens=2000)
+                    statute_response = utils.call_gpt3_withlogging(statute_prompt, args.model, max_tokens=400)
+
+                    # for the N-shot prompting where there are 2 questions after each statute,
+                    # GPT3 will generally try to answer the first question and then produce and
+                    # answer a second question!  To address this, we need to construct a second
+                    # prompt that removes this second question & answer.
+                    construct_normal_second_prompt = True
+                    if args.Nshot_type in ["N/2", "N/2_samepos"]:
+                        if statute_response.count("\n\n") > 1:
+                            print("POSSIBLE PROBLEM: More than one double carriage return in response.\n")
+                        if "\n\n" in statute_response:
+                            construct_normal_second_prompt = False # turns off normal construction
+                            second_statute_prompt = \
+                                curr_statute + "\n" + \
+                                statute_question + \
+                                statute_response.split("\n\n")[0] + \
+                                SECOND_PROMPT
+
                     utils.add_comment("Synthetic applies probe in " + __file__ + " SECOND PROMPT")
-                    second_statute_prompt = statute_prompt + statute_response + SECOND_PROMPT
-                    second_statute_response = utils.call_gpt3_withlogging(second_statute_prompt, args.model, max_tokens=2000)
+                    if construct_normal_second_prompt:
+                        second_statute_prompt = statute_prompt + statute_response + SECOND_PROMPT
+                    second_statute_response = utils.call_gpt3_withlogging(second_statute_prompt, args.model, max_tokens=400)
                 else:
                     statute_response = second_statute_response = ["No.","No","Yes.", "maybe?"][num_this_run % 4]
 
@@ -473,10 +528,10 @@ for run_num in range(args.numruns):
                     if not args.noGPT:
                         # Make the GPT-3 calls for the SENTENCE reasoning version
                         utils.add_comment("Synthetic applies probe SENTENCE VERSION in " + __file__ + " person_type=" + person_type.term + " sent_num=" + str(sent_num))
-                        sentence_response = utils.call_gpt3_withlogging(sentence_prompt, args.model, max_tokens=2000)
+                        sentence_response = utils.call_gpt3_withlogging(sentence_prompt, args.model, max_tokens=400)
                         utils.add_comment("Synthetic applies probe SENTENCE VERSION in " + __file__ + " SECOND PROMPT")
                         second_sentence_prompt = sentence_prompt + sentence_response + SECOND_PROMPT
-                        second_sentence_response = utils.call_gpt3_withlogging(second_sentence_prompt, args.model, max_tokens=2000)
+                        second_sentence_response = utils.call_gpt3_withlogging(second_sentence_prompt, args.model, max_tokens=400)
                     else:
                         sentence_response = second_sentence_response = statute_response
 
