@@ -17,7 +17,7 @@ print("Start=", start)
 # when one option may be on while the other may be turned off
 statute_random = random.Random(42) # used for shuffling to get the statute
 Nshot_random = random.Random(42) # used for generating the prompts (including N-shot)
-skip_random = random.Random(42) # when running a percentage of a run, this is used
+runsubset_random = random.Random(42) # used to select which items in a run to select
 
 parser = argparse.ArgumentParser(description='Generate synthetic statutes and questions to pass to GPT3')
 parser.add_argument('--width', required=True, type=int,
@@ -28,6 +28,8 @@ parser.add_argument('--termtype', required=True, choices=["nonces", "ids"],
                     help='These are the basic types of prompting we handle')
 parser.add_argument('--numruns', required=True, type=int,
                     help='These are the basic types of prompting we handle')
+parser.add_argument('--perrun', type=int, default=0,
+                    help='how many of each (positive & negative) to do each run')
 parser.add_argument('--do_sentences', action="store_true",
                     help='do the semantically identical sentences in addition to the statutes')
 parser.add_argument('--noGPT', action="store_true",
@@ -36,14 +38,14 @@ parser.add_argument('--Nshot', required=False, type=int, default=0,
                     help='Allows for N shot with N examples (must be EVEN, so positive and negative balanced)')
 parser.add_argument('--Nshot_type', choices=["1", "N", "N_samepos", "N/2", "N/2_samepos"],
                     help='whether to do N-shot with N questions or N statutes (including same position)')
-parser.add_argument('--skip_percent', type=float, default=0.0,
-                    help='randomly skips this percent of all valid queries on a statute')
 parser.add_argument('--max_num', type=int, default=0,
-                    help='stop after this number of queries; often combined with a skip_percent>0')
+                    help='stop after this number of queries')
 parser.add_argument('--subdivs', required=True, choices=["leavesonly", "noleaves", "both"],
                     help='which type of subdivisions to consider asking about')
 parser.add_argument('--model', default="text-davinci-003",
                     help='which openai model to use')
+parser.add_argument('--question_form', type=int, default=0,
+                    help='how to phrase question; default is "Does section __ apply to __?"')
 
 
 args = parser.parse_args()
@@ -116,24 +118,12 @@ def select_furthest_items(L:list, a:statute_part, b=None) -> list:
     return rv
 
 # We need to use random names with equal change of each gender to avoid bias.
-# The below were drawn from the top 15 girl names for 2018 and top 15 boy names for 2020 births,
-# from data at https://www.ssa.gov/oact/babynames/.
-
-NAMES = [   "Liam", "Olivia",
-            "Noah", "Emma",
-            "Oliver", "Ava",
-            "Elijah", "Charlotte",
-            "William", "Sophia",
-            "James", "Amelia",
-            "Benjamin", "Isabella",
-            "Lucas", "Mia",
-            "Henry", "Evelyn",
-            "Alexander", "Harper",
-            "Mason", "Camila",
-            "Michael", "Abigail",
-            "Ethan", "Gianna",
-            "Daniel", "Luna",
-            "Jacob", "Ella"]
+# The below were drawn from the top 15 baby names each at https://www.ssa.gov/oact/babynames/decades/names2000s.html.
+MALE_NAMES = [ "Jacob", "Michael", "Joshua", "Matthew", "Daniel", "Christopher", "Andrew",
+         "Ethan", "Joseph", "William", "Anthony", "David", "Alexander", "Nicholas", "Ryan"]
+FEMALE_NAMES = ["Emily", "Madison", "Emma", "Olivia","Hannah","Abigail","Isabella","Samantha",
+            "Elizabeth","Ashley","Alexis","Sarah","Sophia","Alyssa","Grace"  ]
+NAMES = MALE_NAMES.copy().extend(FEMALE_NAMES) # merge
 
 
 def write_multistatute_Nshot_prompt(args, Nshot_statutes, names_set, test_applies_to, test_person_type) -> str:
@@ -344,13 +334,120 @@ def write_facts(person_name, person_type) -> str:
     return person_name + " is " + generate_synstat.get_article(person_type.term) + \
     " " + person_type.term.lower() + "."
 
-def write_statute_facts_question(person_name, person_type, target_section) -> str:
+def write_statute_facts_question(person_name, person_type, target_section, args) -> str:
+    rv = write_facts(person_name, person_type)
+
     if not target_section.stat_defined is None:
-        return write_facts(person_name, person_type) + " Does " + \
-               target_section.stat_defined + " apply to " + person_name + "?"
+        section_name = target_section.stat_defined
     else:
-        return write_facts(person_name, person_type) + " Does " + \
-               target_section.stat_used + " apply to " + person_name + "?"
+        section_name = target_section.stat_used
+
+    main_term = target_section.get_root().term.lower()
+    if person_name in FEMALE_NAMES:
+        pronoun = "her"
+        assert not person_name in MALE_NAMES
+    else:
+        pronoun = "him"
+        assert person_name in MALE_NAMES
+
+    # Here are the possible options for question phrasing
+    # 0. “Does section 1001(b) apply to Alice?” [DEFAULT]
+    # 1. “Does section 1001(b) apply to Alice, making her a tammers?”
+    # 2. “Does section 1001(b) apply to make Alice a tammers?”
+    # 3. “Is Alice a tammers because of section 1001(b)?”
+    # 4. "Is Alice a tammers owing to section 1001(b)?"
+    # 5. "Is Alice a tammers as per section 1001(b)?"
+    if args.question_form == 0:
+        rv += " Does " + section_name + " apply to " + person_name + "?"
+    elif args.question_form == 1:
+        rv += " Does " + section_name + " apply to " + person_name +  ", making " + \
+              pronoun + " " + generate_synstat.get_article(main_term) + " " + main_term + "?"
+    elif args.question_form == 2:
+        rv += " Does " + section_name + " apply to make " + person_name + \
+              " " + generate_synstat.get_article(main_term) + " " + main_term + "?"
+    elif args.question_form == 3:
+        rv += " Is " + person_name + " " + generate_synstat.get_article(main_term) + \
+              " " + main_term + " because of " + section_name + "?"
+    elif args.question_form == 4:
+        rv += " Is " + person_name + " " + generate_synstat.get_article(main_term) + \
+              " " + main_term + " owing to " + section_name + "?"
+    elif args.question_form == 5:
+        rv += " Is " + person_name + " " + generate_synstat.get_article(main_term) + \
+              " " + main_term + " as per " + section_name + "?"
+
+    return rv
+
+# This builds up all possible queries.  It returns a 2-tuple, with the first being for
+# statutes and the second being sentence based (which is empty if we are not doing sentences in options).
+# Each of the items in the 2-tuple is a list of possible prompts, which are stored as 2-tuples
+# of (prompt text as a str, ground truth as a bool).
+def build_possible_queries(args, all_parts, curr_statute):
+    statute_queries = []
+    sentence_queries = []
+
+    if args.subdivs == "leavesonly":
+        parts_to_test = [p for p in all_parts if not p.has_children()]
+    elif args.subdivs == "noleaves": # we are doing it by numbered sentence, so just store the sentence nums
+        parts_to_test = [p for p in all_parts if p.has_children() and not p.parent is None]
+    elif args.subdivs == "both":
+        parts_to_test = [p for p in all_parts if not p.parent is None]
+    else:
+        assert False, "not implemented"
+
+    for person_type in all_parts: # iterate over all the possible types for the person
+        for applies_target in parts_to_test: # iterate over all subsections to ask if applies
+            names_set = NAMES.copy() # we will pop names out
+            Nshot_random.shuffle(names_set)
+            person_name = names_set.pop() # this always used to be Alice but is now randomly selected to avoid bias
+
+            groundtruth = does_A_apply_to_anyB(applies_target, person_type)
+
+            if args.subdivs == "leavesonly":
+                assert not applies_target.has_children()
+            elif args.subdivs == "noleaves":
+                assert applies_target.has_children()
+
+            if not groundtruth is None:
+
+                # Build the question
+                statute_prompt = ""
+                if args.Nshot > 0 and args.Nshot_type.startswith("N"):
+                    statute_prompt = write_multistatute_Nshot_prompt(args,
+                                                                     Nshot_statutes,
+                                                                     names_set,
+                                                                     applies_target,
+                                                                     person_type)
+                statute_prompt += curr_statute
+
+                if args.Nshot > 0 and args.Nshot_type == "1":
+                    examples = write_1statute_Nshot_prompt(args, names_set, applies_target, person_type, all_parts)
+                    statute_prompt += "\n" + examples
+                    print("-----")
+
+                statute_question = write_statute_facts_question(person_name, person_type, applies_target, args)
+                if args.Nshot == 0: # We don't add this if we already have examples
+                    statute_question += " Let's think step by step."
+                statute_prompt = statute_prompt.rstrip() + "\n\n" + statute_question
+                statute_queries.append((statute_prompt, groundtruth))
+
+    return (statute_queries, sentence_queries)
+
+def filter_and_balance_queries(args, possible_queries):
+    positive_queries = [x for x in possible_queries if x[1]]
+    negative_queries = [x for x in possible_queries if not x[1]]
+
+    assert len(positive_queries) <= len(negative_queries), "When are there more positive examples??  Unexpected!"
+
+    num_each = min(len(positive_queries), len(negative_queries))
+    if args.perrun > 0:
+        assert args.perrun <= num_each
+        num_each = args.perrun
+
+    filtered_pos = runsubset_random.sample(positive_queries, num_each)
+    filtered_neg = runsubset_random.sample(negative_queries, num_each)
+
+    filtered_pos.extend(filtered_neg)
+    return filtered_pos
 
 
 if args.termtype == "nonces":
@@ -371,17 +468,14 @@ for run_num in range(args.numruns):
     print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
     print("run_num=", run_num)
 
+    # Generate the statute about which we will ask questions
     nonce_list = raw_nonce_list.copy()
     statute_random.seed(run_num) # re-seeding right before new shuffle fixes unexpected-reshuffling issues
     statute_random.shuffle(nonce_list)
-
     abst = generate_synstat.generate_abstract(nonce_list, args.depth, args.width)
-
     curr_statute = generate_synstat.abstract_to_statute(abst)
-    print(curr_statute)
-    print("")
 
-    # if we are doing many-statute N-shot prompting, we need to generate the N statutes
+    # if we are doing many-statute N-shot prompting, we need to generate the N statutes used in prompting
     Nshot_statutes = []
     if args.Nshot > 0 and args.Nshot_type in ["N", "N_samepos", "N/2", "N/2_samepos"]:
         num_statutes = args.Nshot
@@ -393,6 +487,7 @@ for run_num in range(args.numruns):
             extra_abstract = generate_synstat.generate_abstract(nonce_list, args.depth, args.width)
             Nshot_statutes.append(extra_abstract)
 
+    # if also doing sentence testing, generate the sentences about which we will ask questions
     if args.do_sentences:
         sentences_form, num_sentences = generate_synstat.abstract_to_sentences(abst, "Sentence {:d}: ")
         print(sentences_form)
@@ -402,163 +497,116 @@ for run_num in range(args.numruns):
 
     statute_results = {"True Positive": 0, "True Negative": 0,
                        "False Positive":0, "False Negative": 0, "unclear":0}
-
     sentence_results = statute_results.copy()
 
     num_this_run = 0
 
-    if args.subdivs == "leavesonly":
-        parts_to_test = [p for p in all_parts if not p.has_children()]
-    elif args.subdivs == "noleaves": # we are doing it by numbered sentence, so just store the sentence nums
-        parts_to_test = [p for p in all_parts if p.has_children() and not p.parent is None]
-    elif args.subdivs == "both":
-        parts_to_test = [p for p in all_parts if not p.parent is None]
-    else:
-        assert False, "not implemented"
+    # build up all possible queries
+    possible_statute_queries, possible_sentence_queries = \
+        build_possible_queries(args, all_parts, curr_statute)
 
-    for person_type in all_parts: # iterate over all the possible types for the person
-        # iterate over all subsections that we might ask if it applies to the person
-        for applies_target in parts_to_test:
-            names_set = NAMES.copy() # we will pop names out
-            Nshot_random.shuffle(names_set)
-            person_name = names_set.pop() # this always used to be Alice but is now randomly selected to avoid bias
+    # filter the queries so that the positive/false are balanced and we have appropriate num
+    statute_queries = filter_and_balance_queries(args, possible_statute_queries)
 
-            if 0 < args.max_num <= total_num:
-                assert total_num == args.max_num, "should never go over"
-                break # if we go over the total number allowed, stop further calls
+    # run thru and make the actual calls to GPT
+    for query in statute_queries:
+        print("----------")
+        print(query[0]) # this is the text to pass to GPT
 
-            groundtruth = does_A_apply_to_anyB(applies_target, person_type)
+        # Make the GPT-3 calls for the statutory reasoning version
+        if not args.noGPT:
+            utils.add_comment("Synthetic applies probe in " + __file__)
+            statute_response = utils.call_gpt3_withlogging(query[0], args.model, max_tokens=1000)
 
-            if args.subdivs == "leavesonly":
-                assert not applies_target.has_children()
-            elif args.subdivs == "noleaves":
-                assert applies_target.has_children()
+            SECOND_PROMPT = "\nTherefore, the answer (Yes or No) is"  # cf. Kojima et al. 2022 appendix A.5
 
-            if not groundtruth is None:
-                if skip_random.random() < args.skip_percent/100.0:
-                    print("SKIPPING ", end="")
-                    continue
+            # for the N-shot prompting where there are 2 questions after each statute,
+            # GPT3 will generally try to answer the first question and then produce and
+            # answer a second question!  To address this, we need to construct a second
+            # prompt that removes this second question & answer.
+            construct_normal_second_prompt = True
+            if args.Nshot_type in ["N/2", "N/2_samepos"]:
+                if statute_response.count("\n\n") > 1:
+                    print("POSSIBLE PROBLEM: More than one double carriage return in response.\n")
+                if "\n\n" in statute_response:
+                    construct_normal_second_prompt = False # turns off normal construction
+                    second_statute_prompt = \
+                        query[0] + \
+                        statute_response.split("\n\n")[0] + \
+                        SECOND_PROMPT
 
-                print("++++++++++++++++++++++++++++++")
+            utils.add_comment("Synthetic applies probe in " + __file__ + " SECOND PROMPT")
+            if construct_normal_second_prompt:
+                second_statute_prompt = query[0] + statute_response + SECOND_PROMPT
+            second_statute_response = utils.call_gpt3_withlogging(second_statute_prompt, args.model, max_tokens=400)
+        else:
+            statute_response = second_statute_response = ["No.","No","Yes.", "maybe?"][num_this_run % 4]
 
-                # Build the question to pass into GPT-3
-                statute_prompt = ""
-                if args.Nshot > 0 and args.Nshot_type.startswith("N"):
-                    statute_prompt = write_multistatute_Nshot_prompt(args,
-                                                                     Nshot_statutes,
-                                                                     names_set,
-                                                                     applies_target,
-                                                                     person_type)
-                statute_prompt += curr_statute
+        statute_result = "unclear"
+        if utils.is_yes(second_statute_response):
+            if query[1]: # this holds the groundtruth
+                statute_result = "True Positive"
+            else:
+                statute_result = "False Positive"
+        elif utils.is_no(second_statute_response):
+            if query[1]: # this holds the groundtruth
+                statute_result = "False Negative"
+            else:
+                statute_result = "True Negative"
+        statute_results[statute_result] += 1
+        utils.add_comment("RESULT is " + statute_result)
 
-                if args.Nshot > 0 and args.Nshot_type == "1":
-                    examples = write_1statute_Nshot_prompt(args, names_set, applies_target, person_type, all_parts)
-                    statute_prompt += "\n" + examples
-                    print("-----")
+        print(statute_response)
+        print("-----")
+        print(second_statute_response)
+        print("-----")
+        print("Groundtruth=", query[1], "so this is:", statute_result)
+        print("-----")
 
-                statute_question = write_statute_facts_question(person_name, person_type, applies_target)
-                if args.Nshot == 0: # We don't add this if we already have examples
-                    statute_question += " Let's think step by step."
-                statute_prompt = statute_prompt.rstrip() + "\n\n" + statute_question
+        # if args.do_sentences:
+        #     sentence_question = write_facts(person_name, person_type) + \
+        #                         " Does sentence " + str(applies_target.sentence_num) + " apply to " + \
+        #                         person_name + "?"
+        #     sentence_question += " Let's think step by step."
+        #     sentence_prompt = sentences_form + "\n" + sentence_question
+        #
+        #     print(sentence_question)
+        #     print("-----")
+        #
+        #     if not args.noGPT:
+        #         # Make the GPT-3 calls for the SENTENCE reasoning version
+        #         utils.add_comment("Synthetic applies probe SENTENCE VERSION in " + __file__ + " person_type=" + person_type.term + " sent_num=" + str(sent_num))
+        #         sentence_response = utils.call_gpt3_withlogging(sentence_prompt, args.model, max_tokens=400)
+        #         utils.add_comment("Synthetic applies probe SENTENCE VERSION in " + __file__ + " SECOND PROMPT")
+        #         second_sentence_prompt = sentence_prompt + sentence_response + SECOND_PROMPT
+        #         second_sentence_response = utils.call_gpt3_withlogging(second_sentence_prompt, args.model, max_tokens=400)
+        #     else:
+        #         sentence_response = second_sentence_response = statute_response
+        #
+        #     # now check SENTENCE response
+        #     sentence_result = "unclear"
+        #     if utils.is_yes(second_sentence_response):
+        #         if groundtruth:
+        #             sentence_result = "True Positive"
+        #         else:
+        #             sentence_result = "False Positive"
+        #     elif utils.is_no(second_sentence_response):
+        #         if groundtruth:
+        #             sentence_result = "False Negative"
+        #         else:
+        #             sentence_result = "True Negative"
+        #     sentence_results[sentence_result] += 1
+        #     utils.add_comment("RESULT is " + sentence_result)
+        #
+        #     print(sentence_response)
+        #     print("-----")
+        #     print(second_sentence_response)
+        #     print("-----")
+        #     print("Groundtruth=", groundtruth, "so this is:", sentence_result)
+        #     print("-----")
 
-                SECOND_PROMPT = "\nTherefore, the answer (Yes or No) is"  # cf. Kojima et al. 2022 appendix A.5
-
-                print(statute_question)
-                print("-----")
-
-                # Make the GPT-3 calls for the statutory reasoning version
-                if not args.noGPT:
-                    utils.add_comment("Synthetic applies probe in " + __file__)
-                    statute_response = utils.call_gpt3_withlogging(statute_prompt, args.model, max_tokens=400)
-
-                    # for the N-shot prompting where there are 2 questions after each statute,
-                    # GPT3 will generally try to answer the first question and then produce and
-                    # answer a second question!  To address this, we need to construct a second
-                    # prompt that removes this second question & answer.
-                    construct_normal_second_prompt = True
-                    if args.Nshot_type in ["N/2", "N/2_samepos"]:
-                        if statute_response.count("\n\n") > 1:
-                            print("POSSIBLE PROBLEM: More than one double carriage return in response.\n")
-                        if "\n\n" in statute_response:
-                            construct_normal_second_prompt = False # turns off normal construction
-                            second_statute_prompt = \
-                                curr_statute + "\n" + \
-                                statute_question + \
-                                statute_response.split("\n\n")[0] + \
-                                SECOND_PROMPT
-
-                    utils.add_comment("Synthetic applies probe in " + __file__ + " SECOND PROMPT")
-                    if construct_normal_second_prompt:
-                        second_statute_prompt = statute_prompt + statute_response + SECOND_PROMPT
-                    second_statute_response = utils.call_gpt3_withlogging(second_statute_prompt, args.model, max_tokens=400)
-                else:
-                    statute_response = second_statute_response = ["No.","No","Yes.", "maybe?"][num_this_run % 4]
-
-                statute_result = "unclear"
-                if utils.is_yes(second_statute_response):
-                    if groundtruth:
-                        statute_result = "True Positive"
-                    else:
-                        statute_result = "False Positive"
-                elif utils.is_no(second_statute_response):
-                    if groundtruth:
-                        statute_result = "False Negative"
-                    else:
-                        statute_result = "True Negative"
-                statute_results[statute_result] += 1
-                utils.add_comment("RESULT is " + statute_result)
-
-                print(statute_response)
-                print("-----")
-                print(second_statute_response)
-                print("-----")
-                print("Groundtruth=", groundtruth, "so this is:", statute_result)
-                print("-----")
-
-                if args.do_sentences:
-                    sentence_question = write_facts(person_name, person_type) + \
-                                        " Does sentence " + str(applies_target.sentence_num) + " apply to " + \
-                                        person_name + "?"
-                    sentence_question += " Let's think step by step."
-                    sentence_prompt = sentences_form + "\n" + sentence_question
-
-                    print(sentence_question)
-                    print("-----")
-
-                    if not args.noGPT:
-                        # Make the GPT-3 calls for the SENTENCE reasoning version
-                        utils.add_comment("Synthetic applies probe SENTENCE VERSION in " + __file__ + " person_type=" + person_type.term + " sent_num=" + str(sent_num))
-                        sentence_response = utils.call_gpt3_withlogging(sentence_prompt, args.model, max_tokens=400)
-                        utils.add_comment("Synthetic applies probe SENTENCE VERSION in " + __file__ + " SECOND PROMPT")
-                        second_sentence_prompt = sentence_prompt + sentence_response + SECOND_PROMPT
-                        second_sentence_response = utils.call_gpt3_withlogging(second_sentence_prompt, args.model, max_tokens=400)
-                    else:
-                        sentence_response = second_sentence_response = statute_response
-
-                    # now check SENTENCE response
-                    sentence_result = "unclear"
-                    if utils.is_yes(second_sentence_response):
-                        if groundtruth:
-                            sentence_result = "True Positive"
-                        else:
-                            sentence_result = "False Positive"
-                    elif utils.is_no(second_sentence_response):
-                        if groundtruth:
-                            sentence_result = "False Negative"
-                        else:
-                            sentence_result = "True Negative"
-                    sentence_results[sentence_result] += 1
-                    utils.add_comment("RESULT is " + sentence_result)
-
-                    print(sentence_response)
-                    print("-----")
-                    print(second_sentence_response)
-                    print("-----")
-                    print("Groundtruth=", groundtruth, "so this is:", sentence_result)
-                    print("-----")
-
-                num_this_run += 1
-                total_num += 1
+        num_this_run += 1
+        total_num += 1
         print("")
 
     print("num_this_run=", num_this_run)
@@ -600,4 +648,4 @@ print("End=", end)
 print("Time taken=", end-start)
 
 print("Suggested filename:", suggested_filename)
-print('\a\a\a\a\a\a') # play sounds
+print('\a\a\a\a') # play sounds

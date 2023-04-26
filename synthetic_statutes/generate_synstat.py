@@ -85,6 +85,12 @@ class statute_part:
             y = y.children[tree_branches.pop()]
         return y
 
+    def get_root(self):
+        x = self
+        while x.parent is not None:
+            x = x.parent
+        return x
+
 # This generates the abstract representation of the synthetic statute.
 def generate_abstract(stack_names:list, tree_depth:int, branch_factor:int, cur_depth=0):
     if cur_depth > tree_depth:
