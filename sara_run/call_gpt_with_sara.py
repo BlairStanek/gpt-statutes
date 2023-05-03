@@ -21,7 +21,7 @@ def print_confusion_matrix(groundtruth_vs_response):
           "   {:6d} ".format(groundtruth_vs_response[CONTRADICTION][CONTRADICTION]),
           "   {:6d} ".format(groundtruth_vs_response[CONTRADICTION][UNCLEAR]))
 
-parser = argparse.ArgumentParser(description='Call GPT3 with 4-shot dynamic prompts for SARA')
+parser = argparse.ArgumentParser(description='Call GPT with 4-shot dynamic prompts for SARA')
 parser.add_argument('--letsthink', required=True, choices=["Yes", "no"],
                     help='Whether to add "Lets think step by step." per Kojima et al 2022')
 parser.add_argument('--withstatute', required=True, choices=["Yes", "no"],
@@ -125,7 +125,7 @@ for json_item in json_records:
         response = "unclear"
 
     print("{:15s}".format(json_item["case id"]),
-          "GPT3 Response: {:20s}".format(second_response),
+          "GPT Response: {:20s}".format(second_response),
           "Interpreted as: {:15s}".format(response),
           "Groundtruth:", json_item["answer"])
 
