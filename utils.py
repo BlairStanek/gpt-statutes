@@ -19,7 +19,7 @@ def call_gpt3_withlogging(prompt:str,
                           top_p=1.0,
                           frequency_penalty=0.0,
                           presence_penalty=0.0) -> str:
-    openai.api_key = os.getenv("GPT3_API_KEY")
+    openai.api_key = os.getenv("GPT_API_KEY")
 
     f = open(GPT3_LOGFILE, "a")
     f.write("************************\n")
@@ -88,7 +88,7 @@ def call_gpt_raw(messages:list,
                   top_p=1.0,
                   frequency_penalty=0.0,
                   presence_penalty=0.0) -> str:
-    openai.api_key = os.getenv("GPT3_API_KEY")
+    openai.api_key = os.getenv("GPT_API_KEY")
 
     f = open(GPT3_LOGFILE, "a") # technically also used for GPT4, etc. logging
     f.write("************************\n")
