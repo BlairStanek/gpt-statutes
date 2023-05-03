@@ -32,40 +32,44 @@ def call_gpt3_withlogging(prompt:str,
     f.write(prompt + "\n")
     f.write("------- (prompt above/response below)\n")
 
-    worked = False
-    while not worked:
-        try:
-            response = openai.Completion.create(
-                engine=engine,
-                prompt=prompt,
-                temperature=temperature,
-                max_tokens=max_tokens,
-                top_p=top_p,
-                frequency_penalty=frequency_penalty,
-                presence_penalty=presence_penalty
-            )
-            response_text = response['choices'][0]['text']
-            worked = True
-        except openai.error.ServiceUnavailableError:
-            print("ServiceUnavailableError error, retrying in 2s.", end="")
-            time.sleep(2)
-        except openai.error.RateLimitError:
-            print("RateLimitError error, retrying in 2s.", end="")
-            time.sleep(2)
-        except openai.error.APIConnectionError:
-            print("APIConnectionError error, retrying in 2s.", end="")
-            time.sleep(2)
-        except openai.error.APIError:
-            print("APIError error, retrying in 2s.", end="")
-            time.sleep(2)
-        except openai.error.Timeout:
-            print("Timeout error, retrying in 2s.", end="")
-            time.sleep(2)
-
-
-
-
-    assert worked
+    if engine in ["gpt-4", "gpt-4-0314"]:
+        response = openai.ChatCompletion.create(
+            model=engine,
+            messages=[
+                {"role": "user", "content": prompt}
+            ])
+        response_text = response['choices'][0]['message']['content']
+    else:
+        worked = False
+        while not worked:
+            try:
+                response = openai.Completion.create(
+                    engine=engine,
+                    prompt=prompt,
+                    temperature=temperature,
+                    max_tokens=max_tokens,
+                    top_p=top_p,
+                    frequency_penalty=frequency_penalty,
+                    presence_penalty=presence_penalty
+                )
+                response_text = response['choices'][0]['text']
+                worked = True
+            except openai.error.ServiceUnavailableError:
+                print("ServiceUnavailableError error, retrying in 2s.", end="")
+                time.sleep(2)
+            except openai.error.RateLimitError:
+                print("RateLimitError error, retrying in 2s.", end="")
+                time.sleep(2)
+            except openai.error.APIConnectionError:
+                print("APIConnectionError error, retrying in 2s.", end="")
+                time.sleep(2)
+            except openai.error.APIError:
+                print("APIError error, retrying in 2s.", end="")
+                time.sleep(2)
+            except openai.error.Timeout:
+                print("Timeout error, retrying in 2s.", end="")
+                time.sleep(2)
+        assert worked
 
     f.write(response_text + "\n")
     f.write("************************\n")
@@ -73,6 +77,74 @@ def call_gpt3_withlogging(prompt:str,
     f.close()
 
     return response_text
+
+
+
+# This calls GPT directly, without the wrapper
+def call_gpt_raw(messages:list,
+                  engine:str,
+                  temperature=0.0,
+                  max_tokens=1000,
+                  top_p=1.0,
+                  frequency_penalty=0.0,
+                  presence_penalty=0.0) -> str:
+    openai.api_key = os.getenv("GPT3_API_KEY")
+
+    f = open(GPT3_LOGFILE, "a") # technically also used for GPT4, etc. logging
+    f.write("************************\n")
+
+    f.write(datetime.now().strftime("%A %d-%B-%Y %H:%M:%S") + "\n")
+    f.write("engine=" + engine + " temp={:.2f}".format(temperature) +
+            " max_tokens=" + str(max_tokens) + " top_p={:.2f}".format(top_p) +
+            " freq_pen={:.2f}".format(frequency_penalty) +
+            " pres_pen={:.2f}".format(presence_penalty) + "\n")
+    f.write(str(messages) + "\n")
+    f.write("------- (prompt above/response below)\n")
+
+    worked = False
+    while not worked:
+        try:
+            response = openai.ChatCompletion.create(
+                model=engine,
+                messages=messages,
+                temperature=temperature,
+                max_tokens=max_tokens,
+                top_p=top_p,
+                frequency_penalty=frequency_penalty,
+                presence_penalty=presence_penalty
+            )
+            response_text = response['choices'][0]['message']['content']
+            worked = True
+        except openai.error.ServiceUnavailableError:
+            print("ServiceUnavailableError error, retrying in 5s.")
+            time.sleep(5)
+        except openai.error.RateLimitError:
+            print("RateLimitError error, retrying in 5s.")
+            time.sleep(5)
+        except openai.error.APIConnectionError:
+            print("APIConnectionError error, retrying in 5s.")
+            time.sleep(5)
+        except openai.error.APIError:
+            print("APIError error, retrying in 5s.")
+            time.sleep(5)
+        except openai.error.Timeout:
+            print("Timeout error, retrying in 5s.")
+            time.sleep(5)
+        except openai.error.InvalidRequestError:
+            print("Invalid request error -- trying fewer tokens")
+            f.write("Trying 50 fewer tokens")
+            max_tokens -= 50
+            assert max_tokens > 0, "Fewer tokens did not solve the problem"
+    assert worked
+
+
+    f.write(response_text + "\n")
+    f.write("************************\n")
+    f.flush()
+    f.close()
+
+    return response_text
+
 
 def get_cases(test_or_train:str, exclude_dollars=False, only_tax_cases=False) -> list:
     rv = []
