@@ -14,9 +14,10 @@ random.shuffle(all_cases_text)
 
 for i in range(20):
     prompt = all_cases_text[i] + "\nWhere is the text above from?"
-    response = utils.call_gpt3_withlogging(prompt,
-                                           "text-davinci-003",
-                                           max_tokens=1000)
-    print(response)
+    print(prompt)
+    # response = utils.call_gpt3_withlogging(prompt,
+    #                                        "text-davinci-003",
+    #                                        max_tokens=1000)
+    # print(response)
     print("--------")
 
