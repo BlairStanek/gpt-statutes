@@ -10,6 +10,8 @@ import utils
 import random
 from datetime import datetime
 
+SECOND_PROMPT = "\nTherefore, the answer (Yes or No) is"  # cf. Kojima et al. 2022 appendix A.5 (forces answer)
+
 start = datetime.now()
 print("Start=", start)
 
@@ -19,7 +21,7 @@ statute_random = random.Random(42) # used for shuffling to get the statute
 Nshot_random = random.Random(42) # used for generating the prompts (including N-shot)
 runsubset_random = random.Random(42) # used to select which items in a run to select
 
-parser = argparse.ArgumentParser(description='Generate synthetic statutes and questions to pass to GPT3')
+parser = argparse.ArgumentParser(description='Generate synthetic statutes and questions to pass to GPT')
 parser.add_argument('--width', required=True, type=int,
                     help='Width of the synthetic tree to generate; 2 or 3 are common')
 parser.add_argument('--depth', required=True, type=int,
@@ -44,7 +46,8 @@ parser.add_argument('--skip_first', type=int, default=0,
                     help='skips this number of queries before actually making calls; used to extend ')
 parser.add_argument('--subdivs', required=True, choices=["leavesonly", "noleaves", "both"],
                     help='which type of subdivisions to consider asking about')
-parser.add_argument('--model', default="text-davinci-003",
+DEFAULT_MODEL = "text-davinci-003"
+parser.add_argument('--model', default=DEFAULT_MODEL,
                     help='which openai model to use')
 parser.add_argument('--question_form', type=int, default=6,
                     help='how to phrase question; e.g. "Does section __ apply to __?"')
@@ -553,9 +556,9 @@ for run_num in range(args.numruns):
         else:
             if not args.noGPT:
                 utils.add_comment("Synthetic applies probe in " + __file__)
-                statute_response = utils.call_gpt3_withlogging(query.statute_query, args.model, max_tokens=1000)
+                messages = [ {"role": "user", "content": query.statute_query} ]
 
-                SECOND_PROMPT = "\nTherefore, the answer (Yes or No) is"  # cf. Kojima et al. 2022 appendix A.5
+                statute_response = utils.call_gpt_withlogging(messages, args.model, max_tokens=1000)
 
                 # for the N-shot prompting where there are 2 questions after each statute,
                 # GPT3 will generally try to answer the first question and then produce and
@@ -567,15 +570,14 @@ for run_num in range(args.numruns):
                         print("POSSIBLE PROBLEM: More than one double carriage return in response.\n")
                     if "\n\n" in statute_response:
                         construct_normal_second_prompt = False # turns off normal construction
-                        second_statute_prompt = \
-                            query.statute_query + \
-                            statute_response.split("\n\n")[0] + \
-                            SECOND_PROMPT
+                        messages.append({"role": "assistant", "content": statute_response.split("\n\n")[0]})
+                        messages.append({"role": "user", "content": SECOND_PROMPT})
 
                 utils.add_comment("Synthetic applies probe in " + __file__ + " SECOND PROMPT")
                 if construct_normal_second_prompt:
-                    second_statute_prompt = query.statute_query + statute_response + SECOND_PROMPT
-                second_statute_response = utils.call_gpt3_withlogging(second_statute_prompt, args.model, max_tokens=400)
+                    messages.append({"role": "assistant", "content": statute_response})
+                    messages.append({"role": "user", "content": SECOND_PROMPT})
+                second_statute_response = utils.call_gpt_withlogging(messages, args.model, max_tokens=400)
             else:
                 statute_response = second_statute_response = ["No.","No","Yes.", "maybe?"][num_this_run % 4]
 
@@ -607,13 +609,15 @@ for run_num in range(args.numruns):
 
                 if not args.noGPT:
                     utils.add_comment("Synthetic applies probe in " + __file__)
-                    sent_response = utils.call_gpt3_withlogging(query.sentence_query, args.model, max_tokens=1000)
+                    messages = [{"role": "user", "content": query.sentence_query}]
 
-                    SECOND_PROMPT = "\nTherefore, the answer (Yes or No) is"  # cf. Kojima et al. 2022 appendix A.5
+                    sent_response = utils.call_gpt_withlogging(messages, args.model, max_tokens=1000)
+
+                    messages.append({"role": "assistant", "content": sent_response})
+                    messages.append({"role": "user", "content": SECOND_PROMPT})
 
                     utils.add_comment("Synthetic applies probe in " + __file__ + " SECOND PROMPT")
-                    second_sent_prompt = query.sentence_query + sent_response + SECOND_PROMPT
-                    second_sent_response = utils.call_gpt3_withlogging(second_sent_prompt, args.model,
+                    second_sent_response = utils.call_gpt_withlogging(messages, args.model,
                                                                           max_tokens=400)
                 else:
                     sent_response = second_sent_response = ["No.", "No", "Yes.", "maybe?"][num_this_run % 4]
@@ -679,8 +683,11 @@ if args.do_sentences and args.Nshot == 0:
 elif args.Nshot > 0:
     suggested_filename += "_" + str(args.Nshot) + args.Nshot_type
 
-if args.question_form != 0:
+if args.question_form != 6: # 6 is now the default; it used to be 0
     suggested_filename += "_QF" + str(args.question_form)
+
+if args.model != DEFAULT_MODEL:
+    suggested_filename += "_" + args.model
 
 suggested_filename += ".txt"
 

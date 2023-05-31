@@ -135,9 +135,26 @@ def read_nonces() -> list:
     # verify none are duplicated, which would cause statutory problems
     rv = []
     for nonce in lowercase_nonce_list:
-        capitalize_first = nonce[0].upper() + nonce[1:].lower()
-        assert not capitalize_first in rv
-        rv.append(capitalize_first)
+        candidate = nonce[0].upper() + nonce[1:].lower()
+        if candidate[-1:] == "s": # remove ending s, which indicates plural and might confuse language models
+            candidate = candidate[:-1]
+        assert not candidate in rv
+
+        # make sure there is no overlap of part of one term over another
+        overlap = False
+        for already_in in rv:
+            if candidate.lower() in already_in.lower() or \
+               already_in.lower() in candidate.lower():
+                overlap = True
+        if not overlap:
+            rv.append(candidate)
+
+    for x in rv:
+        for y in rv:
+            if x != y:
+                assert not x.lower() in y.lower()
+                assert not y.lower() in x.lower()
+
     return rv
 
 # This generates a random set of names like "M11" and "Z66"
@@ -185,24 +202,47 @@ def sep(index, len_list) -> str:
     else:
         return ",\n"
 
-# Takes an abstract representation and creates a statute (recursively)
-# Also fills in the citation
-def abstract_to_statute(abst, level = 0, context = None, sec_num = 1001) -> str:
+# Takes an abstract representation and creates a statute (recursively).
+# Also fills in the citation.
+# keep_compact -- used to minimize the number of lines in a normal statute
+# collapse_leaves -- makes all leaf terms appear in a single line with their parent
+def abstract_to_statute(abst,
+                        level = 0,
+                        context = None,
+                        sec_num = 1001,
+                        keep_compact=False,
+                        collapse_leaves=False) -> str:
+    if collapse_leaves:
+        assert keep_compact, "They go together"
     rv = ""
     if level == 0:
         rv  = "Section " + str(sec_num) + ".  Definition of " + abst.term +".\n"
         context = "section " + str(sec_num)
     if not abst.has_grandchildren(): # simple; definition in terms of leaf nodes
-        rv += "  " * (level-1) + "The term \"" + abst.term.lower() + "\" means-\n"
-        abst.stat_defined = context
-        for i, child in enumerate(abst.children):
-            used_label = level_num_label(level, i)
-            child.stat_used = context.strip() + used_label.strip()
-            rv += used_label + " any " + child.term.lower() + sep(i, len(abst.children))
+        if not collapse_leaves:
+            if not keep_compact:
+                rv += "  " * (level - 1)
+            rv += "The term \"" + abst.term.lower() + "\" means-\n"
+            abst.stat_defined = context
+            for i, child in enumerate(abst.children):
+                used_label = level_num_label(level, i)
+                child.stat_used = context.strip() + used_label.strip()
+                rv += used_label + " any " + child.term.lower() + sep(i, len(abst.children))
+        else:
+            rv += "The term \"" + abst.term.lower() + "\" means"
+            abst.stat_defined = context
+            for i, child in enumerate(abst.children):
+                used_label = level_num_label(level, i)
+                child.stat_used = context.strip() + used_label.strip()
+                rv += " any " + child.term.lower() + sep(i, len(abst.children)).strip() + "\n"
     else:
         def_label = level_num_label(level, 0)
-        rv +=  def_label + " General rule\n"
-        rv += "  " * (level) + "The term \"" + abst.term.lower() + "\" means-\n"
+        rv +=  def_label + " General rule"
+        if keep_compact:
+            rv += ". "
+        else:
+            rv += "\n" + "  " * (level)
+        rv += "The term \"" + abst.term.lower() + "\" means-\n"
         abst.stat_defined = context.strip()
         for i, child in enumerate(abst.children):
             used_label = level_num_label(level + 1, i)
@@ -211,8 +251,15 @@ def abstract_to_statute(abst, level = 0, context = None, sec_num = 1001) -> str:
 
         for i, child in enumerate(abst.children):
             head_label = level_num_label(level, i+1)
-            rv += head_label + " " + child.term + "\n"
-            rv += abstract_to_statute(child, level + 1, context.strip() + head_label.strip())
+            rv += head_label + " " + child.term
+            if keep_compact and not child.has_grandchildren():
+                rv += ". "
+            else:
+                rv += "\n"
+            rv += abstract_to_statute(child,
+                                      level + 1,
+                                      context.strip() + head_label.strip(),
+                                      keep_compact=keep_compact)
 
     return rv
 
