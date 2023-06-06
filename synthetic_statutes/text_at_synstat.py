@@ -1,7 +1,7 @@
 # This tests on the simple question of what the text is at a particular section.
 
 import generate_synstat
-from generate_synstat import statute_part
+from generate_synstat import NOT_PARALLEL, NOT_FOUND
 import sys, argparse, re
 sys.path.append('../')
 import utils
@@ -32,39 +32,6 @@ def find_line_num(part, lines, included_term=None):
     assert not rv is None, "Should have found one line with the right answer"
     return rv
 
-WRONG_SUBSECTION = "wrong subsection"
-WRONG_PARAGRAPH = "wrong paragraph"
-WRONG_SUBPARAGRAPH = "wrong subparagraph"
-WRONG_CLAUSE = "wrong clause"
-WRONG_SUBCLAUSE = "wrong subclause"
-NOT_PARALLEL = "not parallel"
-def analyze_error(correct_cite:str, incorrect_cite:str):
-    match_re = "section \d+" + \
-               "(?P<subsec>\(\w+\))" + \
-               "(?P<para>\(\w+\))?" + \
-               "(?P<subpara>\(\w+\))?" + \
-               "(?P<clause>\(\w+\))?" + \
-               "(?P<subclause>\(\w+\))?$"
-    cor = re.match(match_re, correct_cite)
-    incorr = re.match(match_re, incorrect_cite)
-    # Check to see if there's a simple failure of parallelism
-    for group in ["subsec", "para", "subpara", "clause", "subclause"]:
-        if (cor.group(group) is None) != (incorr.group(group) is None):
-            return NOT_PARALLEL # return directly rather than as list
-    # Now pinpoint the error
-    rv = []
-    if cor.group("subsec") != incorr.group("subsec"):
-        rv.append(WRONG_SUBSECTION)
-    if cor.group("para") != incorr.group("para"):
-        rv.append(WRONG_PARAGRAPH)
-    if cor.group("subpara") != incorr.group("subpara"):
-        rv.append(WRONG_SUBPARAGRAPH)
-    if cor.group("clause") != incorr.group("clause"):
-        rv.append(WRONG_CLAUSE)
-    if cor.group("subclause") != incorr.group("subclause"):
-        rv.append(WRONG_SUBCLAUSE)
-    return rv
-
 ###### END OF HELPER FUNCTIONS #######
 
 raw_nonce_list = generate_synstat.read_nonces()
@@ -87,6 +54,18 @@ for idx_run in range(args.numruns):
     statute_random.seed(idx_run)  # re-seeding right before new shuffle fixes unexpected-reshuffling issues
     statute_random.shuffle(nonce_list)
     abst = generate_synstat.generate_abstract(nonce_list, args.depth, args.width)
+
+    if idx_run == 0:
+        max_depth, max_width, count_leaves, \
+        count_nonleaves, total_depth_leaves, total_branching_nonleaves = \
+            generate_synstat.get_stats_recursive(abst)
+        print("max_depth=", max_depth, "\t\t",
+              "max_width=", max_width, "\t\t",
+              "count_leaves=", count_leaves, "\t\t",
+              "count_nonleaves=", count_nonleaves, "\t\t",
+              "average_leaf_depth={:.2f}".format(float(total_depth_leaves) / count_leaves), "\t\t",
+              "total_branching_nonleaves=", total_branching_nonleaves, "\t\t"
+              "average_branching={:.2f}".format(total_branching_nonleaves/float(count_nonleaves)))
 
     # sec_num = statute_random.randint(1010, 9999)
 
@@ -194,7 +173,7 @@ for idx_run in range(args.numruns):
             # analyze the type of error
             minimal_error = None # there can be multiple items returned; choose the closest
             for incorrect_cite in returned_cites:
-                errors = analyze_error(leaf.stat_used, incorrect_cite)
+                errors = generate_synstat.analyze_error(leaf.stat_used, incorrect_cite)
                 if minimal_error is None:
                     minimal_error = errors
                 elif minimal_error == NOT_PARALLEL and errors != NOT_PARALLEL:
@@ -204,15 +183,14 @@ for idx_run in range(args.numruns):
                     len(minimal_error) > len(errors):
                     minimal_error = errors
 
-            if minimal_error is not None:
-                if minimal_error == NOT_PARALLEL:
-                    minimal_error_text = minimal_error
-                else:
-                    minimal_error_text = ",".join(sorted(minimal_error))
-                print("minimal error: ", minimal_error_text)
-                histogram_errors.update([minimal_error_text])
+            if minimal_error is None:
+                minimal_error_text = NOT_FOUND # text not even found
+            elif minimal_error == NOT_PARALLEL:
+                minimal_error_text = minimal_error
             else:
-                print("ODDITY TO INVESTIGATE - no minimal error found")
+                minimal_error_text = ",".join(sorted(minimal_error))
+            print("minimal error: ", minimal_error_text)
+            histogram_errors.update([minimal_error_text])
 
     print("count_overinclusive=", count_overinclusive)
     print("count_wrong_and_overinclusive=", count_wrong_and_overinclusive)
@@ -242,6 +220,7 @@ for idx_run in range(args.numruns):
     histogram_errors_list.sort(key=lambda x: x[1], reverse=True)  # sort by COUNT, not errors
     for x in histogram_errors_list:
         print("{:5d}".format(x[1]), " ", x[0])
+    print("NOTE: len(leaves_only)=", len(leaves_only))
 
     print("****** count_wrong =", count_wrong, " of ", count_calls,
           " accuracy = {:.2f}".format(float((count_calls-count_wrong)/count_calls)))

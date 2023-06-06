@@ -1,4 +1,5 @@
 # Generates synethetic statutes as well as semantically-identical prose equivalents
+import re
 
 class statute_part:
     def __init__(self, term:str):
@@ -189,6 +190,8 @@ def level_num_label(level:int, num:int):
         rv += int_to_roman(num+1).lower()
     elif level == 4: # subclause (I)
         rv += int_to_roman(num+1).upper()
+    elif level == 5: # NOT using
+        rv += ""
     else:
         assert False, "not implemented"
     return rv + ")"
@@ -201,6 +204,17 @@ def sep(index, len_list) -> str:
         return ".\n"
     else:
         return ",\n"
+
+def simple_sep(index, len_list) -> str:
+    if index == len_list - 2:
+        if len_list == 2:
+            return " or"
+        else:
+            return ", or"
+    elif index == len_list - 1:
+        return "."
+    else:
+        return ","
 
 # Takes an abstract representation and creates a statute (recursively).
 # Also fills in the citation.
@@ -228,13 +242,14 @@ def abstract_to_statute(abst,
                 used_label = level_num_label(level, i)
                 child.stat_used = context.strip() + used_label.strip()
                 rv += used_label + " any " + child.term.lower() + sep(i, len(abst.children))
-        else:
+        else: # if here, we are collapsing the children into a single sentence on one line
             rv += "The term \"" + abst.term.lower() + "\" means"
             abst.stat_defined = context
             for i, child in enumerate(abst.children):
                 used_label = level_num_label(level, i)
                 child.stat_used = context.strip() + used_label.strip()
-                rv += " any " + child.term.lower() + sep(i, len(abst.children)).strip() + "\n"
+                rv += " any " + child.term.lower() + simple_sep(i, len(abst.children)) # no newline
+            rv += "\n"
     else:
         def_label = level_num_label(level, 0)
         rv +=  def_label + " General rule"
@@ -242,26 +257,89 @@ def abstract_to_statute(abst,
             rv += ". "
         else:
             rv += "\n" + "  " * (level)
-        rv += "The term \"" + abst.term.lower() + "\" means-\n"
-        abst.stat_defined = context.strip()
-        for i, child in enumerate(abst.children):
-            used_label = level_num_label(level + 1, i)
-            rv += used_label + " any " + child.term.lower() + sep(i, len(abst.children))
-            child.stat_used = abst.stat_defined.strip() + def_label.strip() + used_label.strip()
+        if not collapse_leaves:
+            rv += "The term \"" + abst.term.lower() + "\" means-\n"
+            abst.stat_defined = context.strip()
+            for i, child in enumerate(abst.children):
+                used_label = level_num_label(level + 1, i)
+                rv += used_label + " any " + child.term.lower() + sep(i, len(abst.children))
+                child.stat_used = abst.stat_defined.strip() + def_label.strip() + used_label.strip()
+        else:
+            rv += "The term \"" + abst.term.lower() + "\" means"
+            abst.stat_defined = context.strip()
+            for i, child in enumerate(abst.children):
+                used_label = level_num_label(level + 1, i)
+                rv += " any " + child.term.lower() + simple_sep(i, len(abst.children))
+                child.stat_used = abst.stat_defined.strip() + def_label.strip() + used_label.strip()
+            rv += "\n"
 
         for i, child in enumerate(abst.children):
             head_label = level_num_label(level, i+1)
-            rv += head_label + " " + child.term
-            if keep_compact and not child.has_grandchildren():
-                rv += ". "
+            rv += head_label
+            if collapse_leaves:
+                if child.has_grandchildren():
+                    rv += " " + child.term + "\n"
+                else:
+                    rv += " "
             else:
-                rv += "\n"
+                rv += " " + child.term
+                if keep_compact and not child.has_grandchildren():
+                    rv += ". "
+                else:
+                    rv += "\n"
             rv += abstract_to_statute(child,
                                       level + 1,
                                       context.strip() + head_label.strip(),
-                                      keep_compact=keep_compact)
-
+                                      keep_compact=keep_compact,
+                                      collapse_leaves=collapse_leaves)
     return rv
+
+# This is related to the function of the same name in real_statues/statute_stats.py, but that one
+# is applied to real statutes (encoded in XML), whereas this applies to the synthetic statutes.
+def get_stats_recursive(x:statute_part, cur_depth = 0):
+    max_depth = cur_depth
+    max_width = 0
+    count_leaves = 0
+    count_nonleaves = 0
+    total_depth_leaves = 0 # will be used to calculate average depth of a leaf
+    total_branching_nonleaves = 0 # will be used to calculate average branching for nonleaves
+    branching = 0
+    if x.has_grandchildren():
+        # then we need to count the non-leaf and leaves in the "General rule"
+        count_nonleaves += 1 # "General rule."
+        total_branching_nonleaves += len(x.children)
+        count_leaves += len(x.children) # one for each of the children there
+        total_depth_leaves += (len(x.children) * (cur_depth+2))
+        branching += 1 # there is a branching for the "General rule"
+
+    if x.has_children():
+        for child in x.children:
+            branching += 1
+            temp_depth, temp_max_width, temp_count_leaves, \
+                temp_count_nonleaves, temp_total_depth_leaves, temp_total_branching_nonleaves = \
+                   get_stats_recursive(child, cur_depth+1)
+            if temp_depth > max_depth:
+                max_depth = temp_depth
+            if temp_max_width > max_width:
+                max_width = temp_max_width
+            count_leaves += temp_count_leaves
+            count_nonleaves += temp_count_nonleaves
+            total_depth_leaves += temp_total_depth_leaves
+            total_branching_nonleaves += temp_total_branching_nonleaves
+
+    if branching > max_width:
+        max_width = branching # then this is the maximum branching
+
+    if branching == 0: # ie, x is a leaf
+        count_leaves = 1
+        total_depth_leaves = cur_depth
+    else: # ie, x is NOT a leaf
+        count_nonleaves += 1
+        total_branching_nonleaves += branching # add in the branching we had here
+
+    return max_depth, max_width, count_leaves, \
+           count_nonleaves, total_depth_leaves, total_branching_nonleaves
+
 
 # This will produce text in a non-statutory format to use as a benchmark
 # Also sets the sentence numbers
@@ -326,6 +404,41 @@ def get_article(word):
     else:
         assert False, "not implemented"
     return "a" # the default
+
+
+WRONG_SUBSECTION = "wrong subsection"
+WRONG_PARAGRAPH = "wrong paragraph"
+WRONG_SUBPARAGRAPH = "wrong subparagraph"
+WRONG_CLAUSE = "wrong clause"
+WRONG_SUBCLAUSE = "wrong subclause"
+NOT_PARALLEL = "not parallel"
+NOT_FOUND = "not found"
+def analyze_error(correct_cite:str, incorrect_cite:str):
+    match_re = "section \d+" + \
+               "(?P<subsec>\(\w+\))" + \
+               "(?P<para>\(\w+\))?" + \
+               "(?P<subpara>\(\w+\))?" + \
+               "(?P<clause>\(\w+\))?" + \
+               "(?P<subclause>\(\w+\))?$"
+    cor = re.match(match_re, correct_cite)
+    incorr = re.match(match_re, incorrect_cite)
+    # Check to see if there's a simple failure of parallelism
+    for group in ["subsec", "para", "subpara", "clause", "subclause"]:
+        if (cor.group(group) is None) != (incorr.group(group) is None):
+            return NOT_PARALLEL # return directly rather than as list
+    # Now pinpoint the error
+    rv = []
+    if cor.group("subsec") != incorr.group("subsec"):
+        rv.append(WRONG_SUBSECTION)
+    if cor.group("para") != incorr.group("para"):
+        rv.append(WRONG_PARAGRAPH)
+    if cor.group("subpara") != incorr.group("subpara"):
+        rv.append(WRONG_SUBPARAGRAPH)
+    if cor.group("clause") != incorr.group("clause"):
+        rv.append(WRONG_CLAUSE)
+    if cor.group("subclause") != incorr.group("subclause"):
+        rv.append(WRONG_SUBCLAUSE)
+    return rv
 
 if __name__ == "__main__":
     nonce_list = read_nonces()
