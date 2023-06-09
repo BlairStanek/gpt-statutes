@@ -4,10 +4,9 @@ import xml.etree.ElementTree as ET
 from real_stat_utils import subdivision_types, usc_ns_str, ns, usc_ns_str_curly
 from collections import Counter
 import tiktoken
-import argparse, random, sys, re, os
+import argparse, random, sys, re, os, numpy
 sys.path.append('../')
 import utils
-
 
 parser = argparse.ArgumentParser(description='Test the ability of GPT-* to find the text for a section')
 parser.add_argument('--mindepth', required=True, type=int,
@@ -44,8 +43,8 @@ def analyze_error(correct_id:str, incorrect_id:str):
         return NOT_PARALLEL # not clear how to compare flush language to a real cite; several ways to do it, each with problems.
 
     match_re = "/us/usc/t\d\d?/s" + \
-               "(?P<sec>\d\w+)" + \
-               "(?P<subsec>/\w+)" + \
+               "(?P<sec>\d[^/]*)" + \
+               "(?P<subsec>/\w+)?" + \
                "(?P<para>/\w+)?" + \
                "(?P<subpara>/\w+)?" + \
                "(?P<clause>/\w+)?" + \
@@ -87,9 +86,20 @@ class StatLine:
         self.text = text
         assert "\n" not in self.text
 
+    def __str__(self):
+        return self.identifier + "," + self.text
+
     # returns just the text, with the num stripped off
     def get_line_text(self) -> str:
-        if re.search(r"/s\w+/", self.identifier) is not None:
+        rv = self.text.strip()
+        if self.identifier == FLUSH_LANGUAGE:
+            return rv
+        elif rv.startswith("§"):
+            assert re.search("/s\d[^/]*$", self.identifier) is not None
+            start_id = rv.find(".") # find the period after the section number
+            assert start_id >= 0
+            return rv[start_id+1:].strip()
+        else:
             rv = self.text.strip()
             if rv.startswith("["): # unusual circumstance, e.g. 26 USC 56(c); must handle
                 rv = rv[1:]
@@ -102,8 +112,6 @@ class StatLine:
             end_id = rv.find(")")
             assert end_id > 0
             return rv[end_id+1:].strip()
-        else:
-            return self.text.strip()
 
 class Leaf:
     def __init__(self, statlines, linenum, level):
@@ -129,7 +137,7 @@ class Leaf:
     def get_full_stat_text(self) -> str:
         rv = ""
         for l in self.statlines:
-            rv += l.text + "\n"
+            rv += l.text.rstrip() + "\n"
         return rv
 
     def get_cite(self) -> str:
@@ -140,6 +148,34 @@ class Leaf:
         for component in cite_components[1:]:
             rv += "(" + component + ")"
         return rv
+
+def is_statute_in_response(statute_raw:str, response_raw:str, print_wrong=False) -> bool:
+    statute_tokens = re.split(r'\W+', statute_raw)
+    statute_std = " ".join(statute_tokens).lower().strip()
+    response_std = " ".join(re.split(r'\W+', response_raw)).lower().strip()
+    if statute_std in response_std: # this is the most basic way to be in it
+        return True
+    # sometimes GPT quotes back without trailing conjunction
+    if statute_tokens[-1] in ["or", "and", "but", "yet", "however", "nor"]:
+        if " ".join(statute_tokens[:-1]).lower().strip() in response_std:
+            return True
+    # sometimes GPT quotes back without the title of the subdivison
+    # for example for "(1) General rule. In the case of an estate or trust (other than a trust me..."
+    # it quoted back only "In the case of an estate or trust (other than a trust me..."
+    header_match = re.search("[.]\s+[A-Z]", statute_raw)
+    if header_match is not None:
+        candidate_subset = statute_raw[header_match.start(0)+1:]
+        # We only treat the header as valid if at least this number of words.
+        # For example, this once incorrectly matched up 'In general. If—'
+        MIN_WORDS_TO_BE_VALID = 5
+        if len(candidate_subset.split()) >= MIN_WORDS_TO_BE_VALID:
+            if is_statute_in_response(candidate_subset, response_raw):
+                return True
+
+    if print_wrong:
+        print("statute_std=", statute_std)
+        print("response_std=", response_std)
+    return False
 
 # This builds up the text in the WESTLAW format (i.e. more compact, and using idents
 # that make the most sense).
@@ -175,8 +211,10 @@ def parse_xml_statute(x:ET.Element, statlines:list, assert_no_subdivisions = Fal
         if sub.tag == (usc_ns_str_curly + "heading"):
             sub_isleaf, _ = parse_xml_statute(sub, statlines, True, 0)
             assert not sub_isleaf
-            if len(statlines[-1].text) > 0 and statlines[-1].text[-1] == ".": # some headers already end in period; don't add a second one
-                statlines[-1].text += " "
+            if len(statlines[-1].text) > 0 and \
+                    statlines[-1].text.strip()[-1] in ".-——–:": # some headers already end in punctuation; don't add more
+                if not statlines[-1].text[-1].isspace():
+                    statlines[-1].text += " " # ensure at least one space
             else:
                 statlines[-1].text += ". " # like with Westlaw, have a heading ended with a period, not a newline
         elif sub.tag == (usc_ns_str_curly + "chapeau"):
@@ -210,6 +248,10 @@ def parse_xml_statute(x:ET.Element, statlines:list, assert_no_subdivisions = Fal
                 "The only newlines should be when there are no subdivisions or item repealed, etc."
             if "\n" in line.text:
                 line.text = line.text.replace("\n"," ").replace("  ", " ")
+            if line.text.strip().startswith("“"): # e.g. 5 USCA § 9507(b)(1).  Don't even load these sections.
+                statlines.clear() # remove everything
+                return False, [] # do nothing
+
         # Here we calculate the leaf percentiles
         if len(leaves) > 1: # ignore leaves from sections with just one leaf
             for idx_leaf, leaf in enumerate(leaves):
@@ -238,39 +280,12 @@ def parse_xml_statute(x:ET.Element, statlines:list, assert_no_subdivisions = Fal
 
     return x_is_leaf, leaves
 
-def is_statute_in_response(statute_raw:str, response_raw:str, print_wrong=False) -> bool:
-    statute_tokens = re.split(r'\W+', statute_raw)
-    statute_std = " ".join(statute_tokens).lower().strip()
-    response_std = " ".join(re.split(r'\W+', response_raw)).lower().strip()
-    if statute_std in response_std: # this is the most basic way to be in it
-        return True
-    # sometimes GPT quotes back without trailing conjunction
-    if statute_tokens[-1] in ["or", "and", "but", "yet", "however", "nor"]:
-        if " ".join(statute_tokens[:-1]).lower().strip() in response_std:
-            return True
-    # sometimes GPT quotes back without the title of the subdivison
-    # for example for "(1) General rule. In the case of an estate or trust (other than a trust me..."
-    # it quoted back only "In the case of an estate or trust (other than a trust me..."
-    header_match = re.search("[.]\s+[A-Z]", statute_raw)
-    if header_match is not None:
-        candidate_subset = statute_raw[header_match.start(0)+1:]
-        # We only treat the header as valid if at least this number of words.
-        # For example, this once incorrectly matched up 'In general. If—'
-        MIN_WORDS_TO_BE_VALID = 5
-        if len(candidate_subset.split()) >= MIN_WORDS_TO_BE_VALID:
-            if is_statute_in_response(candidate_subset, response_raw):
-                return True
-
-    if print_wrong:
-        print("statute_std=", statute_std)
-        print("response_std=", response_std)
-    return False
-
 def load_leaves() -> list:
     list_leaves = []  # list of tuples of (statutory text:str, Leaf)
+    print("Loading Titles ", end="")
     for title in range(1, 55):
     # for title in range(26, 27):  # DEBUG
-        print("******** START TITLE", title)
+        print( title, end=" ", flush=True)
         prefix = ""
         if title < 10:
             prefix = "0"
@@ -307,8 +322,13 @@ def load_leaves() -> list:
     order_random.shuffle(list_leaves)
     return list_leaves
 
-if __name__ == "__main__":
+def run_tests():
     list_leaves = load_leaves()
+    list_wrong_statutes = []
+    list_charlen_correct = []
+    list_charlen_wrong = []
+    list_newlinelen_correct = []
+    list_newlinelen_wrong = []
 
     gpt3_tokenizer = tiktoken.encoding_for_model("text-davinci-003")
     curr_tokenizer = tiktoken.encoding_for_model(args.model)
@@ -325,8 +345,9 @@ if __name__ == "__main__":
         # def get_full_stat_text(self) -> str:
         # def get_cite(self) -> str:
 
+        statute_text = leaf.get_full_stat_text()
         question = "What is the exact text at section " + leaf.get_cite() + "?"
-        query = leaf.get_full_stat_text() + "\n" + question
+        query = statute_text + "\n" + question
 
         # This test ensures comparability of GPT-4 and GPT-3, despite different-sized token windows
         GPT3_LIMIT = 4000
@@ -361,9 +382,15 @@ if __name__ == "__main__":
         print("response:", response.strip())
 
         # determine whether this is correct
-        if not is_statute_in_response(correct_answer, response, True):
+        if is_statute_in_response(correct_answer, response, True): # Correct
+            list_charlen_correct.append(len(statute_text))
+            list_newlinelen_correct.append(len(statute_text.split("\n")))
+        else:
             # Do error analysis
             print("WRONG!")
+            list_charlen_wrong.append(len(statute_text))
+            list_newlinelen_wrong.append(len(statute_text.split("\n")))
+            list_wrong_statutes.append(query + "\n\nRESPONSE:" + response)
             count_wrong+=1
             list_percentiles_wrong.append(leaf.percentile)
             errors = None
@@ -392,6 +419,7 @@ if __name__ == "__main__":
                 else:
                     # analyze the type of error
                     for line in returned_lines:
+                        print(line)
                         line_errors = analyze_error(leaf.get_identifier(), line.identifier)
                         if errors is None:
                             errors = line_errors
@@ -411,24 +439,54 @@ if __name__ == "__main__":
             print("error recorded: ", error_text)
             histogram_errors.update([error_text])
 
+            # print detailed error information only if there was just an error found
+            for decile in range(10):
+                if decile == 9:
+                    count = len([x for x in list_percentiles_wrong if 0.9 <= x])
+                else:
+                    count = len([x for x in list_percentiles_wrong if 0.1 * decile <= x < 0.1 * (1 + decile)])
+                print("{:.1f}-{:.1f}: {:4d}".format(0.1 * decile, 0.1 * (1 + decile), count))
+
+            print("histogram_errors: -------------------")
+            histogram_errors_list = list(histogram_errors.items())
+            histogram_errors_list.sort(key=lambda x: x[1], reverse=True)  # sort by COUNT, not errors
+            for x in histogram_errors_list:
+                print("{:5d}".format(x[1]), " ", x[0])
+
         print("count_calls=", count_calls, " count_wrong=", count_wrong,
               " accuracy={:.3f}".format((count_calls-count_wrong)/float(count_calls)))
 
-        for decile in range(10):
-            if decile == 9:
-                count = len([x for x in list_percentiles_wrong if 0.9 <= x])
-            else:
-                count = len([x for x in list_percentiles_wrong if 0.1*decile <= x < 0.1*(1+decile)])
-            print("{:.1f}-{:.1f}: {:4d}".format(0.1*decile, 0.1*(1+decile), count))
+    print("SMALLEST NUMBER CHARACTERS ERRORS:")
+    list_wrong_statutes.sort(key=lambda x: len(x))
+    for i in range(min(5, len(list_wrong_statutes))):
+        print("**** i=", i, " num chars=", len(list_wrong_statutes[i]))
+        print(list_wrong_statutes[i])
+    print("SMALLEST NUMBER LINES ERRORS:")
+    list_wrong_statutes.sort(key=lambda x: len(x.split("\n")))
+    for i in range(min(5, len(list_wrong_statutes))):
+        print("**** i=", i, " num newlines=", len(list_wrong_statutes[i].split("\n")))
+        print(list_wrong_statutes[i])
 
-        print("histogram_errors: -------------------")
-        histogram_errors_list = list(histogram_errors.items())
-        histogram_errors_list.sort(key=lambda x: x[1], reverse=True)  # sort by COUNT, not errors
-        for x in histogram_errors_list:
-            print("{:5d}".format(x[1]), " ", x[0])
+    print("list_charlen_correct=", list_charlen_correct)
+    print("avg = ", numpy.mean(list_charlen_correct))
+    print("list_charlen_wrong =", list_charlen_wrong)
+    print("avg=", numpy.mean(list_charlen_wrong))
+    print("list_newlinelen_correct =", list_newlinelen_correct)
+    print("avg=", numpy.mean(list_newlinelen_correct))
+    print("list_newlinelen_wrong =", list_newlinelen_wrong)
+    print("avg=", numpy.mean(list_newlinelen_wrong))
 
     suggested_filename = "realtextat_n" + str(args.numcalls) + "_minD" + str(args.mindepth)
     if not args.limitGPT3: # if we depart from the comparability baseline, then MENTION it
         suggested_filename += "_NOgptLimit"
     suggested_filename += "_" + args.model + ".txt"
     print("Suggested filename:", suggested_filename)
+
+
+
+if __name__ == "__main__":
+    run_tests()
+    # correct = "(ii) the Chief Actuary of the Centers for Medicare & Medicaid Services certifies that such expansion would reduce program spending under this subchapter; and"
+    # response = "Section 1395cc–4(c)(1)(B)(ii) states that the Chief Actuary of the Centers for Medicare & Medicaid Services certifies that such expansion would reduce program spending under this subchapter."
+    # rv = is_statute_in_response(correct, response, True)
+    # print(rv)
