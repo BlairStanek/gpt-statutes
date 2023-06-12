@@ -4,7 +4,7 @@ import xml.etree.ElementTree as ET
 from real_stat_utils import subdivision_types, usc_ns_str, ns, usc_ns_str_curly
 from collections import Counter
 import tiktoken
-import argparse, random, sys, re, os, numpy
+import argparse, random, sys, re, os, numpy, datetime
 sys.path.append('../')
 import utils
 
@@ -18,9 +18,12 @@ parser.add_argument('--model', default=DEFAULT_MODEL,
                     help='which openai model to use')
 parser.add_argument('--limitGPT3', default=True,
                     help='whether to limit calls to those that would fit within GPT-3\'s 4000 token limit')
+parser.add_argument('--replacenumtitle', action='store_true',
+                    help='whether to substitute the actual section number and title with a fake one')
+
 args = parser.parse_args()
 print("args=", args)
-
+print(datetime.datetime.now())
 order_random = random.Random(42) # used for shuffling
 
 FLUSH_LANGUAGE = "flush"
@@ -89,6 +92,9 @@ class StatLine:
     def __str__(self):
         return self.identifier + "," + self.text
 
+    def get_line_text_withnum(self) -> str:
+        return self.text
+
     # returns just the text, with the num stripped off
     def get_line_text(self) -> str:
         rv = self.text.strip()
@@ -123,6 +129,9 @@ class Leaf:
         self.linenum = linenum
         self.level = level
         self.percentile = None # This will be used to analyze how far the leaf is into the statute
+
+    def get_line_text_withnum(self):
+        return self.statlines[self.linenum].get_line_text_withnum()
 
     def get_line_text(self):
         return self.statlines[self.linenum].get_line_text()
@@ -346,7 +355,16 @@ def run_tests():
         # def get_cite(self) -> str:
 
         statute_text = leaf.get_full_stat_text()
-        question = "What is the exact text at section " + leaf.get_cite() + "?"
+        cite_text = leaf.get_cite()
+        if args.replacenumtitle:
+            idx_first_newline = statute_text.find("\n")
+            assert idx_first_newline > 0
+            idx_first_paren = cite_text.find("(")
+            assert idx_first_paren > 0
+            statute_text = "Section 1001.  Key provisions." + statute_text[idx_first_newline:]
+            cite_text = "1001" + cite_text[idx_first_paren:]
+
+        question = "What is the exact text at section " + cite_text + "?"
         query = statute_text + "\n" + question
 
         # This test ensures comparability of GPT-4 and GPT-3, despite different-sized token windows
@@ -398,18 +416,18 @@ def run_tests():
             #   correct: the transferor or a person who bears a relationship to the transferor described in section 267(b) or 707(b), and
             #   response: The exact text at section 304(b)(5)(A)(i)(II) is: "who bears a relationship to the transferor described in section 267(b) or 707(b)."
             subset_wrong_way = False
-            if is_statute_in_response(response, correct_answer):
+            if is_statute_in_response(response, leaf.get_line_text_withnum()): # include num, since more likely to identify this error
                 subset_wrong_way = True
             qmarks = [idx for idx, c in enumerate(response) if c in ['\"', '\'', '“', "”", "‘", "’"]]
             if len(qmarks) >= 2 and \
-                is_statute_in_response(response[qmarks[0]+1:qmarks[-1]], correct_answer):
+                is_statute_in_response(response[qmarks[0]+1:qmarks[-1]], leaf.get_line_text_withnum()): # include num, since more likely to identify this error
                 subset_wrong_way = True
             if subset_wrong_way:
                 errors = [EXCERPTED_SUBSET]
-            else:
+            else: # so, we don't have an wrong-way-subset error.  Let's figure out the problem.
                 # find which lines were actually returned
                 returned_lines = set()
-                for line in leaf.statlines:
+                for line in leaf.statlines[1:]: # skip the 0th line, which is the section num and title
                     if is_statute_in_response(line.get_line_text(), response):
                         returned_lines.add(line)
                 print("*** len(returned_lines)=", len(returned_lines))
@@ -460,13 +478,12 @@ def run_tests():
     list_wrong_statutes.sort(key=lambda x: len(x))
     for i in range(min(5, len(list_wrong_statutes))):
         print("**** i=", i, " num chars=", len(list_wrong_statutes[i]))
-        print(list_wrong_statutes[i])
+        print(list_wrong_statutes[i].split("\n")[0])
     print("SMALLEST NUMBER LINES ERRORS:")
     list_wrong_statutes.sort(key=lambda x: len(x.split("\n")))
     for i in range(min(5, len(list_wrong_statutes))):
         print("**** i=", i, " num newlines=", len(list_wrong_statutes[i].split("\n")))
-        print(list_wrong_statutes[i])
-
+        print(list_wrong_statutes[i].split("\n")[0])
     print("list_charlen_correct=", list_charlen_correct)
     print("avg = ", numpy.mean(list_charlen_correct))
     print("list_charlen_wrong =", list_charlen_wrong)
@@ -476,17 +493,17 @@ def run_tests():
     print("list_newlinelen_wrong =", list_newlinelen_wrong)
     print("avg=", numpy.mean(list_newlinelen_wrong))
 
+    print(datetime.datetime.now())
+
     suggested_filename = "realtextat_n" + str(args.numcalls) + "_minD" + str(args.mindepth)
     if not args.limitGPT3: # if we depart from the comparability baseline, then MENTION it
         suggested_filename += "_NOgptLimit"
     suggested_filename += "_" + args.model + ".txt"
     print("Suggested filename:", suggested_filename)
 
-
-
 if __name__ == "__main__":
     run_tests()
-    # correct = "(ii) the Chief Actuary of the Centers for Medicare & Medicaid Services certifies that such expansion would reduce program spending under this subchapter; and"
-    # response = "Section 1395cc–4(c)(1)(B)(ii) states that the Chief Actuary of the Centers for Medicare & Medicaid Services certifies that such expansion would reduce program spending under this subchapter."
-    # rv = is_statute_in_response(correct, response, True)
+    # correct = "the number of Federal public bridges within each such State; bears to"
+    # response = "The exact text at section 204(b)(1)(A)(iv)(I) is:\n\n\"(I) the number of Federal public bridges within each such State;\""
+    # rv = is_statute_in_response(response, correct, True)
     # print(rv)
