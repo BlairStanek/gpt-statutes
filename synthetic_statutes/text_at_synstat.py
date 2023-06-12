@@ -22,6 +22,7 @@ parser.add_argument('--model', default=DEFAULT_MODEL,
 args = parser.parse_args()
 
 print("args=", args)
+print(datetime.now())
 
 def find_line_num(part, lines, included_term=None):
     rv = None  # line number of correct answer
@@ -224,6 +225,8 @@ for idx_run in range(args.numruns):
 
     print("****** count_wrong =", count_wrong, " of ", count_calls,
           " accuracy = {:.2f}".format(float((count_calls-count_wrong)/count_calls)))
+
+print(datetime.now())
 
 print("Suggested filename: textat_d" + str(args.depth) + "w" + str(args.width) +
       "n" + str(args.numruns) + "_" + args.model + ".txt")

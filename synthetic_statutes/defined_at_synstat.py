@@ -24,6 +24,7 @@ parser.add_argument('--model', default=DEFAULT_MODEL,
                     help='which openai model to use')
 args = parser.parse_args()
 print("args=", args)
+print(datetime.now())
 statute_random = random.Random(42)  # used for shuffling to get the statute
 
 histogram_errors = Counter()
@@ -112,5 +113,6 @@ for idx_run in range(args.numruns):
 
     print("Wrong =", count_wrong, "of", count_calls)
 
+print(datetime.now())
 print("Suggested filename: definedat_d" + str(args.depth) + "w" + str(args.width) +
       "n" + str(args.numruns) + "_" + args.model + ".txt")

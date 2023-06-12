@@ -52,8 +52,9 @@ parser.add_argument('--model', default=DEFAULT_MODEL,
 parser.add_argument('--question_form', type=int, default=6,
                     help='how to phrase question; e.g. "Does section __ apply to __?"')
 
-
 args = parser.parse_args()
+print("args=", args)
+print(datetime.now())
 
 if args.Nshot_type in ["1", "N/2", "N/2_samepos"] and \
     args.Nshot % 2 == 1:
