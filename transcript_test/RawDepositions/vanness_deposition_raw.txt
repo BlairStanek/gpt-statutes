@@ -1,0 +1,3566 @@
+[1]where the sample comprised an agent that inhibits
+[2]lysis. So the presence of an agent, if it does
+[3]not inhibit lysis, doesn't meet the claims of the
+[4]patent.
+[5]VIDEOGRAPHER: Excuse me. We've got
+[6]about ten minutes left on this media. Just
+[7]letting you know.
+[8]MS. MAJOR: Okay. If you can let me
+[9]know when we have about two minutes left. Thank
+[10]you.
+[11]Q. (By Ms. Major, continuing)
+[12]Doctor Van Ness, just to -- to follow up on your
+[13]answer. I'm talking about an agent that does, in
+[14]fact, inhibit lysis.
+[15]If it is present in the sample, is kind of
+[16]naturally occurring, does that meet the
+[17]limitation?
+[18]A. And my answer, I think, is the same. Is
+[19]that -- no, because the agent has to be at a
+[20]sufficient quantity to inhibit lysis.
+[21]So there's a -- two requirements. Has to
+[22]be an agent selected from one of those categories
+[23]and it has to inhibit lysis. It has to inhibit
+[24]the cellular lysis.
+[25]Q. Why -- it seems like built into your
+  Page 139
+[1]answer to my question is the assumption that
+[2]anything that naturally occurs in that sample
+[3]will not be present in sufficient quantity to
+[4]inhibit lysis.
+[5]Is that the distinction you're making?
+[6]A. I'm -- I'm not sure I -- I'm -- you're --
+[7]you're -- put the global term "anything."
+[8]Q. Okay.
+[9]A. So I, you know -- you just opened up --
+[10]universe here.
+[11]So, I think within the understanding,
+[12]again, of the patent and how this claim is
+[13]described, that -- the -- the -- the patent --
+[14]like, Claim 81 says that the "sample comprising
+[15]agent that inhibits cell lysis and where the
+[16]agent is selected from one of those groups."
+[17]So to -- to meet that claim, both of those
+[18]elements need to be met. If you have an agent in
+[19]the blood, but you're not getting any cell lysis,
+[20]you have not met the claim of the patent.
+[21]Q. But if you have an agent in the blood that
+[22]is inhibiting cell lysis, but is -- strike that.
+[23]You're familiar with the exemplary
+[24]reagents that are listed in the patent
+[25]specification.
+  Page 140
+[1]Correct?
+[2]For instance, of membrane stabilizers?
+[3]A. I'm not -- I'm -- I'm familiar that those
+[4]reagents have been listed as -- as exemplary. I
+[5]am not familiar with the mechanism, structure of
+[6]every one of those reagents.
+[7]Q. Okay. If you could turn to the '720
+[8]patent, which is Exhibit 5.
+[9]A. Okay.
+[10]Q. I'm looking at PDF page 45, if you're in
+[11]that electronic version.
+[12]A. Would you give me a column?
+[13]Q. Yes. Column 6, lines 49 to 65.
+[14]A. All right. I lost my pen. Okay.
+[15]Column 6, 49 to 65. Okay.
+[16]Q. Yes. Do you see the list there of
+[17]exemplary membrane stabilizers?
+[18]A. Oops, I'm on the wrong patent. Sorry.
+[19]Just a minute.
+[20]Q. No, that's no problem. '720.
+[21]A. Yeah, '720. Make sure I've got the right
+[22]one.
+[23]Yeah, I was in the wrong -- I was in the
+[24]wrong patent. My apologies.
+[25]Okay. Column 6 -- yes, I do see the list
+  Page 141
+[1]of the cell lysis inhibitor. And it indicates,
+[2]"is added to the sample and includes but not
+[3]limited to" -- and then there's a list.
+[4]Q. And if you look at the paragraph beginning
+[5]at column 6, line 49, there are a number of what
+[6]the patent refers to as agents that stabilize the
+[7]cell membrane.
+[8]Do you see, among the list of examples,
+[9]there are naturally occurring compounds, such as
+[10]cholesterol?
+[11]A. Correct.
+[12]Q. So is the claim limitation in Claim 1 of
+[13]the '720 patent, claim 81 of the '277 patent
+[14]satisfied if the agent present is cholesterol,
+[15]naturally occurring in the sample, and it is --
+[16]there is, in fact, inhibition of cell lysis in
+[17]the sample? So it meets the one criteria you
+[18]keep pointing to.
+[19]My question is, if the cholesterol is just
+[20]naturally present in the sample at a sufficient
+[21]level to inhibit cell lysis, is limitation met?
+[22]A. I don't think so, because, based on the
+[23]description, it indicates, as in the first
+[24]sentence of 49, line 49, an agent that stabilizes
+[25]cell main -- membranes may be added to the
+  Page 142
+[1]maternal.
+[2]So the -- the -- the -- again, reading the
+[3]claim in light of the specification, the
+[4]specification indicates that an agent is added to
+[5]the sample to prevent cell lysis. It's not the
+[6]endogenous agent that -- that they are adding.
+[7]And, in fact, the consequence of that is
+[8]basically the invention that you have reduced
+[9]maternal cell lysis by adding agents even -- if
+[10]they are naturally occurring agents, you've
+[11]satisfied the patent by adding a -- a -- an agent
+[12]that inhibits cell lysis and reduces the
+[13]contamination of the fetal percentage in the
+[14]blood.
+[15]Q. You would agree with me that that claim
+[16]language itself does not use the word "added" or
+[17]"addition."
+[18]Correct?
+[19]A. I would agree that the claim language
+[20]doesn't use that term. It uses "comprises."
+[21]But, again, reading the claim language in
+[22]light of the specification, and particularly the
+[23]examples given, in all of those examples, the
+[24]agent is added.
+[25]So one skilled in the art, reading this,
+  Page 143
+[1]with the entire patent in front of them, would
+[2]clearly understand that the agent is added to
+[3]inhibit cell lysis.
+[4]VIDEOGRAPHER: Excuse me. We've got
+[5]about two minutes left.
+[6]MS. MAJOR: Okay. Let's go off the
+[7]record.
+[8]VIDEOGRAPHER: We are going off the
+[9]record. The time now is 2:10.
+[10](Recess from 2:10 p.m. to 2:23 p.m.)
+[11]VIDEOGRAPHER: One moment.
+[12]We are back on the record. This is the
+[13]start to Media No. 4. The time is 2:23.
+[14]Q. (By Ms. Major, continuing) So,
+[15]Doctor Van Ness, shortly before the break we were
+[16]talking about whether an agent or reagent that
+[17]naturally occurs in the sample could meet the
+[18]limitation.
+[19]And you indicated that your view is that
+[20]it could not.
+[21]Do I have that right?
+[22]A. Correct.
+[23]Q. And you acknowledge --
+[24]A. Wait. Now -- now, can I clarify -- let me
+[25]clarify that.
+  Page 144
+[1]Q. Yes, of course.
+[2]A. Yeah.
+[3]An agent that's naturally occurring
+[4]certainly could meet the requirement. But in
+[5]order to meet the requirement, it has to be added
+[6]and it has to prevent cell lysis.
+[7]So a naturally occurring agent is not
+[8]eliminated from the list. It's -- it makes the
+[9]list for the patent only if it is added and it
+[10]prevents cell lysis.
+[11]Q. But you agree with me that Claim 1 of the
+[12]'720 patent and Claim 81 of the '277 patent --
+[13]neither includes the word "added" to the sample.
+[14]Correct?
+[15]A. To one skilled in the art that's reviewing
+[16]the patent and the specifications and examples,
+[17]it's very obvious that this -- the reagent is
+[18]added to the sample.
+[19]Q. And that's your view, even though Claim 12
+[20]of the '277 patent, which is again, Exhibit 4 --
+[21]A. Let me -- let me get to Claim 12.
+[22]Q. Sorry, one -- 112. Claim 112.
+[23]A. Claim 112. Okay.
+[24]Q. Let me know when you're there.
+[25]A. I'm there. Okay.
+  Page 145
+[1]Q. So Claim 112 specifically requires the
+[2]method of Claim 97 or 108, wherein an agent that
+[3]inhibits cell lysis is added to the sample to
+[4]inhibit the lysis of cells, and so on and so
+[5]forth, consistent with the other language in the
+[6]remainder of the "agent" term that we've been
+[7]discussing.
+[8]Do you see that?
+[9]A. I do see that.
+[10]Q. So it's your view that even though
+[11]Claim 112 specifically says the agent "is added
+[12]to," that where claims do not include that
+[13]specific language, "is added to," there is still
+[14]a requirement that the agent be added in order to
+[15]meet the claims?
+[16]A. So my view is that the claim is
+[17]sufficiently clear when read in the light of the
+[18]specifications of the examples, where -- where to
+[19]meet Claim 1 or 81, that the sample is added,
+[20]because everything points to that process, which
+[21]supports the claim.
+[22]Q. Okay. Looking again at Claim 1 of the
+[23]'720 patent, for example.
+[24]Who is required to do the selecting from
+[25]the group consisting of membrane stabilizer,
+  Page 146
+[1]cross-linker and cell lysis inhibitor?
+[2]A. Who is required?
+[3]Q. Yes.
+[4]A. I -- I don't -- I've read Claim 1 enough,
+[5]but I probably should -- I just want to make sure
+[6]it's up here.
+[7]Q. Sure.
+[8]A. So who is required?
+[9]I presume it's the person practicing the
+[10]claims of the -- of the patent. One skilled in
+[11]the art.
+[12]Q. Can you -- you can agree with me that
+[13]selecting an agent to inhibit lysis was known
+[14]before the Ravgen patents.
+[15]Correct?
+[16]A. I agree that a -- agent to inhibit lysis
+[17]was known, but it was not known that in doing so
+[18]it would significantly increase fetal DNA in the
+[19]blood.
+[20]Q. Is there anything unique about the
+[21]Ravgen's patents claim selection of an agent to
+[22]impede lysis?
+[23]A. I think the uniqueness is that they
+[24]delineate specifically a membrane stabilizer,
+[25]cross-linker or cell lysis inhibitor.
+  Page 147
+[1]So there is -- it's not anything to
+[2]inhibit cell lysis. It's something -- an agent
+[3]from one of those categories.
+[4]Q. You would agree that your declarations in
+[5]this case provide your complete expert opinions
+[6]on the party's disputes regarding the "agent"
+[7]term.
+[8]Correct?
+[9]A. I would -- I think the statement is that
+[10]it is accurate to the best of my abilities, with
+[11]the idea -- with the -- I acknowledge that I have
+[12]the right to amend.
+[13]So insofar as there may be a need to
+[14]amend, I've stated that I have the right to
+[15]amend.
+[16]Q. What, in your view, is the definition of a
+[17]cell lysis inhibitor?
+[18]A. I think a cell lysis inhibitor -- again,
+[19]in the context of the patent, meets the
+[20]requirements of -- of stabilizing the cell,
+[21]maintaining a structural component of the cell to
+[22]prevent the membrane from rup -- rupturing
+[23]and -- and the cell breaking apart and spilling
+[24]its contents.
+[25]So a cell lysis -- I -- remind me. You
+  Page 148
+[1]wanted the definition of cell lysis inhibitor?
+[2]Q. Cell lysis inhibitor --
+[3]A. It's -- the cell lysis inhibitor
+[4]specifically reduces, inhibits or impedes the
+[5]process of structural integrity that holds that
+[6]cell together. And that does meet membrane
+[7]stabilizer, cross-linker, cell lysis inhibitor.
+[8]Q. Sorry.
+[9]So your definition of cell lysis
+[10]inhibitor -- are you saying that also is the
+[11]definition of membrane stabilizer,
+[12]cross-linker --
+[13]A. No. I'm -- I'm --
+[14]Q. Sorry.
+[15]A. -- saying that the membrane stabilizer and
+[16]cross-linker satisfy the requirement of a cell
+[17]lysis inhibitor by increasing the structural
+[18]integrity of the cell, maintaining the structural
+[19]integrity of the cell.
+[20]Q. Okay. So you're saying the membrane
+[21]stabilizer and cross-linker -- that -- terms are
+[22]referred to in Claim 1 of the '720 patent, for
+[23]instance.
+[24]You say "satisfy the requirement of a cell
+[25]lysis inhibitor."
+  Page 149
+[1]What do you mean by "satisfy the
+[2]requirement of" -- that third category of agents
+[3]that are to be selected from?
+[4]A. That there -- there are agents that
+[5]maintain or preserve the structural integrity of
+[6]the cell. And I refer to those as cell lysis
+[7]inhibitors. They increase the structural
+[8]integrity of the cell so that it does not lys
+[9]when faced with stress.
+[10]Q. Are you saying what you understand to be
+[11]membrane stabilizers are all cell lysis
+[12]inhibitors, as well?
+[13]A. I wouldn't argue that every mem -- every
+[14]membrane stabilizer inhibits lysis. They give
+[15]exemplary -- examples of those that do it. And
+[16]they specifically talked about formalin.
+[17]So, again, as a person of skill in the
+[18]art, I'm understanding that a membrane stabilizer
+[19]preserves the structure of the cell. In order to
+[20]meet the claim, it has to sufficiently maintain
+[21]the structure of the cell to prevent its lysis.
+[22]Q. When you say, "to meet the claim it has to
+[23]sufficiently maintain the structure of the cell
+[24]to prevent its lysis," do you mean it must, for
+[25]all time, prevent the cell from lysing?
+  Page 150
+[1]A. Of course not for all time. It's for
+[2]the -- for the purposes of isolating cell-free
+[3]DNA, as described in the specifications and the
+[4]examples.
+[5]So, as the examples described, when a
+[6]sample is drawn, they are over a fairly short
+[7]period of time. Time is an issue. But over --
+[8]over a fairly short period of time cells are
+[9]under stress and the membranes start degrading.
+[10]The agent is required to stabilize those
+[11]cells so that they don't lys within the time
+[12]period required to analyze the sample, as
+[13]described in the patent.
+[14]Q. You would agree with me, if you look at
+[15]Claim 1 of the '720 patent, that there's no
+[16]mention of a time for which cell lysis must be
+[17]impeded.
+[18]Correct?
+[19]A. In Claim 1 there's not. And in the -- in
+[20]the -- in the patent it doesn't -- it isn't
+[21]claiming time.
+[22]But to one skilled in the art, we would
+[23]all recognize that the longer cells sit, the more
+[24]they start degrading.
+[25]And in terms of an application, if you're
+  Page 151
+[1]going to use this as a diagnostic method, you
+[2]have to be able to process the sample, ship the
+[3]sample, and -- and -- and be able to have it
+[4]preserved in order to carry out the methods of --
+[5]of the patent.
+[6]So I think I'm relying on my
+[7]understanding, as one skilled in the art, that
+[8]there is a time component to cells lysing the
+[9]longer they sit. And you -- you need to stop
+[10]that with the cell lysis inhibitor.
+[11]Q. So to practice Claim 1 of the '720 patent,
+[12]for how long does the agent have to impede cell
+[13]lysis?
+[14]A. That -- that time is not defined as a
+[15]requirement of the patent. It is defined, in
+[16]part, because of experience and -- and
+[17]understanding of people with skill in the art,
+[18]that there is lysis that occurs over a period of
+[19]time.
+[20]And, as this patent describes, the
+[21]processing time can -- you can inhibit that
+[22]lysis.
+[23]So I am basing my understanding and
+[24]opinion, in large part, on -- on my own personal
+[25]experience, which is one of the components that
+  Page 152
+[1]allows you to understand what is being provided
+[2]in the claim.
+[3]Q. So I'm asking you, as a person of ordinary
+[4]skill in the art, what do you understand Claim 1
+[5]to require in terms of for how long cell lysis
+[6]must be impeded in order to practice that claim?
+[7]A. There is nothing in that claim that has a
+[8]time requirement in it.
+[9]Q. So if an agent is included in a sample and
+[10]it impedes cell lysis for -- strike that.
+[11]If an agent is included in a sample and
+[12]the agent falls into one of the three categories
+[13]that we've been discussing, and cell lysis is
+[14]impeded for a minute, it's your view that Claim 1
+[15]of the '720 patent has been practiced?
+[16]A. Within the understanding of the
+[17]specification that there's a processing step that
+[18]is to spin down the cells and isolate the
+[19]cell-free component. If you can do that in a
+[20]minute, it will meet the claims. You've added
+[21]the reagent, you've inhibited the cell lysis, and
+[22]you spun down the cells, you collected the -- the
+[23]plasma -- in a minute, if you could do it.
+[24]Now, the specifications indicate there's a
+[25]certain centrifugation step. And even though
+  Page 153
+[1]it's not a requirement on the claim, it's clear,
+[2]within the examples given, that there's a
+[3]processing time that -- that takes place, in
+[4]terms of drawing the sample, centrifuging the
+[5]sample.
+[6]So I think it's understood that cells will
+[7]lys over time. If you want -- if you can do it
+[8]all in a minute -- sure, it works. Works in 24
+[9]hours, as well.
+[10]So I -- I don't think the claim requires
+[11]that you do it in a minute. Nor does it
+[12]necessarily require you do it in -- in any
+[13]specified time. It simply says this is a method
+[14]that will inhibit lysis.
+[15]Q. So the only reason I'm asking about timing
+[16]is because you previously answered that to meet
+[17]the claim, it has to "sufficiently maintain the
+[18]structure of the cell to prevent its lysis."
+[19]What does "sufficiently maintain the
+[20]structure of the cell to prevent its lysis" mean,
+[21]in your answer?
+[22]A. It means that the structural integrity of
+[23]the cell has to be maintained so that when you
+[24]follow the -- the methods of the -- of the patent
+[25]to isolate the cell-free component, the cells
+  Page 154
+[1]that you're preserving with this fixative, if you
+[2]will, have not lysed.
+[3]And, to one skilled in the art, I think
+[4]it's obvious that that -- that process is a
+[5]fairly common process of processing blood samples
+[6]in terms of spinning them.
+[7]What was novel was the fact that you had
+[8]this lysis inhibitor so that you didn't get the
+[9]lysis to contaminate the cell-free component.
+[10]Q. So what is -- focusing again just on
+[11]the -- the claim term "cell lysis inhibiter" --
+[12]so one of the three categories.
+[13]What is the well-understood definition of
+[14]"cell lysis inhibitor," in your opinion, as one
+[15]of skill in the art?
+[16]A. In my opinion and my understanding -- my
+[17]personal opinion is that a cell lysis inhibitor
+[18]is an agent that preserves the structure of a
+[19]cell so that it doesn't spill its contents.
+[20]Q. And that's your understanding, based on
+[21]your reading of the term claim -- or excuse
+[22]me -- cell lysis inhibitor in the context of the
+[23]claims, the specifications and the intrinsic
+[24]record.
+[25]Do I have that right?
+  Page 155
+[1]A. And my experience. So I -- I would -- I
+[2]would add that.
+[3]All of those components informed me
+[4]what -- how the "cell lysis inhibitor" term was
+[5]being used.
+[6]Q. But at the time of the alleged inventions
+[7]in the Ravgen patents, cell lysis inhibitor was
+[8]not a term of art known to persons of ordinary
+[9]skill.
+[10]Correct?
+[11]A. I don't think that is correct. I think
+[12]cell lysis inhibitor is a -- has some plain,
+[13]ordinary meaning to people in the field. So
+[14]I -- I guess I would not agree that people would
+[15]be confused by that term.
+[16]It's a -- it's a -- pretty well
+[17]descriptive, understood term. And -- and it has
+[18]been used in -- in various contexts.
+[19]Q. Well, the Ravgen patents don't define
+[20]"cell lysis inhibitor." Correct?
+[21]A. Precisely. And that is because it was
+[22]well understood. It didn't -- it -- it had
+[23]plain, ordinary meaning. And I didn't think that
+[24]there needed to be a specific dictionary
+[25]definition of the cell lysis inhibitor, because
+  Page 156
+[1]those skilled in the art knew exactly what it
+[2]was.
+[3]Q. Well, the Ravgen patents don't identify a
+[4]single scientific publication that uses the term
+[5]"cell lysis inhibiter."
+[6]Do they?
+[7]A. They do not.
+[8]But, again, I would defer and say, they
+[9]didn't feel and I don't feel it was necessary to
+[10]quote a paper that used that term if it was well
+[11]understood by those skilled in the art.
+[12]Q. But if no scientific publications are
+[13]using the term "cell lysis inhibiter," doesn't
+[14]that call into question whether it is a term well
+[15]understood in the art?
+[16]A. I -- I don't think so, because it is a
+[17]functional description. And -- and, as I point
+[18]out, it has been used in -- in -- in -- in the
+[19]art. It has been used in the art.
+[20]Q. Well, it -- let -- let's talk about that.
+[21]So your expert declarations don't identify
+[22]any dictionary that identifies and defines the
+[23]term "cell lysis inhibiter."
+[24]Correct?
+[25]A. I did not identify any dictionary
+  Page 157
+[1]definition.
+[2]Q. And your expert declarations don't
+[3]identify any scientific publication that used the
+[4]term "cell lysis inhibiter" as of the time of the
+[5]Ravgen patents.
+[6]Correct?
+[7]A. As of the time of the Ravgen patents there
+[8]are patents that -- that do use that term.
+[9]Again, they -- they may have been a little
+[10]later than 2001. I mean, there --
+[11]Q. So they --
+[12]A. -- wasn't -- there wasn't this -- this
+[13]sudden enlightenment that understanding what a
+[14]cell lysis inhibitor in 2010 suddenly was -- we
+[15]became aware -- and we didn't know what it was in
+[16]2001.
+[17]So I -- again, I would argue, it's simply
+[18]based on what was asked of me for my opinion and
+[19]my understanding, is that the term "cell lysis
+[20]inhibiter" is well understood, even in 2001.
+[21]Q. You testified earlier that you've reviewed
+[22]Doctor Grody's expert declarations in the Natera
+[23]and PerkinElmer cases.
+[24]Correct?
+[25]A. Correct.
+  Page 158
+[1]Q. And you also reviewed his deposition
+[2]transcript. Correct?
+[3]A. I did -- I -- yes, I did.
+[4]Q. What are the primary differences between
+[5]your qualifications and Doctor Grody's
+[6]qualifications?
+[7]A. I can't answer that. I -- I
+[8]don't have -- I mean, I -- I don't -- I didn't
+[9]memorize his qualifications and I don't have his
+[10]CV in front of me. So I -- I -- I apologize. I
+[11]don't -- I don't have a comparison of those
+[12]qualifications.
+[13]Q. There was anything in Doctor Grody's
+[14]declarations or deposition testimony with which
+[15]you disagreed?
+[16]A. Not that I am a aware of right now, no.
+[17]I -- I'm not aware of any disagreement.
+[18]Q. Well, Doctor Grody didn't identify any
+[19]dictionary that defines "cell lysis inhibitor."
+[20]Correct?
+[21]A. Correct. He -- yes. He -- he didn't.
+[22]Nor did I. Correct.
+[23]Q. And Doctor Grody did not identify any
+[24]scientific publication using the term "cell lysis
+[25]inhibiter."
+  Page 159
+[1]Correct?
+[2]A. Correct.
+[3]I don't disagree with his -- his
+[4]declaration that he looked -- he did not cite to
+[5]a specific publication. So yeah, I -- I -- that
+[6]didn't -- that's not a disagreement with his
+[7]declaration. It's simply an acknowledgment that
+[8]he did not cite to a publication.
+[9]Q. And setting aside the asserted patents,
+[10]Doctor Grody didn't identify any patent using the
+[11]term "cell lysis inhibiter."
+[12]Correct?
+[13]A. He did not. Nor am I entirely clear
+[14]whether he was asked to redo all the patent
+[15]histories to -- to find such a term. So the fact
+[16]that he didn't cite it doesn't mean it doesn't
+[17]exist.
+[18]Q. But you're not aware of any patent at the
+[19]time or prior to the alleged priority date of the
+[20]Ravgen patents that used the -- the term "cell
+[21]lysis inhibiter."
+[22]Correct?
+[23]A. I did cite to several patents. And I must
+[24]admit I forget what their priority dates were.
+[25]As I recall, I think the priority dates were
+  Page 160
+[1]after 2001, but I -- I -- I would beg to amend
+[2]that date consideration until I confirm
+[3]that -- that the Rabinowitz, Vigneault and Lee
+[4]patents that I referred to -- I don't recall
+[5]their priority dates.
+[6]Q. Okay. Well, we'll get to those, but let's
+[7]focus now on Ravgen's claim construction briefs
+[8]in this matter.
+[9]You would agree Ravgen's claim
+[10]construction briefs don't identify any dictionary
+[11]that defined "cell lysis inhibitor."
+[12]Correct?
+[13]A. It does not. But, again, they -- they
+[14]claim -- in the claim construction they claim
+[15]that as a plain and ordinary meaning.
+[16]Q. And Ravgen's claim construction briefs
+[17]don't identify any scientific publication that
+[18]uses the term "cell lysis inhibiter."
+[19]Correct?
+[20]A. Correct. But I don't find it a -- an
+[21]issue of confusion.
+[22]Q. And setting aside the asserted patents,
+[23]Ravgen's claim construction briefs don't identify
+[24]any patent in existence as of the alleged
+[25]priority date of the Ravgen patents that uses the
+  Page 161
+[1]term "cell lysis inhibiter."
+[2]Correct?
+[3]A. As far as I know. But, again, I don't
+[4]find that a source of confusion.
+[5]Q. But, again, no patent prior to the date of
+[6]the Ravgen patents that ever used the term "cell
+[7]lysis inhibiter," as far as you're aware.
+[8]Correct?
+[9]A. As far as I am aware. I have not done an
+[10]exhaustive search. I didn't feel the need to do
+[11]an exhaustive search, because I knew what "cell
+[12]lysis inhibitor" was. That...
+[13]Q. Well, in your declaration you cite to a
+[14]technical dictionary definition of "cell lysis."
+[15]Correct?
+[16]And if -- if you want to take a look, it's
+[17]paragraph 41 of Exhibit 1.
+[18]A. Paragraph 41. Correct?
+[19]Q. Yes.
+[20]A. This was an agreement with Doctor Grody,
+[21]that "cell lysis" means rupture of cell membrane
+[22]and loss of cytoplasm.
+[23]Correct.
+[24]Q. Now, to be clear, "cell lysis" is a
+[25]different term from "cell lysis inhibitor."
+  Page 162
+[1]Correct?
+[2]A. It has a different meaning.
+[3]Q. "Cell lysis" is the phenomenon of the
+[4]rupture of cell membranes and loss of cytoplasm.
+[5]Correct?
+[6]A. Correct.
+[7]Q. And that's different from a cell lysis
+[8]inhibitor. Right?
+[9]A. Within the context of my understanding and
+[10]the patent -- that they are distinct. There --
+[11]there's a functional relationship, but the terms
+[12]are just distinct terms.
+[13]Q. And the 2002 Concise Dictionary of
+[14]Biomedicine and Molecular Bio -- Biology that you
+[15]cite in paragraph 41 of your opening claim
+[16]construction declaration does not include a
+[17]definition for "cell lysis inhibitor."
+[18]Correct?
+[19]A. It does not. But that doesn't -- but its
+[20]absence doesn't mean that it's a term that is a
+[21]source of confusion without that dictionary's
+[22]definition.
+[23]Again, citing to the specifications and
+[24]how -- how all of this is described in the
+[25]patent -- is very clear what a cell lysis
+  Page 163
+[1]inhibitor is in the context of the patent and the
+[2]claims that use it.
+[3]Q. Who first coined the term "cell lysis
+[4]inhibiter"?
+[5]A. I have no idea.
+[6]Q. Now, in forming the opinions set forth in
+[7]your declaration, you considered the prosecution
+[8]histories of the asserted patents.
+[9]Correct?
+[10]A. There were certain sections of the
+[11]prosecution history that I did consider.
+[12]Correct.
+[13]Q. And the prosecution histories of the
+[14]Ravgen asserted patents don't identify any
+[15]dictionary that defines "cell lysis inhibitor."
+[16]Correct?
+[17]A. I don't have access and didn't read the
+[18]entire prosecution history, so, of what I
+[19]reviewed, I did not see that definition. That
+[20]doesn't mean it wasn't provided in other parts
+[21]that I did not review.
+[22]Q. But you, I believe, testified earlier that
+[23]you understood counsel provided you all the
+[24]relevant sections pertaining to terms in dispute
+[25]in the class action.
+  Page 164
+[1]Is that right?
+[2]A. They provide -- it is correct, they
+[3]provided me with relevant sections in the
+[4]prosecution history that they -- that related to
+[5]claim construction.
+[6]Q. And you would -- you would presume that if
+[7]there were some portion of the prosecution
+[8]history that offered an expressed definition for
+[9]cell lysis inhibitor, that that would have been
+[10]provided to you, as relevant to claim
+[11]construction issues.
+[12]Correct?
+[13]A. I don't want to presume anything. I --
+[14]there -- everybody has different motives for what
+[15]they are providing and -- and that.
+[16]So I don't -- I can't presume knowledge
+[17]about material I didn't see.
+[18]Q. But, as far as you're aware, nothing in
+[19]the prosecution histories of the Ravgen patents
+[20]identify any dictionary that defines "cell lysis
+[21]inhibitor."
+[22]Correct?
+[23]A. I have not reviewed the entire history, so
+[24]I can't answer that question.
+[25]Q. Let me -- let me repeat it.
+  Page 165
+[1]As far as you're aware, the prosecution
+[2]histories of the Ravgen patents don't identify
+[3]any dictionary that defines "cell lysis
+[4]inhibitor."
+[5]Correct?
+[6]A. As far as I'm aware, of the material that
+[7]I reviewed, the "cell lysis inhibitor" did not
+[8]have a specific definition.
+[9]Q. And, as far as you're aware, the
+[10]prosecution histories of the Ravgen patents don't
+[11]identify any scientific publication using the
+[12]term "cell lysis inhibiter."
+[13]Correct?
+[14]A. As far as I'm aware, based on what I
+[15]reviewed, I did not see a publication cited in
+[16]what I reviewed that used the term "cell lysis
+[17]inhibiter."
+[18]Q. And setting --
+[19]A. Could I -- could I --
+[20]Q. Sorry. Go ahead.
+[21]A. Could I clarify that a minute?
+[22]Yeah, that --
+[23]Q. Yes.
+[24]A. I -- I'll stay by -- I'll -- I'll stick
+[25]with that -- that statement. That's fine.
+  Page 166
+[1]Q. Okay. And setting aside the asserted
+[2]patents themselves, the prosecution histories of
+[3]the Ravgen patents don't identify any patent
+[4]using the term "cell lysis inhibiter" so far as
+[5]you're aware.
+[6]Correct?
+[7]A. I did not read anything in the prosecution
+[8]history that cited a patent that defines "cell
+[9]lysis inhibitor."
+[10]Q. Now, you state in your initial declaration
+[11]that cell lysis inhibitor is a known and well-
+[12]defined category of chemical substances.
+[13]Correct?
+[14]A. I would -- I would clarify that a little
+[15]bit by saying in -- in -- within the context of
+[16]the patent there is a description of cell lysis
+[17]inhibitors of particular categories. And there
+[18]were examples in those categories that were
+[19]known.
+[20]Q. When you say there -- strike that.
+[21]When you say, "in the context of the
+[22]patent there is a description of cell lysis
+[23]inhibitors of particular categories," what do you
+[24]mean by "particular categories"?
+[25]A. Claim 1 says that the agent -- that is,
+  Page 167
+[1]the cell lysis inhibitor -- that the agent -- I'm
+[2]sorry.
+[3]Restate that.
+[4]In Claim 1 it is stated that "An agent
+[5]that impedes cell lysis is an agent that is
+[6]selected from" -- three categories -- "membrane
+[7]stabilizer, cross-linker, cell lysis inhibitor."
+[8]Q. Right.
+[9]And so in your prior answer, where you
+[10]said, "in the context of the patent there is a
+[11]description of cell lysis inhibitors of
+[12]particular categories," were you using "cell
+[13]lysis inhibitors" con -- interchangeably with
+[14]"agents that impede cell lysis"?
+[15]A. I think the answer would be yes, in the
+[16]reading of the claim, an agent that impedes cell
+[17]lysis is selected from one of the categories
+[18]that -- the three categories list -- that are
+[19]listed.
+[20]Q. If you look at Claim 1 of the '720 patent.
+[21]A. I have it. I...
+[22]Q. What, in your view, is the difference
+[23]between an agent that impedes cell lysis and cell
+[24]lysis inhibitor?
+[25]A. Cell lysis inhibitor is one of those three
+  Page 168
+[1]categories that needs the -- that meets the
+[2]requirement of an agent that impedes cell lysis.
+[3]Q. But how -- how is cell lysis inhibitor
+[4]distinct from agents that impede cell lysis?
+[5]A. It's the -- the cell lysis inhibitor is
+[6]one of the three categories that -- that's --
+[7]meet the requirement of an agent that impedes
+[8]cell lysis.
+[9]So I am saying that they are equivalent.
+[10]An agent that impedes cell lysis, if it's
+[11]selected from one of those categories -- and one
+[12]of those categories is a cell lysis inhibitor --
+[13]that is, an agent -- a cell lysis inhibitor is an
+[14]agent that impedes cell lysis.
+[15]I think the -- think the -- there's
+[16]a -- there's a clear meaning from that, as I
+[17]understand it.
+[18]Q. All right. And I'm trying to get to that
+[19]understanding, because I -- I am -- I am a little
+[20]puzzled.
+[21]So is there any agent that impedes cell
+[22]lysis that is not a cell lysis inhibitor?
+[23]A. It -- let me -- let me, actually, just
+[24]rephrase your question.
+[25]Is there an agent that impedes cell lysis
+  Page 169
+[1]that is not a cell lysis inhibitor?
+[2]Yeah.
+[3]Q. What --
+[4]A. That -- that was a yes/no question, so I
+[5]gave you -- I -- I gave you a yes answer.
+[6]Q. No, that's fine. I'm happy to follow up.
+[7]A. Okay.
+[8]Q. What is an example of an agent that
+[9]impedes cell lysis that, in your view, is not a
+[10]cell lysis inhibitor?
+[11]A. EDTA. We're there. EDTA impedes cell
+[12]lysis, but it's not a cell lysis inhibitor.
+[13]Q. Why is it not a cell lysis inhibitor?
+[14]A. Because EDTA does not meet the requirement
+[15]of stabilizing, fixing the structural components
+[16]of the cell.
+[17]EDTA is an anticoagulant that blocks the
+[18]stress that causes cell lysis.
+[19]So EDTA does not break -- stop the cells
+[20]from breaking down membranes and rupturing. It
+[21]stops coagulation that is a stress that induces
+[22]cell lysis.
+[23]So it's not an anti -- it is not a cell
+[24]lysis inhibitor. It's an anticoagulant.
+[25]In addition, I'm informed by that -- not
+  Page 170
+[1]only by the -- the specifications, but I'm
+[2]informed by that, by the prosecution history,
+[3]where the examiner and the patentee both had that
+[4]discussion and both agreed and specifically
+[5]pointed to the fact that EDTA is not, in this
+[6]patent, to be considered a cell lysis inhibitor.
+[7]So one reading the claims in the patent
+[8]would understand, based on the intrinsic
+[9]evidence, and the fact that EDTA is an
+[10]anticoagulant to prevent stress, much like
+[11]centrifugation, narrow-bore needles, it is not an
+[12]inhibitor of coagulation, does not meet the
+[13]definition of a cell lysis inhibitor. The patent
+[14]examiner and the patentee came to that agreement.
+[15]Q. Besides EDTA, are you aware of any agents
+[16]that impede cell lysis that are not themselves
+[17]cell lysis inhibitors?
+[18]A. Oh, probably EGTA.
+[19]Other agents...
+[20]Off the top of my head, I -- I can't think
+[21]of another one, but I think EDTA is a good
+[22]example of -- impedes lysis, but is not a cell
+[23]lysis inhibitor.
+[24]Q. And, just to make sure I'm clear, you're
+[25]saying because EDTA stops coagulation,
+  Page 171
+[1]coagulation being the thing that causes stress
+[2]that induces cell lysis, it is not considered a
+[3]cell lysis inhibitor, because it's not, itself,
+[4]preventing -- well --
+[5]A. I'll -- I'll fix -- if I may finish your
+[6]sentence -- I agree with everything you said.
+[7]Q. Yes.
+[8]A. It's not preventing the struct --
+[9]structural degradation of the cell itself, an
+[10]issue to which I understand, as well as the
+[11]patentee and the examiner understood.
+[12]Q. So a cell lysis inhibitor has to, itself,
+[13]prevent the structural degradation of the cell?
+[14]A. That is my understanding.
+[15]Q. Do I have that right?
+[16]A. That is my understanding.
+[17]Q. So what chemical substances fall within
+[18]the category "cell lysis inhibitor"?
+[19]A. They are listed in -- we -- we reviewed
+[20]one of the columns. Column 6, I think it was.
+[21]That provides a list of compounds that are cell
+[22]lysis inhibitors.
+[23]Q. Can you identify any compound not
+[24]expressly listed in the specification of the
+[25]Ravgen patents that is considered a cell lysis
+  Page 172
+[1]inhibitor?
+[2]A. I wasn't asked to do that. I -- that
+[3]wasn't part of what my charge was, as to identify
+[4]compounds that weren't in the patent.
+[5]So no, I don't -- I don't have any
+[6]additional compounds to add to that list. Wasn't
+[7]something I was asked to investigate.
+[8]Q. Do you know if there are any additional
+[9]compounds, beyond what's listed in the
+[10]specification of the patent, that would be
+[11]considered a cell lysis inhibitor, to your
+[12]understanding?
+[13]A. I don't know. I didn't investigate that.
+[14]Q. What chemical substances fall outside of
+[15]the category of cell lysis inhibitors, as you
+[16]understand that term?
+[17]A. What substances?
+[18]You want me to list some things
+[19]that -- well, EDTA -- and forgive me, but we can
+[20]go down an entire chemical list of things that
+[21]don't prevent cell lysis. I mean, sodium
+[22]chloride, sodium iodide, magnesium chloride -- I
+[23]mean, there's a whole list of chemicals that
+[24]don't prevent cell lysis.
+[25]So there's -- there's a large list that
+  Page 173
+[1]I -- I could choose all day long -- chemicals
+[2]that -- that do not likely in -- inhibit cell
+[3]lysis.
+[4]So I -- I named a few, but I -- I could go
+[5]down the -- the shelf of my laboratory and pick
+[6]lots of chemicals that don't impede or don't stop
+[7]cell lysis.
+[8]Q. You would agree that substances that don't
+[9]qualify as cell lysis inhibitors are never
+[10]explained within the specification of the Ravgen
+[11]patents.
+[12]Correct?
+[13]A. Could you say that again? I -- I want to
+[14]make sure I'm clear on --
+[15]Q. Sure.
+[16]A. -- on your question.
+[17]Q. You would agree that substances that don't
+[18]qualify as cell lysis inhibitors are never
+[19]explained in the specification of the Ravgen
+[20]patents.
+[21]Correct?
+[22]A. I would guess that's correct, because I
+[23]don't know why you would name all the things that
+[24]don't meet the requirements of the patent.
+[25]Q. Well, can you point to any portion of the
+  Page 174
+[1]specification that does explain what cell lysis
+[2]inhibitor -- what that category is?
+[3]A. I think, as you read it, it -- and, again,
+[4]in column -- should we go to column 6?
+[5]I think that was the column we -- we went
+[6]to before.
+[7]Q. In the '720 patent, I believe.
+[8]A. I think it was -- was it? Was that not
+[9]the one we went to before, where there was the
+[10]list of compounds?
+[11]Q. Yes, column 6, in the '720 patent.
+[12]A. Okay. So now could you repeat your
+[13]question one more time, now that I have the
+[14]context of this in front of me?
+[15]Q. Sure.
+[16]Can you point to any portion of the patent
+[17]specification that provides any explanation as to
+[18]what a cell lysis inhibitor is?
+[19]A. At line 46.
+[20]"An agent that stabilizes cell membranes
+[21]may be added to a maternal blood samples to
+[22]reduce maternal cell lysis."
+[23]So they are referring to stabilizing the
+[24]cell membrane. It -- it reduces cell lysis. And
+[25]they provide examples of compounds that do that.
+  Page 175
+[1]So I think -- to one skilled in the art, I
+[2]think it's understood that -- that these are --
+[3]are things that inhibit cell lysis.
+[4]They also refer to formalin, which is well
+[5]known as a cross-linker. The mechanism of
+[6]cross-linking is well known to people in the art.
+[7]Ravgen didn't discover it, but they
+[8]utilized it in a novel way that -- well known in
+[9]the art that formalin cross-links proteins in a
+[10]membrane and fulfills the requirements of a
+[11]membrane stabilizer and struct -- and maintaining
+[12]the structural integrity of the cell to reduce
+[13]lysis.
+[14]Q. How does a cell lysis inhibitor differ, if
+[15]at all, from a membrane stabilizer?
+[16]A. Kind of a pickles-and-cucumbers argument
+[17]again. And that is that a membrane stabilizer is
+[18]one type of cell lysis inhibitor. And I think
+[19]they wanted to be -- the patent wanted to be
+[20]inclusive of categories that -- agents that
+[21]created a structural support to stop the cell
+[22]from rupturing. So a membrane stabilizer
+[23]is -- or a cross-linker is one way to achieve
+[24]that.
+[25]Q. And -- sorry.
+  Page 176
+[1]You just referenced cross-linker, but my
+[2]question was about the difference, if any,
+[3]between membrane stabilizer and cell lysis
+[4]inhibitor.
+[5]A. Right.
+[6]So a membrane stabilizer is a -- an agent
+[7]that I would understand is a cell lysis -- can be
+[8]a cell lysis inhibitor, if it meets the
+[9]requirements of preventing cell lysis.
+[10]The reason I think the term "cell lysis
+[11]inhibiter" was added is because there are
+[12]examples of things that do -- that don't
+[13]necessarily cross-link proteins, for example, to
+[14]stabilize the membrane.
+[15]Q. Are you using "cross-linker"
+[16]interchangeably with "membrane stabilizer"?
+[17]A. Could. Because a cross-linker does have
+[18]the capability of stabilizing a membrane.
+[19]Q. So if you look at the list of the three
+[20]categories in the claim --
+[21]A. Uh-huh.
+[22]Q. -- how, if at all, does one category
+[23]differ from another?
+[24]It sounds like you're using them
+[25]interchangeably.
+  Page 177
+[1]A. I think -- "interchangeably" isn't maybe
+[2]the way I would describe it.
+[3]I would probably say there is overlap;
+[4]that is, formalin is a membrane stabilizer and it
+[5]is a cross-linker. So there's overlap.
+[6]And I don't think that the listing
+[7]indicated that those categories were mutually
+[8]exclusive from each other. There's nothing in
+[9]the patent that said each category is mutually
+[10]exclusive from another.
+[11]And, in fact, a person of skill in the art
+[12]would recognize formalin as an example of a
+[13]stabilizer and a cross-linker.
+[14]Q. And you would agree that patent
+[15]specifications also refers to it as a cell lysis
+[16]inhibitor.
+[17]Correct?
+[18]A. Correct. It can -- it -- it's meeting the
+[19]requirements of the categories.
+[20]Q. By meeting all three, apparently?
+[21]A. You can meet --
+[22]Q. Is that your testimony?
+[23]A. Any one or all three works -- works.
+[24]Q. So, sitting here today, it's your
+[25]testimony that what exactly was the definition of
+  Page 178
+[1]"cell lysis inhibitor" that was known at the time
+[2]of the alleged invention in the Ravgen patents?
+[3]A. I provided that answer, but I -- I will
+[4]try to do it again in the hope that I get the
+[5]same words in the same order.
+[6]And that is that -- my understanding at
+[7]the time of the invention, that a cell lysis
+[8]inhibitor was understood to be an agent that
+[9]acted by structurally -- by -- by taking
+[10]structural integrity in a cell to prevent it from
+[11]lysing.
+[12]Q. So it's your understanding cell lysis
+[13]inhibitors really depended on acting to improve
+[14]or support the structural integrity of the cell?
+[15]Is that the -- the critical part of what a
+[16]cell lysis inhibitor does?
+[17]A. Cell lysis inhibitor preserves the
+[18]structural integrity of the cell -- insofar as I
+[19]think that's pretty close to an agreement to what
+[20]you said, but I wanted to make sure that I -- I
+[21]was clear on that.
+[22]Q. Okay. Okay. Well, in your reply
+[23]declaration, which we've marked as Exhibit 2, if
+[24]you need to look at it for any reason -- but
+[25]you've, again, offered the opinion that "cell
+  Page 179
+[1]lysis inhibitor" was a well-understood term.
+[2]Correct?
+[3]A. Again, correct, based on skill in the art
+[4]and reading the patent and specifications,
+[5]examples, prosecution history. All of those
+[6]components, to me, in my opinion, made the
+[7]understanding of cell lysis inhibitor apparent
+[8]and clear.
+[9]Q. And that you specifically point to third-
+[10]party patents that you say support your opinion
+[11]that cell lysis inhibitor was well understood.
+[12]Correct?
+[13]A. I do point to some patents that -- that
+[14]use that term in their specifications. And I
+[15]think the Rabinowitz patent actually has it in
+[16]one of their claim constructions. That term is
+[17]used --
+[18]Q. How did you -- sorry to interrupt.
+[19]A. Go ahead.
+[20]Q. How did you go about identifying the
+[21]patents discussed in your reply declaration?
+[22]A. I asked for help from counsel to identify
+[23]places where a cell lysis inhibitor may be used.
+[24]And we undertook a search to -- to find those.
+[25]Counsel provided those patents to me.
+  Page 180
+[1]Q. Do you know what sources were searched to
+[2]find the patents you have cited to in your
+[3]declaration?
+[4]A. I'm sure it was the U.S. Patent Office,
+[5]but in terms of how they -- they did a word
+[6]search on that, I -- I don't know.
+[7]Q. All right. And if you want to take a look
+[8]at the portion of your reply declaration, I'm
+[9]referencing -- it's paragraph 62 of your reply
+[10]declaration, which was Exhibit 2, if you want to
+[11]look at the electronic version.
+[12]A. I am -- I just want to make sure I'm in
+[13]the right place here. I've got Exhibit 2 and
+[14]paragraph 62. Okay. Okay.
+[15]Q. Okay.
+[16]A. Do -- should it be useful if I read this
+[17]paragraph first, before we discuss it? I mean,
+[18]I've read it, but I'd like to review it --
+[19]Q. Sure.
+[20]A. -- if you want to discuss it.
+[21]Q. Yeah, you're welcome to review it.
+[22]My question is just, paragraph 62 is where
+[23]you point to certain third-party patents that you
+[24]say support --
+[25]A. Oh, okay.
+  Page 181
+[1]Q. -- support your opinion that "cell lysis
+[2]inhibitor" is a well-understood term in the art.
+[3]Correct?
+[4]A. Yeah, there were third-party patents
+[5]that -- that supported my contention that "cell
+[6]lysis inhibitor" was used and did not require
+[7]specific definitions and it was understood.
+[8]Q. Okay. And then you list two patents and
+[9]one published patent application. Correct?
+[10]A. I think that's correct. I -- I -- I
+[11]recognize -- for reasons I -- for reasons I can't
+[12]give you -- I'm terrible remembering names, but I
+[13]actually remember these -- Rabinowitz, Vigneault
+[14]and Lee patents. That's how I identify it. But
+[15]those are -- those are the patents included
+[16]there.
+[17]Q. I see.
+[18]Well, let's look at the patents. So let's
+[19]mark Tab 12 -- I'm sorry -- Tab 13 as Exhibit 6.
+[20]CONCIERGE: Okay.
+[21](Deposition Exhibit No. 6 marked.)
+[22]CONCIERGE: Exhibit 6 should be in
+[23]your folder, if you refresh.
+[24]A. (Continuing) I'm getting -- is it loading
+[25]or -- I got a blank page. Let me -- let me go
+  Page 182
+[1]back and try it again. Just...
+[2]No, I just get a gray page.
+[3]Open, there it is.
+[4]CONCIERGE: Okay.
+[5]THE WITNESS: Okay.
+[6]Q. (By Ms. Major, continuing) All right.
+[7]So --
+[8]A. This is -- okay.
+[9]Q. So you recognize Exhibit 6 as U.S. Patent
+[10]10,392,614?
+[11]A. Correct.
+[12]Q. And that is what you are referring to as
+[13]the Vigneault --
+[14]A. Vigneault -- however you pronounce it.
+[15]Q. Vigneault?
+[16]A. Yes. Correct.
+[17]Q. All right. Now, the '614 patent was filed
+[18]on September 29, 2017. Correct?
+[19]A. Correct.
+[20]Q. And the earliest provisional application
+[21]relied on by the '614 patent was filed on
+[22]March 15, 2013.
+[23]Do you see that?
+[24]A. I do see that.
+[25]Q. And you understand that in claim
+  Page 183
+[1]construction we're concerned with the meaning of
+[2]terms as understood by a person of ordinary skill
+[3]in the art at the effective filing date of the
+[4]patent.
+[5]Correct?
+[6]A. I understand that.
+[7]Q. So for claim construction for the Ravgen
+[8]patents, the focus is on a person of ordinary
+[9]skill in the art at the time of the invention of
+[10]the '277 and the '720 patents.
+[11]Right?
+[12]A. Correct.
+[13]Q. And, as we discussed previously, your
+[14]understanding, based on your review of Ravgen
+[15]documents, is that the relevant time is
+[16]December 28, 2001.
+[17]Do I have that right?
+[18]A. That's correct.
+[19]Q. And the earliest potential filing date of
+[20]the '614 patent that's been marked as Exhibit 6,
+[21]and that you point to in your declaration, was
+[22]over 12 years after the alleged invention of
+[23]Ravgen's patents.
+[24]Correct?
+[25]A. Correct.
+  Page 184
+[1]Q. So you understand that the '614 patent is
+[2]not relevant to construction of terms in the
+[3]Ravgen patents.
+[4]Right?
+[5]A. In terms of a timing issue. But the use
+[6]of that term -- I -- I do think the question you
+[7]asked me was, is there any published work that --
+[8]that uses that term. This is an example of that.
+[9]If you now ask me, is there a published
+[10]term that uses that work prior to or
+[11]contemporaneous with the patent application, this
+[12]does not fulfill that.
+[13]That doesn't change my opinion that a
+[14]person of skill in the art would understand the
+[15]use of cell lysis inhibitor in this context and
+[16]it would understand the use of the words "cell
+[17]lysis inhibitor" in the Ravgen 2001 time frame.
+[18]It doesn't change my opinion that that
+[19]term is not a confusing term in light of all of
+[20]the components of the patent.
+[21]Q. But, just to be clear, are you relying on
+[22]this later '614 patent in support of your
+[23]opinions on claim construction of the Ravgen
+[24]patents?
+[25]A. I am not relying on this patent to make
+  Page 185
+[1]that -- that claim. I'm relying on my
+[2]understanding in reading the patent and my
+[3]understanding of skill in the art, that I find
+[4]that in 2001 the term "cell lysis inhibiter" was
+[5]not a confusing term.
+[6]Q. And you would agree that a person of
+[7]ordinary skill in the art at the time of the
+[8]alleged invention of Ravgen's patents would never
+[9]have known about the '614 patent that you point
+[10]to in your declaration.
+[11]Correct?
+[12]A. That is correct. But, again, as I point
+[13]out, I'm not relying on this to support my
+[14]opinion that the term is -- is -- is known.
+[15]Q. But the '614 patent doesn't tell us
+[16]anything about the knowledge of a person of skill
+[17]in the art at the time of the alleged invention
+[18]of Ravgen's patents.
+[19]Correct?
+[20]A. Correct. But it does not change my
+[21]opinion.
+[22]Q. And the '614 patent doesn't demonstrate
+[23]that the term "cell lysis inhibiter" was used by
+[24]persons of skill in the art at the time of the
+[25]alleged invention of Ravgen's patents.
+  Page 186
+[1]Correct?
+[2]A. It doesn't deny that possibility. That
+[3]is, it doesn't say people didn't use that term.
+[4]It's just simply saying, we're using the term in
+[5]2013, 12 years after.
+[6]But it doesn't -- it doesn't specifically,
+[7]anywhere in this patent, say, "Oh, nobody used
+[8]it" and "Nor is my opinion that this patent
+[9]supports a contention that that term was never
+[10]used in 2001."
+[11]Quite the opposite. That term was easily
+[12]understood.
+[13]Q. But the '614 patent doesn't provide
+[14]evidence that it was a term in use in the
+[15]December 2001 time frame.
+[16]Correct?
+[17]A. It does not provide evidence that it was.
+[18]Nor does it provide evidence that it was not.
+[19]Q. Now, you also point to U.S. Patent
+[20]No. 9,404,150 as another third-party patent that
+[21]used the term "cell lysis inhibiter."
+[22]Correct?
+[23]A. Which one -- which -- can we -- should we
+[24]bring that up? I mean, it's cited. And if it's
+[25]cited --
+  Page 187
+[1]Q. Sure.
+[2]A. I mean, if it's cited --
+[3]Multiple voices.)
+[4]A. (Continuing) -- I -- I agree.
+[5]Q. Yes.
+[6]MS. MAJOR: And we can mark that as
+[7]Tab 14. Should be marked as Exhibit 7.
+[8]CONCIERGE: Marking right now.
+[9](Deposition Exhibit No. 7 marked.)
+[10]CONCIERGE: Exhibit 7 should be in
+[11]your folder, if you refresh.
+[12]A. (Continuing) Okay. This is the Lee
+[13]publication. I mean, the Lee patent. Published
+[14]patent. Okay.
+[15]Q. All right. And so Exhibit 7, which I'll
+[16]refer to as the '150 patent, was filed on
+[17]August 28, 2008.
+[18]Correct?
+[19]A. Correct.
+[20]Q. And the earliest provisional application
+[21]relied on by the 150 patent was filed on
+[22]August 29, 2007.
+[23]Right?
+[24]A. Wait a minute. I'm missing that date.
+[25]Where -- where is that date?
+  Page 188
+[1]I see March 12, 2009.
+[2]Q. So if you go a little farther down,
+[3]under -- or next to the 60 that's in
+[4]parentheses -- application number?
+[5]A. I -- I'm seeing 50 -- oh, 60, there.
+[6]Q. Yeah.
+[7]A. Provisional application -- yep, got it --
+[8]2007. Correct.
+[9]Q. Okay. So the earliest potential filing
+[10]date of the '150 patent that you point to in your
+[11]declaration was over five years after the alleged
+[12]invention of Ravgen's patents.
+[13]Correct?
+[14]A. Correct.
+[15]Q. And so you understand that the '150 patent
+[16]is not relevant to assessing how to construe the
+[17]term in the Ravgen patents.
+[18]Correct?
+[19]A. I -- I would clarify this, that the use of
+[20]the term "cell lysis inhibiter" in this patent
+[21]wasn't a novel term they made up on August 29,
+[22]2007.
+[23]So, in other words, to say that that term
+[24]was used in 2007 puts that as its date that it
+[25]was known, I think, is kind of silly.
+  Page 189
+[1]They certainly knew the term before they
+[2]wrote the patent. They -- and so how long before
+[3]the patent? I don't have an idea.
+[4]But I certainly wouldn't restrict the
+[5]patent, as that term was only known as -- as of
+[6]2007, because they wouldn't have made up that
+[7]term on the spot in 2007.
+[8]They would have understood that term prior
+[9]to the filing of the patent and using the
+[10]language they were using.
+[11]So I think it does support, for me, that
+[12]the term "cell lysis inhibiter" was -- was known.
+[13]I can't argue that this proves it was
+[14]known in 2001, but I do think it -- it
+[15]demonstrates that it was known, I would argue,
+[16]well before 2007.
+[17]And it doesn't change my opinion that a
+[18]person of skill in the art would understand the
+[19]term "cell lysis inhibitor" is an agent that
+[20]prevents cell lysis.
+[21]So I -- again, my opinion is, I'm not
+[22]dependent on this patent, that my understanding
+[23]of the term is not dependent on this patent, and
+[24]I don't find any ambiguity or reason to question
+[25]what the definition of that term is in 2001.
+  Page 198
+[1]cross-linker"?
+[2]A. I think that that statement would -- would
+[3]hold water. It may be a little bit less
+[4]inclusive than adding the term "cell lysis
+[5]inhibiter," because adding the term "cell lysis
+[6]inhibiter" allows that there are reagents
+[7]that -- that may fall out of those categories.
+[8]So I think it would be -- it wouldn't
+[9]change my understanding, but I do think, by
+[10]adding all three components, it adds clarity and
+[11]comprehensiveness to the breadth of the claim --
+[12]I'm sorry, let's use the legal term -- to the
+[13]scope of the claim.
+[14]Q. Can you identify any cell lysis inhibitor,
+[15]as you understand that term, that does not fall
+[16]within the category membrane stabilizer or
+[17]cross-linker?
+[18]A. I'll -- I'll give you one example,
+[19]but -- but I also want to comment that it wasn't
+[20]my charge to identify all of the mechanisms of
+[21]actions of all of those compounds.
+[22]I accept the fact that there are compounds
+[23]that represent those categories. Some of those
+[24]compounds overlap. Some of them may be distinct.
+[25]I didn't go through every compound.
+  Page 199
+[1]But if you take a compound, like
+[2]Vitamin E, it's an antioxidant. And so it -- it
+[3]actually stabilizes the health of the cell by
+[4]reducing oxidation events which pre -- helps
+[5]preserve the structural integrity of the cell.
+[6]I don't think it works by cross-linking.
+[7]And the extent to which it -- it maintains a
+[8]structural integrity of -- of a membrane
+[9]stabilizer -- I'm not so sure.
+[10]But its mechanism is more of an
+[11]antioxidant that -- that basically gives you a
+[12]healthy cell.
+[13]One of the things that happens when cells
+[14]are stressed is, they generate these reactive
+[15]oxygen species. And that leads to a whole series
+[16]of events that result in a rupturing of the -- of
+[17]the -- of the membrane.
+[18]I -- I don't think Vitamin E -- I -- I
+[19]fully understand its full mechanism, but I do
+[20]think it's an example of something that has an
+[21]impact on cell lysis without necessarily being
+[22]defined as a membrane stabilizer.
+[23]Ultimately, the membrane is destabilized
+[24]because it has to be in order for the cell
+[25]to -- to rupture.
+  Page 200
+[1]So I -- I -- I will -- I will -- go by
+[2]my -- my first answer, which is, I don't know the
+[3]mechanism of all of the compounds that were
+[4]listed.
+[5]Q. So if we could turn to Exhibit 5, which is
+[6]the '720 patent, column 6.
+[7]A. Okay. '720, column 6, yes.
+[8]Q. We're back to the -- the list of examples.
+[9]A. Uh-huh.
+[10]Q. Vitamin E appears in the passage, in
+[11]column 6, lines 49 through 65.
+[12]A. Yeah, in that paragraph -- "Vitamin E, and
+[13]Vitamin E derivatives," yes.
+[14]Q. And in this paragraph the list of
+[15]exemplary compounds, it's characterized as a list
+[16]of "agents that stabilize cell membranes to
+[17]re" -- "reduce maternal cell lysis."
+[18]Do you see that?
+[19]A. I do see that.
+[20]Q. So is it your testimony that Vitamin E
+[21]does not stabilize cell membranes?
+[22]A. I will stand corrected that -- that based
+[23]on what I am learning, being instructed by the
+[24]patent, I am being instructed by the patent that
+[25]Vitamin E and derivatives fall into a category of
+  Page 201
+[1]membrane stabilizers.
+[2]As I said, I didn't -- I -- I don't know
+[3]the mechanism of all of these, nor did I memorize
+[4]all the lists and which categories they fit in.
+[5]Q. So my question was just a little
+[6]different.
+[7]I was asking if you can give me an example
+[8]of anything that would, to your understanding,
+[9]qualify as a cell lysis inhibitor that would not
+[10]already be encompassed in "membrane stabilizer"
+[11]or "cross-linker."
+[12]A. It -- again, I wasn't asked to -- to
+[13]determine mechanisms and distinctions among all
+[14]of those compounds in the groupings.
+[15]But, again, if you get something like
+[16]alcohols that -- that dehydrate cells, by
+[17]dehydrating the cells you basically fix the
+[18]cells. You don't necessarily stabilize the
+[19]membrane. You actually just fix the cells by
+[20]dehydrating, removing water from the contents of
+[21]the cells. So there -- there's -- there's
+[22]no -- there's no pressure inducer to burst the
+[23]cell.
+[24]But you are preserving the structure of
+[25]the cell by the use of an alcohol that dehydrates
+  Page 202
+[1]and removes water components from the cell.
+[2]I -- I would argue that one might
+[3]interpret that as an inhibitor of cell disruption
+[4]without necessarily preserving -- being a
+[5]membrane stabilizer.
+[6]But, again, I'm -- I'm -- I'm not an
+[7]expert on all of these compounds and I -- I do
+[8]admit that.
+[9]Q. Okay.
+[10]MS. MAJOR: Let's mark --
+[11]THE WITNESS: On -- on -- this is
+[12]one -- may I ask for a -- a break here so I can
+[13]use the restroom? That is --
+[14]MS. MAJOR: Of course.
+[15]THE WITNESS: Would this -- be okay
+[16]to break now?
+[17]MS. MAJOR: That's fine.
+[18]VIDEOGRAPHER: We are -- we are going
+[19]off the record. Time now is 3:43.
+[20](Recess from 3:43 p.m. to 3:57 p.m.)
+[21]VIDEOGRAPHER: One moment.
+[22]We are back on the record. This is the
+[23]start to Media No. 5. The time is 3:57.
+[24]MS. MAJOR: All right. Could we
+[25]please mark Tab 15 as Exhibit 8.
+  Page 203
+[1]CONCIERGE: Sure thing.
+[2](Deposition Exhibit No. 8 marked.)
+[3]THE WITNESS: Bug is back.
+[4]Q. (By Ms. Major, continuing) And,
+[5]Doctor Van Ness, if you can let me know when you
+[6]have Exhibit 8 on your screen, I'd appreciate it.
+[7]CONCIERGE: Exhibit 8 should be in
+[8]your folder, if you refresh.
+[9]A. (Continuing) Okay. I do have it up.
+[10]Q. All right. And do you recognize Exhibit 8
+[11]as the Rabinowitz patent that we've been
+[12]discussing as one of the patents identified in
+[13]your reply claim construction declaration?
+[14]A. I do.
+[15]Q. I'm --
+[16]A. You are correct. That is the -- that is
+[17]the -- the patent that I identified.
+[18]Q. I'll refer to this, for the record, as the
+[19]'415 publication.
+[20]You see on the face of the '415
+[21]publication that it was filed on July 1, 2020.
+[22]Correct?
+[23]A. Correct.
+[24]Q. And the earliest provisional application
+[25]relied on by the '415 publication was filed on
+  Page 204
+[1]November 26, 2005.
+[2]Correct?
+[3]That, again, is beside the 60.
+[4]A. Yes, I see that, yes.
+[5]Q. So the earliest potential filing date of
+[6]the '415 publication, that you point to in your
+[7]declaration, was over three years after the
+[8]alleged invention of Ravgen's patents.
+[9]Correct?
+[10]A. That provisional file date is about three
+[11]years after the Ravgen file date. Correct.
+[12]Q. And, to be clear, you're not relying on
+[13]the '415 publication to support your opinions
+[14]about the claim constructions for the Ravgen
+[15]patents.
+[16]Correct?
+[17]A. It is -- I'm not relying on this as my
+[18]sole basis for my opinion.
+[19]Q. But a person of ordinary skill in the art
+[20]at the time of the alleged invention of Ravgen's
+[21]patents would never have known about the '415
+[22]publication that you point to in your
+[23]declaration.
+[24]Correct?
+[25]A. Correct. But the people who file the
+  Page 205
+[1]patent would probably know about the Ravgen
+[2]filing and understand its use of the term "cell
+[3]lysis inhibiter."
+[4]So I would -- I guess I would argue, the
+[5]people who filed this patent would certainly know
+[6]the use of the term "cell lysis inhibiter" and
+[7]probably were aware of -- of the Ravgen patent's
+[8]use of that term, as we saw in the last patent.
+[9]Q. But the '415 publication doesn't
+[10]demonstrate that the term "cell lysis inhibiter"
+[11]was understood by persons of skill in the art at
+[12]the time of the alleged invention of Ravgen's
+[13]patents.
+[14]Correct?
+[15]A. It does not demonstrate that nor does it
+[16]refute it.
+[17]Q. So, to sum up, you looked for patents that
+[18]used the term "cell lysis inhibiter."
+[19]Do I have that right?
+[20]A. Correct.
+[21]Q. Did you look for articles that used the
+[22]term?
+[23]A. I -- I -- as I recall, I did a brief
+[24]search of articles. That probably wasn't the
+[25]most exhaustive search engine to use.
+  Page 206
+[1]Q. And you were unable to find any patent or
+[2]articles, from whatever search engine you used,
+[3]as of the date of the Ravgen claimed invention
+[4]that used the term "cell lysis inhibiter."
+[5]Correct?
+[6]A. That is correct. But it doesn't change my
+[7]opinion.
+[8]Q. But we can agree on this. You were not
+[9]able to identify a single patent or reference
+[10]from the time of the alleged invention that uses
+[11]the term "cell lysis inhibiter."
+[12]Correct?
+[13]A. Yes. But that doesn't -- not mean that in
+[14]the context of the patent, where it was used, it
+[15]was not understood.
+[16]I -- I do think I have to decline the
+[17]alternative, which is, that does not mean that
+[18]the term was not understood in its use in the
+[19]patent.
+[20]It simply means that it was not used
+[21]in -- in a publication.
+[22]Q. At any time prior to the Ravgen patents
+[23]that you've been able to find. Correct?
+[24]A. Again, I don't believe that my search was
+[25]an exhaustive search, which means there may be
+  Page 207
+[1]publications out there that use that term. It's
+[2]kind of difficult to -- to do a word search on
+[3]every publication. I did not find it.
+[4]I do not believe that is a demonstration
+[5]that it does not exist. I think it's simply a
+[6]demonstration that I did not find.
+[7]But it does not change my opinion.
+[8]Q. Well, wouldn't you agree that if a term is
+[9]widely used in the art, then one should be able
+[10]to point to references using that term?
+[11]A. I -- I -- I don't necessarily agree with
+[12]that. I mean, cell lysis inhibitor is synonymous
+[13]sometimes with other things. You know, people
+[14]use the term "fixative." You know, cell lysis
+[15]inhibitors, as described by the patent, were
+[16]things that fixed cells. And the term "fixative"
+[17]was used quite frequently.
+[18]And so I would -- I would think that a
+[19]cell lysis inhibitor and a fixative are commonly
+[20]understood terms.
+[21]And, again, I would argue -- I don't even
+[22]want to say "argue."
+[23]I would contend that the use of the term
+[24]"cell lysis inhibiter" is in light of what -- how
+[25]it was being used in the patent, with all of this
+  Page 208
+[1]description that was provided.
+[2]It isn't an isolated term. It's a term.
+[3]It's in the context of an entire patent.
+[4]Q. But if I told you that a term was well
+[5]known and you couldn't find that term ever used
+[6]in a printed publication, you would be skeptical
+[7]of my claim.
+[8]Correct?
+[9]A. I think you're mischaracterizing my
+[10]understanding of the -- the term definition.
+[11]And, again, I think you're
+[12]mischaracterizing that there has to be an
+[13]extrinsic use of the term, when the intrinsic use
+[14]made the term well understood.
+[15]Q. And, again, what are you pointing to as
+[16]intrinsic use of the term "cell lysis inhibiter"
+[17]that makes that well understood?
+[18]A. We went through column 6, that described
+[19]agents that -- that stop cells from lysis. The
+[20]term "cell lysis inhibiter" is -- is used in the
+[21]patent. And there's a very extensive
+[22]description, both in terms of background, saying
+[23]there are reagents, there are agents that impede
+[24]cell lysis. And then in the examples they are
+[25]using them.
+  Page 209
+[1]And -- and the end result is that the
+[2]cells are inhibited from lysing by use of these
+[3]agents.
+[4]Therefore, when I get to the claim and
+[5]they say a "cell lysis inhibitor," I have no
+[6]problem understanding what they mean.
+[7]Again --
+[8]Q. But you acknowledge --
+[9]A. -- it's my understanding and my opinion.
+[10]I -- I -- it -- based on what I'm reading.
+[11]And I'm being asked to offer an opinion of
+[12]one skilled in the art, that when that term was
+[13]used in the context of the entire patent, my
+[14]opinion, my understanding was, I had no problem
+[15]understanding what -- how that term was being
+[16]used and how it was being defined.
+[17]Q. But I believe you've acknowledged that you
+[18]don't understand the mechanisms of all of the
+[19]hundred-plus compounds that are listed in the
+[20]patent as compounds that can be used in the
+[21]invention.
+[22]Correct?
+[23]A. I don't, but as a person skilled in the
+[24]art, if somebody said that these were cell lysis
+[25]inhibiters and I was potentially interested in
+  Page 210
+[1]using them, as a person skilled in the art, I'd
+[2]look them up, because most of these probably have
+[3]published indicators as to how they act and what
+[4]they do.
+[5]So the fact that I can't give you an exact
+[6]mechanism of every compound is -- I -- I would
+[7]also consider that -- as a person skilled in the
+[8]art, I would certainly have the ability to find
+[9]out what these compounds do, if I was motivated.
+[10]I wasn't asked to do that, so I -- I
+[11]didn't do that. But a person skilled in the art
+[12]certainly could find out what these compounds do.
+[13]Q. But you are looking exclusively to the
+[14]list of compounds of various unknown functions,
+[15]but described in the patent specification as
+[16]"cell lysis inhibitors," to understand what
+[17]qualifies as a cell lysis inhibitor.
+[18]Do I have that right?
+[19]A. I am looking to those compounds as
+[20]examples that the patent teaches me, or compounds
+[21]that meet the definition of a cell lysis
+[22]inhibitor.
+[23]And when some of those compounds, like
+[24]formalin or glutaraldehyde are used, they, in
+[25]fact, result in the consequence of an
+  Page 211
+[1]identifiable impediment of lysis, because the
+[2]maternal cells are not spilling their DNA. They
+[3]are not lysing.
+[4]So I -- my -- the patent is instructing me
+[5]to the term, giving me examples -- some of which
+[6]I actually do know -- using those examples, and
+[7]demonstrating their effect.
+[8]That sum total of intrinsic evidence in
+[9]the patent, in my opinion, gave me an
+[10]understanding of how the term "cell lysis
+[11]inhibiter" was being used.
+[12]Q. Okay. I'll refer you to paragraph 51 of
+[13]your opening claim construction declaration,
+[14]Exhibit 1.
+[15]A. Okay. Let me go -- Exhibit 1. And,
+[16]again, paragraph 51.
+[17]Q. Paragraph 51, yes.
+[18]A. Okay.
+[19]Q. On page 18 of the PDF.
+[20]A. If you give me just a moment, I'd like to
+[21]read it, so I -- when we get to that.
+[22]Okay.
+[23]Q. Okay. And in paragraph 51 of your opening
+[24]declaration you say you "agree with Doctor Grody
+[25]that a POSITA would readily understand what is
+  Page 212
+[1]meant by 'cell lysis' and, plus, understand cell
+[2]lysis inhibitors to be the category of chemical
+[3]substances that prevent or reduce the rupture of
+[4]cell membranes and release of cellular contents
+[5]by protecting or preserving the structural
+[6]integrity of the cells."
+[7]Do you see that?
+[8]A. Yes.
+[9]Q. Now, thinking about the membrane
+[10]stabilizer category. Do membrane stabilizers
+[11]prevent or reduce the rupture of cell membranes?
+[12]A. Some do. And I would argue that -- that
+[13]some membrane stabilizers may stabilize the
+[14]membrane, but insufficient to counter the lysis
+[15]that may be occurring with the kind of stress
+[16]that these cells are in -- seeing.
+[17]So I think a membrane stabilizer can
+[18]prevent cell lysis. It can be a -- a cell lysis
+[19]inhibitor.
+[20]I'm not sure if I would characterize that
+[21]every membrane stabilizer is always a cell lysis
+[22]inhibitor. I would -- would not go so far as
+[23]to -- to make that total generalization.
+[24]Q. Do membrane --
+[25]A. And I --
+  Page 213
+[1]Q. -- stabilizers --
+[2]A. Go ahead. I'm sorry.
+[3]Q. Do membrane stabilizers protect or
+[4]preserve the structural integrity of the cell?
+[5]A. With those that I am familiar with? Yes.
+[6]So there are -- there are agents that are
+[7]listed that meet those requirements that I fully
+[8]understand. Yes.
+[9]Q. Earlier I asked about any exemplar --
+[10]excuse me -- any cell lysis inhibitors beyond
+[11]those exemplary ones listed in the specifications
+[12]of the asserted patents.
+[13]About how many more are there beyond the
+[14]specific examples listed in the patent
+[15]specifications?
+[16]A. I have no idea. I was not asked to
+[17]investigate the total universe of -- of cell
+[18]lysis inhibitors. I was asked to -- if the
+[19]language provided enough clarity that -- that I
+[20]understood the terms.
+[21]I -- I -- I felt it did.
+[22]I was not charged with looking for other
+[23]examples.
+[24]Q. So you don't know if there are five
+[25]compounds that qualify as cell lysis inhibitors,
+  Page 214
+[1]as you understand that term, but that aren't
+[2]listed in the specification or hundreds of
+[3]compounds that meet your understanding of cell
+[4]lysis inhibitor that aren't specifically listed.
+[5]Is that right?
+[6]A. I don't, but, as one skilled in the art, I
+[7]could find out, A, by looking things up and B, if
+[8]there was any compound that -- that might be
+[9]suspected of being a cell lysis inhibitor, I
+[10]could experimentally determine that.
+[11]Q. How would you experiment --
+[12]A. I was not charged -- one could add
+[13]different amounts of an agent and determine
+[14]whether the cells were rupturing by measuring
+[15]intercellular contents that are now spilled out.
+[16]There are also fairly standard cell
+[17]biology methods where you add a dye, like trypan
+[18]blue. And if a cell is in the process of lysing,
+[19]the trypan blue seeps into the cell; whereas, a
+[20]healthy, intact cell excludes the dye.
+[21]So there are -- and there are biochemical,
+[22]biophysical methods to measure a -- membrane
+[23]potentials across cells. Intact cells maintain a
+[24]membrane potential gradient; whereas cells that
+[25]are lysing do not.
+  Page 215
+[1]There are a number of experimental
+[2]approaches that can determine whether an agent is
+[3]causing or preventing cell lysis.
+[4]Q. Earlier you referenced that EDTA could
+[5]ultimately have the effect of reducing cell
+[6]lysis.
+[7]Correct?
+[8]A. It's one of the agents that is capable of
+[9]impeding cell lysis, but it does not meet the
+[10]asserted claim categories.
+[11]Q. How, in any experimental assessment you do
+[12]of a compound, would you evaluate whether
+[13]something is a cell lysis inhibitor based on any
+[14]of the techniques you used, if there are
+[15]compounds like EDTA that have the same effect as
+[16]the ultimate result that you are looking for,
+[17]meaning the spilling of intercellular
+[18]components --
+[19]A. I might do an experiment --
+[20]Q. -- other --
+[21]A. I might do an experiment exactly as
+[22]described in the patent, in examples four and 15,
+[23]in which EDTA is added to the cells. And then
+[24]EDTA, plus a cell lysis inhibitor defined as a
+[25]membrane stabilizer, like formalin, is added.
+  Page 216
+[1]And ask, did the addition of the membrane
+[2]stabilizer decrease the amount of contents of the
+[3]cell that spilled out?
+[4]That was exactly the way the experiment
+[5]was done.
+[6]And, also, as one skilled in the art, I
+[7]also am aware that EDTA prevents blood clotting,
+[8]which provides a stress to cells that can cause
+[9]lysis.
+[10]But, EDTA does not preserve the structure
+[11]of the cells for any period of time that might be
+[12]useful as a diagnostic technique that the -- the
+[13]patent might approach, because over a period of
+[14]four to six to eight hours, even the EDTA is not
+[15]effective in preventing cell lysis. It prevented
+[16]the stress, but other stresses, by having cells
+[17]sit there, cause those cells to lys. And EDTA
+[18]will not prevent that.
+[19]So I think experiments were done that
+[20]demonstrate very clearly the impact of a lysis
+[21]inhibitor described in the patent.
+[22]And my own experience is that EDTA, as an
+[23]anticoagulant, is not particularly effective as a
+[24]cell lysis inhibitor by doing anything described
+[25]in the patent in one of those three categories.
+  Page 217
+[1]Q. But we're back to a timing requirement, in
+[2]your view. I presume, if you measure a compound
+[3]that's mixed with just EDTA, after an hour there
+[4]will be less of the cellular components that have
+[5]spilled out than if you measure a compound that
+[6]hasn't been mixed with EDTA after an hour.
+[7]Correct?
+[8]A. Haven't done the experiment. I -- and, I
+[9]guess, neither -- neither have you. So I -- I --
+[10]you're -- you're making a presumption.
+[11]I haven't seen the data to -- on the
+[12]results of that -- of that hypothetical
+[13]experiment.
+[14]Q. You haven't reviewed the Lee reference?
+[15]A. You mean the Lee patent? That -- that --
+[16]that patent? I don't recall on --
+[17]Q. Okay.
+[18]A. -- on that.
+[19]Q. All right. Well, let's turn to membrane
+[20]stabilizer. What is the definition of a membrane
+[21]stabilizer, in your understanding?
+[22]A. In my understanding, a membrane stabilizer
+[23]preserves the structure of a membrane or, to put
+[24]it another way, fixes the cells so that the
+[25]membrane does -- is -- is -- it -- the structure
+  Page 218
+[1]of the cell and the membrane is retained. So
+[2]it's stabilizing the structural surroundings of
+[3]the cell that is the mem -- the -- that is
+[4]defined as the membrane.
+[5]Q. And is that the definition as you
+[6]understand it today or as of the time of the
+[7]alleged invention in Ravgen's patents?
+[8]A. Well, it's certainly my understanding
+[9]today. And I think at the time of the Ravgen
+[10]patents, given the fact that we understood that
+[11]our use of membrane stabilizer primarily was to
+[12]preserve the cells so that we could look at
+[13]cellular structures -- I think my understanding
+[14]of membrane stabilizer -- to keep the cells
+[15]intact so we could follow with the next set of
+[16]analysis -- would say that I probably would have
+[17]the same definition.
+[18]But that was a time ago.
+[19]Q. So it's your testimony that you and your
+[20]team was conducting research using membrane
+[21]stabilizers as of the date of the Ravgen patents?
+[22]A. Yeah, I think we were using membrane
+[23]stabilizers as of that point.
+[24]Q. And what specific membrane stabilizers
+[25]were you using?
+  Page 219
+[1]A. They were using methanol alcohol and --
+[2]and formalin.
+[3]Q. Now, a little while ago you referred to
+[4]alcohol as a cell lysis inhibitor that wouldn't
+[5]necessarily preserve the integrity of the
+[6]membrane.
+[7]Do I have that right?
+[8]A. You're correct. I did say that.
+[9]Q. So is it now your testimony that alcohols
+[10]are membrane stabilizers?
+[11]A. If -- if I may, hold off on -- just a
+[12]minute.
+[13]I guess -- hold on just a minute.
+[14]I -- I've -- my answer to that question is
+[15]that my use of the alcohols was to preserve the
+[16]structural integrity of the cell.
+[17]I'm not entirely sure on its mechanism. I
+[18]was speculating as -- as something that
+[19]dehydrates.
+[20]It probably also precipitates proteins,
+[21]which fixes the cell, but it probably is -- is
+[22]not maintaining the original structure of the
+[23]membrane, because it is dehydrating and -- and
+[24]probably precipitating some of the proteins in
+[25]that membrane, so, as a result, it fixes the
+  Page 220
+[1]cells. It doesn't necessarily preserve the
+[2]structure of the membrane, but it preserves the
+[3]integrity such that the membrane is not allowing
+[4]the internal contents to -- to be released.
+[5]That's my -- my best understanding of how
+[6]that might work.
+[7]Q. So, given that understanding, are alcohols
+[8]membrane stabilizers, as you understand that term
+[9]as used in the patents -- the Ravgen patents?
+[10]A. I would put them in the category of cell
+[11]lysis inhibitors. And I defer to knowing the
+[12]full mechanic -- to being sure of the full
+[13]mechanisms.
+[14]I just used my background in the science
+[15]to -- to speculate. And that's not -- I -- I do
+[16]not want to stand by a speculation.
+[17]So I will say I would put it into the
+[18]category as a cell lysis inhibitor. And I'm not
+[19]completely 100 percent sure of its mechanism.
+[20]Q. Okay. You would agree that the Ravgen
+[21]patents don't define membrane stabilizer.
+[22]Correct?
+[23]A. I don't recall whether there was a
+[24]specific -- the definition of "membrane
+[25]stabilizer" is, so I don't recall seeing a
+  Page 221
+[1]specific definition of "membrane stabilizer."
+[2]Q. And the Ravgen patents don't identify any
+[3]dictionary that expressly defines "membrane
+[4]stabilizer."
+[5]Correct?
+[6]A. They do not.
+[7]But, again -- I keep coming back to
+[8]this -- that to one skilled in the art,
+[9]stabilizing a membrane with a membrane stabilizer
+[10]was understood. I -- I would say that that term
+[11]is understood.
+[12]There are a lot -- there are -- are ways
+[13]to stabilize a membrane, such as cross-linking
+[14]the protein, but I think the term "membrane
+[15]stabilizer" in 2001 was a term that a person of
+[16]skill in the art would understand without
+[17]uncertainty.
+[18]Q. Well, setting aside the asserted patents
+[19]themselves, the Ravgen patents don't identify any
+[20]patent that uses the term "membrane stabilizer."
+[21]Correct?
+[22]A. Would you repeat that again? I apologize.
+[23]Q. Sure.
+[24]Setting the asserted patents to the side,
+[25]the Ravgen patents don't identify any patent that
+  Page 234
+[1]Exhibit 21, which is Tab 9.
+[2]Q. And Exhibit 9, on your screen, is the Wang
+[3]article referenced in paragraph 63 of your
+[4]declaration.
+[5]Correct?
+[6]A. Correct.
+[7]Q. And the Biochemical Pharmacology journal
+[8]article authored by Wang was first accepted
+[9]as -- by the publication on December 5, 2005.
+[10]Correct?
+[11]A. Correct.
+[12]Q. So the Wang article that you point to in
+[13]your declaration was published over four years
+[14]after the alleged invention of Ravgen's patents.
+[15]Correct?
+[16]A. Correct.
+[17]Q. So you understand that the Wang article is
+[18]not relevant to how to construe the terms in the
+[19]much earlier Ravgen patents.
+[20]Correct?
+[21]A. Not entirely. Because, again, I would
+[22]argue that -- that the date of December -- or
+[23]received November 2005 -- was not the first time
+[24]this group used the term "membrane stabilizer."
+[25]This does not indicate that -- that this
+  Page 235
+[1]term was limited to that date.
+[2]Certainly this group was understanding of
+[3]the term "membrane stabilizer" before they wrote
+[4]the paper, otherwise they wouldn't have used the
+[5]term "membrane stabilizer" without knowing what
+[6]it meant before they wrote the taper.
+[7]How long before they knew it? I don't
+[8]know. But I would argue --
+[9]Q. So are you --
+[10]A. -- a person skilled in the art would --
+[11]would know in 2001.
+[12]Q. So are you relying on this later-published
+[13]Wang article in support of your opinions
+[14]regarding claim construction for the Ravgen
+[15]patents?
+[16]A. I'm not relying on it. I'm simply
+[17]pointing to it as an indication of the use of the
+[18]term that was understood by people that were
+[19]using that term prior to 2005. How long prior, I
+[20]don't know, but I -- wasn't dependent -- this was
+[21]not a dependent reliance on just this paper, for
+[22]me to contend that the term "membrane stabilizer"
+[23]was understood in 2001.
+[24]Q. And you would -- you would agree that a
+[25]person of skill in the art at the time of the
+  Page 236
+[1]alleged invention of Ravgen's patents would never
+[2]have known about the Wang article that you point
+[3]to in your declaration.
+[4]Correct?
+[5]A. I might argue that the people in the Wang
+[6]laboratory would know about that term and they
+[7]are probably people who may well be skilled in
+[8]the art. And when they knew about the term
+[9]"membrane stabilizer" -- certainly before 2005,
+[10]maybe as early as 2001.
+[11]So I'm not -- I'm not -- I don't think
+[12]this paper discounts my contention that the term
+[13]was well understood.
+[14]I simply am saying, I wasn't relying on
+[15]this paper alone to contend that "membrane
+[16]stabilizer," as a term, was understood in the
+[17]context of how it was used in 2001, in the Ravgen
+[18]patent.
+[19]That opinion --
+[20]Q. My --
+[21]A. -- is still the same.
+[22]Q. My question is just a little different.
+[23]So a person of skill in the art at the
+[24]time of the Ravgen patents would not have known
+[25]about the Wang article that was published in
+  Page 237
+[1]2005.
+[2]Correct?
+[3]A. They would not have read or had access to
+[4]this article before 2005, unless they were
+[5]intimately involved in a laboratory and got early
+[6]drafts, but I -- I -- I accept the -- the fact
+[7]that a person skilled in the art in 2001 would
+[8]not have seen a paper published in 2005.
+[9]Q. All right. You also point to an article
+[10]by Grau, et al., from the publication Chemistry
+[11]and Physics of Lipids.
+[12]MS. MAJOR: So let's mark that
+[13]article next. That's Tab 17. If we could please
+[14]have that marked as Exhibit 10.
+[15]CONCIERGE: Okay.
+[16](Deposition Exhibit No. 10 marked.)
+[17]CONCIERGE: Exhibit 10 should be in
+[18]your folder, if you refresh.
+[19]A. (Continuing) Okay. I have it up.
+[20]Q. All right. Now, to be clear, in your
+[21]reply declaration you don't point to anyplace in
+[22]the Grau article that defines the term "membrane
+[23]stabilizer."
+[24]Correct?
+[25]A. They don't define it, but they use it with
+  Page 238
+[1]the reasonable assumption that people understood
+[2]how they were using it.
+[3]Q. And your declarations also don't identify
+[4]any instance in which the Grau article discusses
+[5]cell lysis.
+[6]Correct?
+[7]A. That wasn't one of their measures, was --
+[8]was measuring -- they were looking at membrane
+[9]hydrolysis, which is -- can lead to -- to -- one
+[10]with skill in the art would understand that
+[11]membrane hydrolysis could lead to cell lysis.
+[12]But, as -- as pointed out in the -- say,
+[13]for an example, in the abstract -- it says that
+[14]these tocopherol Vitamin E derivatives, such as
+[15]PLA inhibitors, are discussed considering its
+[16]biologic significance as a membrane stabilizer.
+[17]So they are using the term "membrane
+[18]stabilizer" in a paper published prior to 2001.
+[19]Q. But the Grau article uses the term
+[20]"membrane stabilizer" to describe the function of
+[21]certain things, such as tocopherols.
+[22]Right?
+[23]A. Well, that agent they are describing --
+[24]they are describing as a membrane stabilizer.
+[25]And I would make a certain conclusion that
+  Page 239
+[1]if "membrane stabilizer" was a term that was
+[2]totally unfamiliar, the editors may not accept
+[3]that as something that they should be describing
+[4]without a point of definition.
+[5]Having said that, my contention is that a
+[6]person of skill in the art knew what a membrane
+[7]was. We were all trying to stabilize membranes
+[8]to preserve the integrity of the cell. As a
+[9]result, the use of the term in this abstract and
+[10]in the paper -- the biologic significance of a
+[11]membrane stabilizer -- stabilizer would be well
+[12]understood.
+[13]Q. Well, if we look at PDF page 9, Grau talks
+[14]about -- this is -- let you get there.
+[15]A. I'm there.
+[16]Q. Let me know when you're -- oh.
+[17]A. Okay.
+[18]Q. So if you look in the paragraph that
+[19]begins, "To conclude," in the right column.
+[20]A. Okay.
+[21]Q. About four lines up from the bottom.
+[22]"The results are reported as relevant to
+[23]explain the stabilizing role of toco" --
+[24]"tocopherols and biological membranes."
+[25]Do you see that?
+  Page 240
+[1]A. I do.
+[2]Q. And in your declaration you suggest that
+[3]the Grau article discusses Vitamin E as a
+[4]membrane stabilizer.
+[5]Do I have that right?
+[6]A. Well, the -- the derivative -- they are --
+[7]Vitamin E is -- is a tocopherol. So there are
+[8]derivatives of tocopherol that we could refer to
+[9]as Vitamin E derivatives.
+[10]Q. Okay. And in examining the stabilizing
+[11]role that the Vitamin E derivatives have on
+[12]biological membranes, Grau finds that Vitamin E
+[13]may inhibit PLA2 activity.
+[14]Correct?
+[15]A. Okay. It -- that -- in the first
+[16]sentence, "We conclude in this paper that alpha
+[17]tocopherol inhibits PLA2 activity when present in
+[18]fluid membranes at low concentrations."
+[19]Correct.
+[20]Q. And that's the activity Grau was assessing
+[21]to determine whether Vitamin E's derivatives had
+[22]a stabilizing effect on the membrane?
+[23]A. That is my understanding.
+[24]Q. Now, you're aware that Grau also discusses
+[25]cholesterol. Correct?
+  Page 241
+[1]A. I -- I -- it's been awhile since I've
+[2]looked at this paper, but I -- I do recall there
+[3]was some discussion about cholesterol. I -- I,
+[4]frankly, don't recall the exact context. I would
+[5]have to go through the paper and -- and identify
+[6]that and see how that's used.
+[7]Q. Sure.
+[8]If you look at the cover of the article.
+[9]A. Yep.
+[10]Q. The very first page.
+[11]A. Yes.
+[12]Q. About five lines up from the -- or six
+[13]lines up from the bottom of the abstract it says,
+[14]"Cholesterol does not inhibit PLA2 activity."
+[15]Do you see that?
+[16]A. I do see that.
+[17]Q. So Grau found that cholesterol didn't
+[18]inhibit the very activity that it was relying on
+[19]to identify Vitamin E derivatives as having a
+[20]stabilizing effect on cell membranes.
+[21]Correct?
+[22]A. Well, I think, to be more -- more
+[23]specific, he's saying cholesterol does not
+[24]inhibit PLA2 activity at concentrations even
+[25]higher than those of tocopherol.
+  Page 242
+[1]So he's defining a specific compound and
+[2]suggesting cholesterol does not inhibit that
+[3]compound's activity.
+[4]Q. But that activity is what Grau used to
+[5]conclude that Vitamin E derivatives acted as
+[6]membrane stabilizers.
+[7]Correct?
+[8]A. In -- in separate experiments.
+[9]He then looked at the tocopherols and
+[10]concluded that the tocopherols did provide
+[11]membrane stabilization.
+[12]Q. So, in essence, Grau found that
+[13]cholesterol doesn't play a stabilizing role on
+[14]biological membranes --
+[15]A. No. He found that --
+[16]Q. -- derivatives do?
+[17]A. No. He found that cholesterol in the
+[18]context of PLA2 doesn't provide a
+[19]stabilizing -- it may provide stabilizing
+[20]activity by inhibiting other things that are
+[21]going on. I don't know what they are.
+[22]But this certainly simply says cholesterol
+[23]does inhibit PLA2. That's a very specific
+[24]compound they are artificially putting into the
+[25]system.
+  Page 243
+[1]The fact that cholesterol may be important
+[2]in rebuilding and supporting the structure of
+[3]lipids in -- in membranes is a totally separate
+[4]issue. And may still be effective in inhibiting
+[5]lysis and being a membrane stabilizer.
+[6]This does not discount cholesterol, in any
+[7]condition, can act as a membrane stabilizer,
+[8]under that condition, for that compound. That's
+[9]all they were saying.
+[10]Q. But what Grau reports is that Vitamin E
+[11]derivatives have the stabilizing effect on
+[12]biological membranes. And cholesterol did not
+[13]exhibit the same effects in their experiments.
+[14]Correct?
+[15]A. When done in the context of phospho --
+[16]phospholipase A2, or PLA2. The distinction was
+[17]made in the context of a very specific compound.
+[18]Q. Now, you're aware that the asserted
+[19]patents list cholesterol as an ex -- exemplarily
+[20]agent that stabilizes cell membranes.
+[21]Correct?
+[22]A. I'm aware of that, correct.
+[23]Q. And the Grau article that we've been
+[24]discussing, in fact, suggests the Vitamin E
+[25]derivatives and cholesterol have different
+  Page 244
+[1]activities or different effects when it comes to
+[2]playing a stabilizing role on biological
+[3]membranes.
+[4]Correct?
+[5]A. Correct. In the context of PLA2, a very
+[6]specific context.
+[7]Q. But, to summarize, you've undertaken a
+[8]search to find any use of membrane stabilizer.
+[9]Correct?
+[10]A. Correct.
+[11]And here was a case where that term was
+[12]used with what I interpret as a -- an
+[13]understanding of one use of the term "membrane
+[14]stabilizer" that in these conditions, this
+[15]tocopherol derivative was able to stabilize the
+[16]membrane. So it is, by definition, in these
+[17]conditions a membrane stabilizer.
+[18]Q. But the result of your search for use of
+[19]the term "membrane stab" -- "stabilizer" yielded
+[20]two examples, one of those from years after the
+[21]claimed priority date of the patent.
+[22]Correct?
+[23]A. Correct.
+[24]Q. And one that reports experiments to
+[25]evaluate different -- or the activity of
+  Page 245
+[1]Vitamin E derivatives and cholesterol.
+[2]Correct?
+[3]A. In the context of a specific compound,
+[4]yes.
+[5]Q. And you'd agree that both Vitamin E
+[6]derivatives and cholesterol are identified as
+[7]exemplary membrane stabilizers in the Ravgen
+[8]patents.
+[9]Correct?
+[10]A. Correct.
+[11]Q. And the single article that you found that
+[12]predates the patents and includes the phrase --
+[13]phrase "membrane stabilizer," only Vitamin E
+[14]exhibits the activity that stabilizes cells, and
+[15]cholesterol does not, in the context of that
+[16]experiment.
+[17]Correct?
+[18]A. Thank you. Yes.
+[19]Q. So Ravgen's patents use the term in a way
+[20]that isn't entirely consistent with what Grau
+[21]reports.
+[22]Correct?
+[23]A. Incorrect.
+[24]Q. You would agree that Grau reports that
+[25]Vitamin E derivatives and cholesterol exhibit
+  Page 246
+[1]different activities in the context of this
+[2]experiment.
+[3]Correct?
+[4]A. I -- in the context of those experiments,
+[5]that is correct.
+[6]The Ravgen patent doesn't limit itself to
+[7]one condition of things that -- that destabilize
+[8]membranes.
+[9]There are lots of things that destabilize
+[10]membranes. One of them is this PLA2.
+[11]Other things cholesterol may be perfectly
+[12]effective in.
+[13]Q. But you -- you don't know which of the
+[14]dozens of exemplary membrane stabilizers actually
+[15]have the effect of stabilizing membranes, because
+[16]you don't understand the mechanisms of all of the
+[17]compounds listed in the Ravgen patents.
+[18]Correct?
+[19]A. I understand that the -- the patentee has
+[20]provided these as an instruction to one skilled
+[21]in the art, that these are compounds that meet
+[22]the requirement of membrane stabilizers.
+[23]In that instruction he does not provide
+[24]the mechanism of every one of those compounds.
+[25]However, to one skilled in the art, you
+  Page 247
+[1]could likely find that out relatively easily.
+[2]I was not charged to find out the
+[3]mechanism of all of these compounds, so I did
+[4]not. That does not mean they are ineffective.
+[5]It simply means I didn't investigate how each of
+[6]those mechanistically works to stabilize
+[7]membranes.
+[8]Q. Are there additional membrane stabilizers
+[9]beyond the exemplary ones listed in the Ravgen
+[10]patent specifications?
+[11]A. I wasn't asked to investigate and -- and
+[12]identify additional ones. I don't know.
+[13]Q. So you can't name any others, sitting here
+[14]today?
+[15]A. I wasn't asked to do that, so I did not
+[16]investigate it, so I cannot name an additional
+[17]compound.
+[18]Q. Now, the exemplary membrane stabilizers
+[19]listed in the Ravgen patents don't share a common
+[20]structure.
+[21]Correct?
+[22]A. Chemically they probably don't share a
+[23]common structure, but, again, it depends a little
+[24]bit on -- on your definition of "structure."
+[25]They -- they are structurally equivalent in that
+  Page 248
+[1]they've stabilized membranes.
+[2]The chemical may not be the same
+[3]structure, but they have a structural similarity
+[4]of stabilizing a membrane structure.
+[5]Q. Isn't what you're referring to a
+[6]functional similarity, as opposed to a structural
+[7]similarity?
+[8]A. It's a functional similarity on
+[9]maintaining a structure. So they -- they -- they
+[10]have a common structural consequence in
+[11]maintaining membrane structure.
+[12]Q. But you would agree that the exemplary
+[13]list of membrane stabilizers includes reagents of
+[14]diverse as atoms, simple sugars, complex
+[15]carbohydrates, and other numerous compounds?
+[16]A. Correct. All of which I would interpret,
+[17]as one skilled in the art, as I read the patent
+[18]and the descriptions, as all having a common
+[19]feature, that they've been listed as compounds
+[20]that maintain the structural component of a
+[21]membrane.
+[22]Q. But they do not themselves share a common
+[23]structure. Correct?
+[24]A. They do not share a common chemical
+[25]structure.
+  Page 249
+[1]Q. And even if you don't know the mechanism
+[2]of every last one of the exemplary membrane
+[3]stabilizers, you would agree that they don't
+[4]share a common mechanism.
+[5]Correct?
+[6]A. Since I didn't investigate them all, I
+[7]can't answer that question.
+[8]Q. Do you think Vitamin E and sucrose have
+[9]the same mechanism for stabilizing cell membrane?
+[10]A. I don't know the answer to that question.
+[11]I'm sorry. I did not investigate the mechanism
+[12]of any of those. So I would only be speculating
+[13]as to whether they had common mechanisms or
+[14]dissimilar mechanisms or had overlapping
+[15]mechanisms.
+[16]And since I didn't look that up, I don't
+[17]feel comfortable speculating on each of their
+[18]similarities or differences.
+[19]Q. So as part of your analysis to try to
+[20]decipher or understand what "cell mem" -- or
+[21]"membrane stabilizer" means in the context of the
+[22]Ravgen patent claims, you didn't evaluate what
+[23]the patents identify as the group of things that
+[24]are supposedly membrane stabilizers, to evaluate
+[25]what their similarity, if any, may be?
+  Page 250
+[1]A. My understanding was that the assertion
+[2]was that there was an agent that prevented cell
+[3]lysis that fit into a category, including
+[4]membrane stabilizers.
+[5]That those -- the claim terms were very
+[6]clear to me, that there's an agent claim, that
+[7]there is a -- a -- a dependence on fitting one of
+[8]those three categories. And those categories
+[9]include membrane stabilizers, cell lysis
+[10]inhibitors.
+[11]I had no problem understanding what they
+[12]meant, although I couldn't give you mechanisms of
+[13]every compound that was listed.
+[14]There were exemplary compounds listed that
+[15]I found instructional, as a person of skill in
+[16]the art, that they met the requirements of the
+[17]claim as being agents that stabilized membranes.
+[18]Q. So it's your understanding that "membrane
+[19]stabilizer" and each of the claimed categories,
+[20]meaning cell lysis inhibitor and cross-linker, as
+[21]well, are well defined.
+[22]Correct?
+[23]A. Some of them are well defined and some of
+[24]them I even know about. So I do think that there
+[25]are examples -- well-known examples of things
+  Page 251
+[1]like formalin, that is a -- well known.
+[2]And -- and my understanding of the term
+[3]"membrane stabilizer" is significantly enhanced
+[4]by my understanding that there are membrane
+[5]stabilizers like formalin that serve to
+[6]cross-link and stabilize the membrane, in my
+[7]understanding of the terms.
+[8]As a result of that, while I don't
+[9]understand the mechanism of every stabilizer, I
+[10]do understand the mechanism of formalin. And, as
+[11]a result, I can then understand the term
+[12]"membrane stabilizer" to mean a reagent that
+[13]stabilizes the structural component of the
+[14]membrane.
+[15]I -- I have no problem, based on my
+[16]knowledge of some of these compounds, putting
+[17]that in the context to give me full understanding
+[18]of how the claim terms are used.
+[19]Q. But the mechanism that formalin relies on
+[20]is actually a cross-linking mechanism.
+[21]Correct?
+[22]A. That's -- it -- it -- cross-link is --
+[23]cross-links, that's correct. But it also is a
+[24]membrane stabilizer.
+[25]Q. But it stabilizes the cell membrane by
+  Page 252
+[1]cross-linking. Correct?
+[2]A. Correct.
+[3]Q. So is it your understanding that the
+[4]"membrane stabilizer" term, as it's used in the
+[5]Ravgen patent, is intended to encompass things
+[6]that preserve membrane -- that stabilize
+[7]structural components of the membrane by
+[8]cross-linking?
+[9]A. That is one component of how a membrane
+[10]stabilizer can work. And I understand that --
+[11]there may be other mechanisms I'm willing to
+[12]accept. That there are compounds whose
+[13]mechanisms I am not familiar with, but, given the
+[14]fact that formalin is a membrane stabilizer that
+[15]cross-links -- gives me confidence in
+[16]understanding with reasonable certainty what the
+[17]patentee is referring to as a mem -- the term
+[18]"membrane stabilizer."
+[19]Formalin is an exemplary compound that
+[20]does that. And, as a result, I understand what
+[21]it's doing and I understand what the term
+[22]"membrane stabilizer" means.
+[23]Q. What other mechanisms can be used to
+[24]stabilize a membrane and fall within this
+[25]category of membrane stabilizer?
+  Page 253
+[1]A. I don't know. I have not investigated
+[2]other mechanisms.
+[3]Q. So you assume that "membrane stabilizer"
+[4]is understood without actually understanding the
+[5]full scope of what "membrane stabilizer" covers?
+[6]A. It covers a compound that -- that can
+[7]demonstrate -- demonstrate inhibition of lysis.
+[8]Formalin is one example of that.
+[9]If -- if you say to me that formalin is a
+[10]membrane stabilizer, I fully accept my
+[11]understanding of the term "membrane stabilizer"
+[12]based on that simple statement that formalin is a
+[13]membrane stabilizer.
+[14]So your question is to whether the
+[15]definition of "membrane stabilizer" is
+[16]understood.
+[17]When that sentence is provided to me or
+[18]somebody with skill in the art, that formalin is
+[19]a membrane stabilizer, I understand all the terms
+[20]of that sentence.
+[21]I don't need to know all of the other
+[22]compounds. I understand how the term "membrane
+[23]stabilizer" is being used.
+[24]Q. But what in that sentence tells you about
+[25]all of whatever other mechanisms might result in
+  Page 254
+[1]membrane stabilization and might qualify,
+[2]therefore, as a membrane stabilizer --
+[3]A. Well --
+[4]Q. -- if you have just the example of
+[5]formalin?
+[6]A. That -- that statement doesn't provide
+[7]that.
+[8]On the other hand, the asserted patent --
+[9]the asserted claims of the patent and the
+[10]invention of the patent in no way suggests that
+[11]any of these agents were being invented by the
+[12]patentee.
+[13]They were simply being used because they
+[14]were -- they were known to the patentee as a list
+[15]of compounds that prevented cell lysis and
+[16]stabilized membranes.
+[17]I will acknowledge the fact that the
+[18]patentee maybe knew more about those -- those
+[19]compounds than I do.
+[20]But to one skilled in the arts, you were
+[21]instructed by the patent of a compound well known
+[22]in the art that stabilizes membranes. That, in
+[23]turn, gave me clear definition of what the term
+[24]"membrane stabilizer" implied and what -- how it
+[25]was being used. And, therefore, I understood
+  Page 255
+[1]that the other compounds that were listed as
+[2]membrane stabilizers met that criteria.
+[3]Do I know how they do it?
+[4]I don't.
+[5]Could I find out?
+[6]Probably, I could look them up and find
+[7]out.
+[8]Q. But you didn't look them up. Correct?
+[9]A. I did not.
+[10]Sorry. I talked over you.
+[11]THE WITNESS: My apologies, Nancy.
+[12]A. (Continuing) I did not.
+[13]Q. Now, you understand that a patent claim is
+[14]indefinite when it fails to inform with
+[15]reasonable certainty those skilled in the art
+[16]about the scope of the claim.
+[17]Correct?
+[18]A. With -- read in light of the
+[19]specifications. Or the intrinsic evidence.
+[20]Q. And -- and in your opening declaration you
+[21]say that the patent claims can allow for some
+[22]degree of uncertainty.
+[23]Do you recall that?
+[24]A. I recall that phrase, yeah.
+[25]Q. How much uncertainty is allowed before a
+  Page 256
+[1]claim fails to inform with reasonable certainty
+[2]those skilled in the art about a claim scope?
+[3]A. I think -- as -- example, if there are
+[4]terms used that have ambiguity or have multiple
+[5]meanings, then it may create a degree of
+[6]uncertainty, because a term may have multiple
+[7]meanings.
+[8]I think the term "cell lysis inhibiter,"
+[9]"membrane stabilizer" had very well-defined
+[10]meanings. They didn't have multiple meanings.
+[11]So, as an example, I think if terms are
+[12]used that have multiple meanings, it would reach
+[13]a degree of uncertainty that would start to
+[14]qualify as indefinite. But I don't see that as a
+[15]case here.
+[16]Q. But you've just acknowledged that
+[17]"membrane stabilizer" applies to a host of
+[18]compounds with unknown mechanisms.
+[19]Do I have that right?
+[20]Mechanisms you're not even aware of?
+[21]A. I think there's an important distinction.
+[22]And that is --
+[23]Q. Okay.
+[24]A. -- it points to compounds that I don't
+[25]know what -- what they do, but, as I interpret
+  Page 257
+[1]the patent, the clear language of the patent --
+[2]patent says, "These compounds I list as exemplary
+[3]compounds as membrane stabilizers."
+[4]I understand the term. There is no
+[5]uncertainty about how the term is being used and
+[6]what it's directing me to.
+[7]The fact that I don't know the mechanism
+[8]of all of those terms doesn't change my
+[9]understanding of -- of the terms or create an
+[10]uncertainty of the term that's being used.
+[11]Q. All right. I'm going to shift gears. And
+[12]I have a few questions about just the word
+[13]"agents."
+[14]So not the long phrase that is included in
+[15]the patent claims, but just the term "agent."
+[16]Do you have that in mind?
+[17]A. I -- I -- I -- I -- sorry. I need context
+[18]here. I can't -- I mean, you can take a word out
+[19]and pull it out and just place it on the board
+[20]and I could give you lots of definitions. But
+[21]the definition I'm most interested in is in the
+[22]context of the patent, as it's used.
+[23]Q. Yeah. Just to be clear, I'm just trying
+[24]to clarify, for you and for the record, that when
+[25]I'm saying "agent" now, I'm using just the word
+  Page 258
+[1]"agent."
+[2]A. Okay.
+[3]Q. Not the lengthy --
+[4]A. I -- I appreciate --
+[5](Multiple voices.)
+[6]A. (Continuing) Okay. So -- I got you. I
+[7]was being contentious before I even -- okay. My
+[8]apologies.
+[9]Q. So, to your understanding, in the context
+[10]of the claims and the specification and other
+[11]intrinsic evidence, what is an agent?
+[12]A. My understanding is, an agent is a
+[13]substance which creates an effect.
+[14]Q. And you would agree with me that the term
+[15]"agent that impedes cell lysis" is describing the
+[16]function of the agent.
+[17]Correct?
+[18]A. Ah, but there was more to that phrase.
+[19]And that is, the agent impedes cell lysis and is
+[20]part of a group that fits into those three
+[21]categories.
+[22]So I -- you -- there -- there is a --
+[23]there is a restriction on the use of the term
+[24]"agent" to both functionally impede lysis and be
+[25]a member of one of those groups.
+  Page 259
+[1]Q. Understood, regarding the full scope of
+[2]the disputed term.
+[3]I'm just asking about the words "agent
+[4]that impedes lysis" in the context of the claims.
+[5]Those words, "agent that impedes cell
+[6]lysis," describe the function of an agent.
+[7]Correct?
+[8]A. Correct.
+[9]Q. And it is an agent that performs a
+[10]particular function of impeding license.
+[11]Correct?
+[12]A. It -- in the clear language of the claim,
+[13]it's -- an agent that impedes lysis -- I think
+[14]that's fairly clear, correct.
+[15]Q. So you would agree with me that "agent
+[16]that impedes cell lysis" -- that portion of the
+[17]claim language uses functional language.
+[18]Correct?
+[19]A. There is a function in impedes that is
+[20]blocking -- so yes, it -- it -- it is using a
+[21]functional characterization of the action of
+[22]that.
+[23]Since "agent" is a substance that has an
+[24]action, the agent that's being described --
+[25]description of the action is a function. It
+  Page 260
+[1]impedes cell lysis.
+[2]Q. To impede cell lysis is a function.
+[3]Correct?
+[4]A. One could argue that that is one --
+[5]one -- one -- what's the word I want? -- it's one
+[6]description that -- that one could use, that
+[7]there's a function, impede lysis, that is being
+[8]associated with the agent. Sure.
+[9]Q. And "inhibits lysis of cells" is also a
+[10]function.
+[11]Correct?
+[12]A. Under those circumstances and -- correct.
+[13]Q. And now focusing on the three categories
+[14]referenced in the "agent" terms, so the full
+[15]claim term that's being disputed.
+[16]Do you have those three categories in
+[17]mind?
+[18]A. I do. Membrane stabilizer, cross-linker
+[19]and cell lysis inhibitor.
+[20]Q. Yes.
+[21]A. Yes.
+[22]Q. Those categories of agents use functional
+[23]language, as well. Correct?
+[24]A. Could you point me to that? I mean,
+[25]you're -- you're pointing to something that I
+  Page 261
+[1]can't see. You're -- what -- by -- what do you
+[2]mean by that?
+[3]Q. So "membrane stabilizer," for instance,
+[4]describes something that stabilizes membranes.
+[5]A. Correct.
+[6]Q. Right?
+[7]A. Correct.
+[8]Q. Stabilizing membranes is a function.
+[9]Correct?
+[10]A. Correct.
+[11]Q. And the term "membrane stabilizer" does
+[12]not connote any particular struct -- structure
+[13]that performs the function of stabilizing the
+[14]membrane and inhibiting cell lysis.
+[15]Correct?
+[16]A. It does not define a particular chemical
+[17]structure of the agent that is performing that.
+[18]Correct.
+[19]Q. Does it define any other structure that
+[20]performs the function of inhibiting cell lysis
+[21]and stabilizing membranes?
+[22]A. The only structure it refers to is the
+[23]structure of the agent and those agents that
+[24]perform that, that fit into those categories,
+[25]have various structures. So there is not a
+  Page 262
+[1]single structure that's defined by that.
+[2]Q. Now, "cell lysis inhibitor" is one of the
+[3]other categories referenced in the claim term.
+[4]Correct?
+[5]A. That's correct.
+[6]Q. And "cell lysis inhibitor" describes
+[7]something that inhibits cell lysis.
+[8]Would you agree?
+[9]A. And, again, within -- in light of the --
+[10]of the description, it inhibits cell lysis by
+[11]maintaining the structural integrity of the cell
+[12]membrane, yes.
+[13]Q. And in -- inhibition of cell lysis by
+[14]maintaining the structural integrity of the cell
+[15]membrane is also a function.
+[16]Correct?
+[17]A. I could say that -- I could agree that
+[18]that's a function.
+[19]Q. And the term "cell lysis inhibiter" does
+[20]not connote any particular structure that
+[21]performs the function of inhibiting cell lysis.
+[22]Correct?
+[23]A. There is no single chemical structure that
+[24]is implied by that term.
+[25]Q. Is there any other structure that is
+  Page 263
+[1]implied by the term "cell lysis inhibiter"?
+[2]A. Again, you've -- you -- based on how you
+[3]phrased it, the implication is the structure --
+[4]is the structure of the membrane, so it does
+[5]preserve the structure of the membrane.
+[6]The agent has commonality because it
+[7]preserves -- preserves the structure of the
+[8]membrane.
+[9]Q. But, again, the commonality of the agent
+[10]that you're referring to -- the commonality is in
+[11]its function, because it functions to preserve
+[12]the structure of the membrane.
+[13]Do I have that right?
+[14]A. I -- I'm okay with that.
+[15]Q. And, by the way, you mentioned you
+[16]reviewed Doctor Grody's deposition transcript, I
+[17]believe.
+[18]A. Correct.
+[19]Q. Is that right?
+[20]A. Yes.
+[21]Q. And you're -- so you're aware with and
+[22]agree -- strike that.
+[23]So you're aware of and agree with
+[24]Doctor Grody's testimony that there's no common
+[25]structure among membrane stabilizers.
+  Page 264
+[1]Correct?
+[2]A. I -- I -- I think there's an important
+[3]distinction here. The common structure of the
+[4]membrane stabilizers is that they are an agent.
+[5]And the reason I say that is that
+[6]distinguishes things that may inhibit cell lysis
+[7]that have no agent associated with them.
+[8]So there is a structure that is an agent,
+[9]a compound, a substance that can inhibit cell
+[10]lysis.
+[11]There are other means to achieve impeding
+[12]cell lysis that have nothing to do with a sub --
+[13]a substance, an agent or a structure.
+[14]Things like centrifugation, heat, the size
+[15]of the needle. Things like that can also induce
+[16]lysis. Or you can prevent lysis by changing the
+[17]bore size of the needle, by centrifuging more
+[18]slowly.
+[19]But those are not agents that -- so that
+[20]the common structural component that -- that I
+[21]view in -- in the claim terms is -- it's a
+[22]structure of an agent, a chemical substance --
+[23]not other things that can impede lysis that are
+[24]not agents.
+[25]They are not structurally -- not
+  Page 265
+[1]compounds, they are not agents that do it. They
+[2]are themselves some process that alters the
+[3]function of cell lysis.
+[4]Q. So the -- the only structure you're
+[5]suggesting exists in the full "agent" term is
+[6]agent itself.
+[7]Do I have that right?
+[8]A. I would interpret that as the agent has a
+[9]structure that meets the requirements of the
+[10]claim and that other things that impede cell
+[11]lysis, that don't have any agent structure at
+[12]all, that are just activities that can be done --
+[13]don't meet the claim terms.
+[14]VIDEOGRAPHER: Excuse me. We've got
+[15]about five minutes left on this media.
+[16]MS. MAJOR: Let's go off the record
+[17]to change it and we can continue.
+[18]VIDEOGRAPHER: We are going off the
+[19]record. Time now is 5:21.
+[20](Recess from 5:21 p.m. to 5:31 p.m.)
+[21]VIDEOGRAPHER: One moment.
+[22]We are back on the record. This is the
+[23]start to Media No. 6. The time is 5:31.
+[24]Q. (By Ms. Major, continuing) All right.
+[25]Doctor Van Ness, before the break you were
+  Page 266
+[1]talking about your understanding that the thing
+[2]that provides any structure at all in the claim
+[3]is the term "agent."
+[4]Do I have that right?
+[5]A. Yes. I -- I think the fact that there is
+[6]a -- a -- a structure, an agent, a substance, as
+[7]opposed to an action to cause another action,
+[8]distinguishes that term as a -- a structural
+[9]term.
+[10]That's -- that's my understanding.
+[11]Q. Okay. But you would agree that cell lysis
+[12]inhibitor doesn't provide any common structure.
+[13]Correct?
+[14]A. Well, if we go -- if you go back to what
+[15]we just agreed -- what I just agreed was my
+[16]understanding, the cell lysis inhibitor goes back
+[17]to the "agent" term, which is a structure of a
+[18]substance that creates a -- the -- the inhibition
+[19]of lysis. So I think the lysis inhibitor is an
+[20]agent.
+[21]Q. So you're saying cell lysis inhibitor
+[22]is -- strike that.
+[23]So is it your testimony that a cell lysis
+[24]inhibitor must have a structure because it is an
+[25]agent that is a substance?
+  Page 267
+[1]A. Yes.
+[2]Q. But you would agree that there is no
+[3]common structure in the category "cell lysis
+[4]inhibitor"?
+[5]A. We're -- I -- I'm -- I'm facing a somewhat
+[6]circular argument here, which is that the common
+[7]structural component is the "agent" term, which
+[8]distinguishes it from a nonstructural component,
+[9]which is, there is no substance, there is no
+[10]agent.
+[11]And you can do things to impede lysis that
+[12]does not include an agent, that meets the
+[13]definition of a cell lysis inhibitor, which is an
+[14]agent that has structure.
+[15]So I -- I -- I kind of went circular, but
+[16]I want to distinguish function of the agent from
+[17]function of things that are not an agent that
+[18]fits into those categories.
+[19]Q. But you would agree that there is no
+[20]common structural -- strike that.
+[21]You would agree there's no structural
+[22]commonality, no shared chemical structure, no
+[23]other kind of characteristics of cell lysis
+[24]inhibitors that puts them into a class of
+[25]compounds having a shared structure.
+  Page 268
+[1]A. There is no shared -- there -- there is no
+[2]share -- well, there are compounds that have
+[3]shared structure. I mean, the aldehydes have --
+[4]whether it's glutaraldehyde or formaldehyde, they
+[5]both have aldehydes as part of their structure.
+[6]So there are examples where there are
+[7]common structures, but across all the categories
+[8]there is not a common chemical structure.
+[9]I'm not sure that that -- puts any
+[10]question about the certainty of the claims,
+[11]because I wouldn't expect every compound that
+[12]inhibits lysis to have the same structure
+[13]in -- in how it operates.
+[14]So I -- I agree that the "agent" term is
+[15]the structural term and the cell lysis inhibitor
+[16]refers back to that "agent" term.
+[17]Q. And you agree that there's no common
+[18]structural -- strike that.
+[19]You would agree that membrane stabilizers
+[20]do not connote a common structure. Correct?
+[21]A. I would say that, based on my limited
+[22]knowledge of the compounds that were listed as
+[23]exemplary, they don't have a common chemical
+[24]structure.
+[25]Q. And the same is true for cell lysis
+  Page 269
+[1]inhibitors. If you think about the exemplary
+[2]compounds identified as cell lysis inhibitors,
+[3]they don't share any chemical structure.
+[4]Correct?
+[5]A. I'm not a -- I'm -- I'm not aware that
+[6]they share a chemical structure.
+[7]Q. And the same is true for the cross-linkers
+[8]provided as exemplary cross-linkers in this
+[9]specification. There's no shared common chemical
+[10]structure among the cross-linkers identified
+[11]there.
+[12]Correct?
+[13]A. Well, there again, there are some common
+[14]chemical structures among some of the
+[15]cross-linkers, like the aldehydes. So there are
+[16]common structures among a -- a list of
+[17]cross-linkers.
+[18]Q. But they don't -- but all of the
+[19]cross-linkers identified as exemplary
+[20]cross-linkers don't share a single common
+[21]chemical structure.
+[22]Correct?
+[23]A. I'm not aware that they do.
+[24]Q. Okay. Let's turn to the parties' dispute
+[25]regarding the isolating and detecting term in
+  Page 278
+[1]the art."
+[2]Did I read that correctly?
+[3]A. You did.
+[4]Q. So you're only pointing to the plain
+[5]language of the plain term as the basis for what
+[6]you've described as the method that corresponds
+[7]to the claim language.
+[8]Correct?
+[9]A. I am stating that based on the plain
+[10]language of the claim term and for the reasons
+[11]listed above, which include a description of --
+[12]of information that I would have received from
+[13]the patent, it would all be readily
+[14]understandable.
+[15]So I -- my -- my answer to your question
+[16]is, I agree with -- based on the plain language
+[17]of the claim terms, the scope of the isolating
+[18]detecting was readily understandable.
+[19]And, I -- I mean, are -- are you con --are
+[20]you challenging that I didn't include -- with
+[21]understanding of the intrinsic evidence?
+[22]Because I think that's implied, that any
+[23]time you read --
+[24]Q. You --
+[25]A. -- a claim term, you -- in determining
+  Page 279
+[1]whether it is definite or indefinite, you read
+[2]the claim term in light of the intrinsic
+[3]evidence.
+[4]So I think, from a legal standpoint,
+[5]that's implied in that statement.
+[6]Q. You haven't pointed to specific intrinsic
+[7]evidence as supporting your position in this
+[8]section of your declaration, though.
+[9]Correct?
+[10]A. In this section I didn't point to
+[11]something specific. I -- if -- if you give me a
+[12]minute...
+[13]So the reason -- the reason I'm looking
+[14]here is because within the context of my
+[15]declaration there are places where I point to
+[16]various specifications which inform me that the
+[17]plain language of the claim is understood.
+[18]In that sentence, referring to other
+[19]specific parts of the -- the patent that -- that
+[20]have specifications is not present in that
+[21]particular sentence, but in the scope of my
+[22]entire declaration I point to various places that
+[23]the -- that provide specification clarity.
+[24]Q. You would agree, if you look at the -- the
+[25]heading labeled A at the top of PDF page 26,
+  Page 280
+[1]that -- that the title for the section -- that it
+[2]refers to "A POSITA would understand the scope of
+[3]the isolating and detecting terms with reasonable
+[4]certainty based on the plain language of Claim 1
+[5]of the '720 patent."
+[6]Correct?
+[7]A. Correct.
+[8]Q. Okay. And so, just to be clear, two steps
+[9]in Claim 1 of '720, A and B. Correct?
+[10]A. Yes.
+[11]Q. A requires isolating. Right?
+[12]A. Correct.
+[13]Q. B requires detecting. Right?
+[14]A. Correct.
+[15]Q. The B limitation follows the A limitation.
+[16]Correct?
+[17]A. Correct.
+[18]Q. And B refers back to A. Correct?
+[19]A. B follows from A, that isolating free
+[20]nucleic acid is then used to detect the presence
+[21]or absence of the free nucleic acids. So B does
+[22]follow from A.
+[23]Q. Well, let's look at the claim language, as
+[24]opposed to your declaration. So if you could
+[25]please pull up the '720 patent again, Exhibit 5.
+  Page 281
+[1]A. And which claim are you --
+[2]Q. Claim 1.
+[3]A. Okay. I'm there.
+[4]Q. All right. In the preamble, the actual
+[5]language of Claim 1 of the Ravgen '720 patent
+[6]reads, "A method for detecting a free nucleic
+[7]acid."
+[8]Correct?
+[9]A. Correct.
+[10]Q. And we can agree that the preamble of
+[11]Claim 1 of the '720 patent does not say, "A
+[12]method for detecting a particular free nucleic
+[13]acid."
+[14]Right?
+[15]A. There -- there are a lot of dependencies
+[16]on that, because, depending on your application,
+[17]you wouldn't define, in Claim 1, a particular
+[18]free nucleic acid. It could be a cancer. It
+[19]could be a fetal. It could be an organ
+[20]transplant nucleic detection.
+[21]So I think the claim indicates that a
+[22]method is being provided for detecting a free
+[23]nucleic acid that in subsequent claims are
+[24]defined as cancer cells, organ transplant or
+[25]fetal cells -- fetal DNA.
+  Page 282
+[1]Q. But you would agree with me, the word
+[2]"particular" does not appear in front of the word
+[3]"free" in the preamble of Claim 1 of the '720
+[4]patent.
+[5]Correct?
+[6]A. That word does not appear in front
+[7]of -- "particular" does not appear in that
+[8]sentence. Correct.
+[9]Q. And we can agree that Claim 1 -- strike
+[10]that.
+[11]And we can agree that the preamble of
+[12]Claim 1 of the '720 patent does not say, "A
+[13]method for detecting a free nucleic acid with a
+[14]mutation."
+[15]Correct?
+[16]A. It doesn't define that in that claim,
+[17]correct.
+[18]Q. For the isolating step in part A of the
+[19]claim, the actual language of Claim 1 of the
+[20]Ravgen '720 patent reads, "A, isolating free
+[21]nucleic acid from a noncellular fraction of a
+[22]sample."
+[23]Correct?
+[24]A. Correct.
+[25]Q. We can agree, this step of the method
+  Page 283
+[1]claim is denoted as step A. Correct?
+[2]A. Correct.
+[3]Q. And we can agree it does not say
+[4]"isolating a mixture of free nucleic acid."
+[5]Correct?
+[6]A. It doesn't say that, but I think one
+[7]skilled in the art would know that if you're
+[8]isolating a DNA from a noncellular fract --
+[9]fraction, you would be getting a mixture of DNA.
+[10]Q. But we can agree, the words "a mixture of"
+[11]don't appear in step A of Claim 1 of the '720
+[12]patent.
+[13]Correct?
+[14]A. The words "mixture of" does not appear,
+[15]but, again, one skilled in the art would
+[16]understand that isolating DNA from a noncellular
+[17]fraction would certainly have a mixture of DNA.
+[18]Q. But the words "a mixture of" don't appear
+[19]anywhere in Claim 1 of '720 patent. Correct?
+[20]A. Those words do not appear.
+[21]Q. Now, for the detecting step, the actual
+[22]language of Claim 1 of the Ravgen '720 patent
+[23]reads, "B, detecting the presence or absence of
+[24]the free nucleic acid."
+[25]Correct?
+  Page 284
+[1]A. Correct.
+[2]Q. We can agree, this step of the method
+[3]claim is denoted as step B. Correct?
+[4]A. Correct.
+[5]Q. And we can agree, step B of Claim 1 of the
+[6]'720 patent does not say "detecting the presence
+[7]or absence of the particular free nucleic acid of
+[8]interest within the isolated free nucleic acid."
+[9]Correct?
+[10]A. It does not say that, but there's a
+[11]distinction between the method for detecting a
+[12]free nucleic acid -- and now the presence or
+[13]absence of the free nucleic acid implies a
+[14]specific nucleic acid.
+[15]The -- the word "the" I would interpret
+[16]as the -- as "the free nucleic acid of interest."
+[17]Q. But the words "of interest" do not appear
+[18]in step B of Claim 1 of the '720 patent.
+[19]Correct?
+[20]A. It does not. But, again, reading this
+[21]patent with the clarity that I would have with
+[22]the intrinsic evidence, I would understand it to
+[23]mean "the free nucleic acid target," because that
+[24]is the intrinsic evidence, the speci --
+[25]specifications and examples that are given.
+  Page 285
+[1]So reading this claim, in light of all of
+[2]that other material, I would have an
+[3]understanding that that would mean the free
+[4]target DNA that's trying to be detected.
+[5]Q. Well, you would agree, the specification
+[6]does talk about target DNA, DNA of interest,
+[7]nucleic acid having a mutation.
+[8]Correct?
+[9]A. Correct.
+[10]Q. It uses all those terms when it wants to
+[11]be specific about a particular kind of nucleic
+[12]acid to be detected.
+[13]Correct?
+[14]A. Correct.
+[15]Q. Now, Claim 1 of the '720 patent does not
+[16]say "isolating some free nucleic acid and
+[17]detecting whether the particular free nucleic
+[18]acid of interest is present or absent."
+[19]Correct?
+[20]A. It does not say that.
+[21]Q. And Claim 1 of the '720 patent also does
+[22]not say, "detecting the presence or absence of a
+[23]free nucleic acid with a mutation."
+[24]Correct?
+[25]A. There is -- could you hold on just a
+  Page 286
+[1]minute?
+[2]Q. Sure.
+[3]A. So Claim 1 is a claim that is understood
+[4]to be the method for isolating the new -- the DNA
+[5]and detecting the presence.
+[6]But then, as you move to Claim 7, the
+[7]dependent claim, Claim 1, "where said nucleic
+[8]acid con" -- "constitutes at least one mutation."
+[9]So, as we read the claims, there is
+[10]dependent claims that further limit with
+[11]understanding that -- that nucleic acid of
+[12]interest has at least one mutation, as in
+[13]Claim 7.
+[14]Q. But Claim 1 of the '720 patent does not
+[15]say, "detecting the presence or absence of a free
+[16]nucleic acid with the mutation."
+[17]Correct?
+[18]A. Claim 1 doesn't say that. Claim 7 does.
+[19]Q. But we're focused on the terms appearing
+[20]in Claim 1. Correct?
+[21]That's the disputed term on which you've
+[22]rendered an opinion. Right?
+[23]A. And, again, I would argue that those terms
+[24]cannot be construed in the absence of other
+[25]material in the patent.
+  Page 287
+[1]You can't simply take a claim -- a -- a
+[2]claim, pull it out, and then try to interpret the
+[3]terms in isolation of all of the other components
+[4]of the patent, including the specifications
+[5]description, and following through with the
+[6]patent to the dependent in claim, where you
+[7]actually do have a mutation limitation.
+[8]Q. But we've established that the
+[9]specification talks about mutations and talks
+[10]about nucleic acid of interest when it intends
+[11]to.
+[12]Correct?
+[13]A. When it is instructive, correct.
+[14]Q. And the word "mutation" does not appear
+[15]anywhere in Claim 1 of the '720 patent. Correct?
+[16]A. It does not, but it does appear in
+[17]Claim 7.
+[18]Q. Now, we've discussed that the isolating
+[19]and detecting steps are denoted in Claim 1 of the
+[20]'720 patent as steps A and B of this method
+[21]claim.
+[22]Do you agree?
+[23]A. Yes.
+[24]Q. And you're not suggesting that there's no
+[25]relationship between steps A and B in Claim 1.
+  Page 288
+[1]Correct?
+[2]A. I'm -- there was a double negative in
+[3]there. Could we -- could we rephrase that?
+[4]Q. I'll take that out.
+[5]You agree there's a relationship between
+[6]steps A and B in Claim 1 of the '720 patent.
+[7]Correct?
+[8]A. Read in light of the full patent? It's
+[9]very clear there's a relationship between A and
+[10]B.
+[11]Q. Well -- and the natural reading of Claim 1
+[12]of the '720 patent is that step A and step B
+[13]inform one another.
+[14]Fair?
+[15]A. I'm not sure if I would characterize it as
+[16]informing one another. I think step A -- step B
+[17]is derived from the material obtained in step A.
+[18]Step B is -- is -- as you said, it's a
+[19]relationship in which step B follows from step A.
+[20]They don't inform each other. In other words,
+[21]you can't do step B before you do step A.
+[22]Q. Agreed.
+[23]And a person of ordinary skill who wanted
+[24]to understand step B of Claim 1 of the '720
+[25]patent should look to step A.
+  Page 289
+[1]Correct?
+[2]A. If they wanted to practice the art that's
+[3]provided in the patent, they would look to step A
+[4]before doing step B.
+[5]Q. Okay. Now, let's say I have a method for
+[6]making a coffee.
+[7]Are you with me?
+[8]A. So far. Okay. You've got a coffee
+[9]method. Okay. You're -- you're making coffee.
+[10]Okay.
+[11]Q. Step A is collecting coffee from my
+[12]cabinet.
+[13]Are you still with me?
+[14]A. I -- I'm there. Yeah. Okay.
+[15]Q. Okay. And step B is adding the coffee to
+[16]my coffee maker.
+[17]Are you with me?
+[18]A. So far.
+[19]Q. If anyone is --
+[20]A. I understand what you're doing. Okay.
+[21]Q. If -- if anyone is unclear about step B,
+[22]we can agree it would be natural to look at step
+[23]A for guidance.
+[24]Correct?
+[25]A. Not necessarily. At least in your
+  Page 290
+[1]example, if you're going to add coffee to your
+[2]coffee maker, where you got it from -- at least
+[3]in your example -- you could get it from the
+[4]cabinet above, the cabinet to the left, the
+[5]cabinet to the right. You could get it from
+[6]anywhere.
+[7]So I'm not sure your example is -- I'm
+[8]following its relationship that B is dependent on
+[9]A.
+[10]Certainly you have to get the coffee.
+[11]Q. But --
+[12]A. But where you get it from -- where you get
+[13]it from is -- is not entirely required.
+[14]Q. Well, in my hypothetical, step A requires
+[15]collecting coffee from my cabinet. Okay?
+[16]A. I -- I guess I would agree with you, step
+[17]A requires collecting your coffee.
+[18]From the cabinet? It -- it's that --
+[19]that -- that phrase is not necessary. You're
+[20]collecting coffee.
+[21]Q. But the words in the claim have meaning.
+[22]Correct?
+[23]A. Well, I -- I -- they do, but I'm -- I'm
+[24]not trying to be difficult, but your hypothetical
+[25]is B is dependent on me collecting the coffee
+  Page 291
+[1]from the cabinet.
+[2]And my argument is, B is dependent on your
+[3]collecting coffee. I'm not sure it's dependent
+[4]on you getting it from the cabinet. You could
+[5]get it from your brother, who hands it to you.
+[6]So I'm -- I -- I don't think the dependency is
+[7]quite as clear on the cabinet term, in your
+[8]hypothetical.
+[9]Q. Well, in my hypothetical the claim
+[10]requires collecting coffee from my cabinet.
+[11]And step B requires adding the coffee to
+[12]my coffee maker.
+[13]A. Okay. So if I --
+[14]Q. Have those two steps in mind.
+[15]A. Okay. And can I -- can I agree that you
+[16]have established a method that requires that you
+[17]get the coffee from the cabinet and that you add
+[18]that coffee to the cabinetmaker? To the
+[19]cabinet -- to the coffee maker?
+[20]Q. Would you a -- you would agree that the
+[21]coffee in step B refers to the coffee I collected
+[22]from my cabinet in step A.
+[23]Right?
+[24]A. Insofar as you defined it as requiring it
+[25]to come from the cabinet.
+  Page 292
+[1]Q. Put the cabinet to the side.
+[2]You agree that the coffee in step B refers
+[3]to the coffee I'm collected in step A.
+[4]A. I -- I agree.
+[5]Q. That's the natural reading. Right?
+[6]A. Correct.
+[7]Q. And you can agree with me that in claim
+[8]construction you have to take the claim language
+[9]as it is in the claims.
+[10]Correct?
+[11]A. You have to be able to understand it with
+[12]reasonable certainty in the claim construction.
+[13]Q. You can't rewrite claim language in order
+[14]to interpret claims.
+[15]Correct?
+[16]A. Correct. But you do so in -- with a
+[17]background of person of skill and all of the
+[18]other components. So you aren't doing this
+[19]coffee analogy in isolation.
+[20]You are -- you need -- you need to know
+[21]what coffee is. And I'm assuming you know what
+[22]coffee is. So your skill in the art is, at least
+[23]I know what coffee is.
+[24]So I do think that a person of skill in
+[25]the art would interpret the relationship based on
+  Page 293
+[1]their understanding of the component terms and
+[2]their skill in the art.
+[3]Q. But we can agree that you cannot write --
+[4]rewrite claim language when doing claim
+[5]construction.
+[6]Correct?
+[7]The first --
+[8]A. Correct.
+[9]And -- and, in your scenario, the only way
+[10]that this claim could be fulfilled is that you
+[11]have to get the coffee from the cabinet and you
+[12]have to put it in the coffee maker.
+[13]Q. Okay. Well, let's focus now on Claim 1 --
+[14]A. Okay.
+[15]Q. -- of the '720 patent.
+[16]You would agree with me that if the free
+[17]nucleic acid in the detecting step is the same as
+[18]the free nucleic acid in the isolating step, then
+[19]it's impossible to practice the full scope of the
+[20]claim, because you can't detect the absence of
+[21]the very thing you've just isolated.
+[22]Correct?
+[23]A. I think, again, within skill in the art,
+[24]with the understanding, with skill in the art,
+[25]that the free nucleic acid you're isolating in A
+  Page 294
+[1]is a mixture, and in B you're detecting the free
+[2]nucleic acid of interest, understood by skill in
+[3]the art, that it is possible, in the language
+[4]of -- of one skilled in the art, to talk about
+[5]detecting free DNA or finding that a target DNA
+[6]is absent from that mixture of DNA.
+[7]So I think the plain meaning of the
+[8]language is clear. You can run a method to
+[9]detect DNA and fail to detect it within the
+[10]limits of your detection sensitivity.
+[11]And I think all of those components I just
+[12]described would be well known to a person of
+[13]skill in the art.
+[14]Q. But your interpretation of the claim
+[15]requires applying two different meanings for the
+[16]very same words, even though they appear in the
+[17]claim the same way.
+[18]So free nucleic acid in step A, in your
+[19]view, means something different than free nucleic
+[20]acid in step B.
+[21]Correct?
+[22]A. Free nucleic acid in step A means
+[23]something different than the free nucleic acid of
+[24]step B, which -- which is defined quite
+[25]adequately in the intrinsic evidence and -- and
+  Page 295
+[1]subsequent claims.
+[2]I think there's a distinction between
+[3]isolating free nucleic acid -- that a person of
+[4]skill would understand what that means -- and
+[5]detecting the presence or absence of the free
+[6]nucleic acid. A person with -- of skill would
+[7]understand that the -- the free nucleic acid is
+[8]likely a target nucleic acid, which is confirmed
+[9]by reading the rest of the patent.
+[10]Q. But you would agree with me, that in your
+[11]interpretation of the claim you are applying a
+[12]meaning of "free nucleic acid" in step A to be
+[13]mixture of free nucleic acid.
+[14]Correct?
+[15]A. I'm defining that as a person of skill
+[16]would recognize that in the context of -- of what
+[17]the patent was achieving. You would be getting a
+[18]mixture --
+[19]Q. But --
+[20]A. -- of DNA.
+[21]Q. But, in your view, "free nucleic acid" in
+[22]step A means "a mixture of free nucleic acid."
+[23]Correct?
+[24]A. That would be my understanding, that that
+[25]nucleic acid would contain a mixture.
+  Page 296
+[1]Q. And, in your view, "free nucleic acid," as
+[2]it appears in step B, means something different.
+[3]It means "particular free nucleic acid."
+[4]Correct?
+[5]A. Which is my interpretation that the "the"
+[6]term is referring to the free DNA of interest.
+[7]Q. But the bottom line is, you're applying
+[8]two different meanings for the term "free nucleic
+[9]acid."
+[10]Correct?
+[11]A. The bottom line is, I'm inferring two
+[12]different meanings because each of those meanings
+[13]have a different context and a different process.
+[14]In A it's isolating and B it's detecting. So the
+[15]context of A and B is entirely different.
+[16]Q. Now, in your declaration you opine that
+[17]the '720 patent specification provides guidance
+[18]to a person of skill to understand the scope of
+[19]Claim 1.
+[20]Correct?
+[21]A. Yes.
+[22]Q. And you point to a particular embodiment.
+[23]Isn't that right?
+[24]A. Where are you referring to in -- in that?
+[25]Q. Let's look at paragraph 84 of your
+  Page 297
+[1]declaration.
+[2]A. Okay. Okay.
+[3]Q. So paragraph 84 of your declaration
+[4]references an embodiment that appears at
+[5]column 22, lines 58 to 66 of this '720 patent.
+[6]Correct?
+[7]A. Correct.
+[8]Q. Now, this is the only embodiment from the
+[9]'720 patent that you discuss in your declaration.
+[10]Right?
+[11]A. In -- in -- in the entire declaration?
+[12]Q. In the reference to --
+[13]A. Oh.
+[14]Q. In reference to this claim term. Sorry.
+[15]A. Correct.
+[16]Q. Now, you agree there are many, many other
+[17]embodiments described in the patent
+[18]specification.
+[19]Correct?
+[20]A. Took a while to read through all of them.
+[21]Yes.
+[22]Q. But this is the one that you discuss in
+[23]the --
+[24]A. This is the one --
+[25]Q. -- context --
+  Page 298
+[1]A. -- I discuss --
+[2]Q. -- you --
+[3]A. -- in paragraph 84. This is the one I
+[4]discuss. Correct.
+[5]Q. And in the embodiment that you discuss,
+[6]step A is isolating nucleic acid. Right?
+[7]A. Correct.
+[8]Now, a -- again, context? From a plasma
+[9]sample. One skilled in the art would understand
+[10]that the nucleic acid from a plasma sample is
+[11]cell-free DNA, which would be a mixture.
+[12]So I'm -- it's not a leap of understanding
+[13]that a person of skill in the art would recognize
+[14]that a plasma sample would be cell-free DNA that
+[15]contained a mixture.
+[16]Q. You would agree with me that the claim
+[17]itself does not refer to collection -- I'm
+[18]sorry -- isolation from a plasma sample.
+[19]Correct?
+[20]A. The Claim 1 does not -- does not do that,
+[21]but Claim 5 says the sample is blood. And
+[22]Claim 6 says the sample is plasma.
+[23]As a person of skill in the art, I go,
+[24]"Ah-ha, I understand what they are doing here."
+[25]Q. But Claim 5 or Claim 6 -- are supposed to
+  Page 299
+[1]be more specific methods than what's claimed in
+[2]Claim 1.
+[3]Correct?
+[4]A. They are dependent claims.
+[5]Q. And Claim 1 does not reference collecting
+[6]from a plasma sample -- I'm sorry -- isolating
+[7]from a plasma sample.
+[8]Correct?
+[9]A. Claim 1 does not specifically indicate
+[10]a -- a plasma sample. It -- it does say,
+[11]"isolating free nucleic acid."
+[12]And one -- again, going the other
+[13]direction, if I'm isolating from plasma, it's
+[14]free nucleic acid. If I'm isolating free nucleic
+[15]acid, it must be from an acellular portion of the
+[16]sample I've started with. Plasma. I'm sorry.
+[17]Plasma.
+[18]Q. So are you now suggesting that your
+[19]reading of Claim 1 is, it must be collected from
+[20]a plasma sample?
+[21]A. No. My reading Claim 1 doesn't -- doesn't
+[22]restrict it from being isolated from -- just from
+[23]plasma.
+[24]But the meaning of isolating free nucleic
+[25]acid from a noncellular fraction -- one can
+  Page 300
+[1]define the noncellular fraction to a person
+[2]skilled in the art is either serum or plasma.
+[3]Q. Thank you.
+[4]Now, in the embodiment that you discuss,
+[5]step B is detecting the presence or absence of a
+[6]nucleic acid molecule containing the mutation.
+[7]Correct?
+[8]A. Correct.
+[9]Q. And based on this embodiment you conclude
+[10]that a skilled person would be reasonably certain
+[11]regarding the scope of the "isolating" and
+[12]"detecting" terms in Claim 1 of the '720 patent.
+[13]Correct?
+[14]A. In light of the embodiments that I -- that
+[15]I refer to, a person of skill in the art would be
+[16]reasonably sure of understanding that.
+[17]Q. But you understand that the embodiment you
+[18]discuss in your declaration uses different
+[19]language from Claim 1 of the '720 patent.
+[20]Correct?
+[21]A. I don't -- I -- that is correct, but I
+[22]don't consider that the embodiments that clarify
+[23]the meaning of terms can -- are restricted to
+[24]only the language of the claim construction.
+[25]They are providing additional
+  Page 301
+[1]clarification about the scope.
+[2]And so if you're going to say that
+[3]specifications and embodiments can only use the
+[4]words in the -- the claim, then you are -- are
+[5]really kind of short-circuiting the ability to
+[6]understand the claim as it's meant in this
+[7]particular patent.
+[8]MR. DESMARAIS: Counsel --
+[9]Q. (By Ms. Major, continuing) You
+[10]understand --
+[11]MR. DESMARAIS: -- are you -- are you
+[12]almost done? Because I think we're probably at
+[13]seven hours at this point.
+[14]MS. MAJOR: I think we're -- still
+[15]about 17 minutes left.
+[16]MR. DESMARAIS: I don't think so.
+[17]Can we get a time check?
+[18]VIDEOGRAPHER: Can we go off the
+[19]record?
+[20]MS. MAJOR: Yes.
+[21]VIDEOGRAPHER: We are going off the
+[22]record. Time now is 6:16.
+[23](Recess from 6:16 p.m. to 6:18 p.m.)
+[24]VIDEOGRAPHER: All right. One moment
+[25]here.
+  Page 310
+[1]nucleic acid" in the preamble and step B.
+[2]Correct?
+[3]A. The "free nucleic acid" in the preamble
+[4]and step B is a component present in the free
+[5]nucleic acid isolated in step A. Or -- or not.
+[6]That is, it may not be detected.
+[7]MS. MAJOR: Okay. Thank you.
+[8]Nothing further.
+[9]THE WITNESS: Okay.
+[10]MR. DESMARAIS: Okay. Nothing
+[11]further. Thanks, everybody.
+[12]VIDEOGRAPHER: This concludes today's
+[13]deposition. The time now is 6:26 p.m.
+[14]COURT REPORTER: Amanda?
+[15]MS. MAJOR: Yes.
+[16]COURT REPORTER: Did you want a
+[17]transcript?
+[18]MS. MAJOR: I'm sorry. I didn't hear
+[19]the question.
+[20]COURT REPORTER: Did you want a
+[21]transcript?
+[22]MS. MAJOR: Yes, please. If I could
+[23]get a rough. And I think we ordered an expedited
+[24]transcript, as well.
+[25]COURT REPORTER: And John, did you
+  Page 311
+[1]want a transcript?
+[2]MR. DESMARAIS: Yes, please. Same --
+[3]whatever Amanda wants, I want, too.
+[4](Deposition concluded at 6:27 p.m.)
