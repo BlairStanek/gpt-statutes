@@ -5,7 +5,7 @@ import utils
 import transcript_utils
 from collections import Counter
 
-parser = argparse.ArgumentParser(description='Generate synthetic statutes and questions to pass to GPT')
+parser = argparse.ArgumentParser(description='Test whether GPT can retrieve the text at a transcript line')
 parser.add_argument('--numlines', type=int, required=True,
                     help='number of lines per simulated page')
 parser.add_argument('--numruns', type=int, required=True,
@@ -130,7 +130,6 @@ for idx_run in range(args.numruns) :
         histogram_wronglines_absolute_list.sort(key=lambda x: x[0], reverse=True) # sort by absolute location, not numbers
         for x in histogram_wronglines_absolute_list:
             print("{:5d} {:5d}".format(x[0], x[1]))
-
 
 print(datetime.datetime.now())
 suggested_filename = "textatline_lines" + str(args.numlines) + "_runs" + str(args.numruns) + "_" + \
