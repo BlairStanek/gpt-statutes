@@ -1,7 +1,8 @@
 # This tests on the simple question of what the text is at a particular section.
 
 import generate_synstat
-from generate_synstat import NOT_PARALLEL, NOT_FOUND
+from synthetic_stat_utils import NOT_PARALLEL, NOT_FOUND, \
+    analyze_error, reformat_with_lines, print_stats
 import sys, argparse, re
 sys.path.append('../')
 import utils
@@ -11,21 +12,23 @@ from collections import Counter
 
 parser = argparse.ArgumentParser(description='Generate synthetic statutes and questions to pass to GPT')
 parser.add_argument('--width', required=True, type=int,
-                    help='Width of the synthetic tree to generate; 2 or 3 are common')
+                    help='Width of the synthetic tree to generate; 2 thru 5 are common')
 parser.add_argument('--depth', required=True, type=int,
-                    help='Depth of the synthetic tree to generate; 2 or 3 are common')
+                    help='Depth of the synthetic tree to generate; 2 thru 5 are common')
 parser.add_argument('--numruns', default=1, type=int,
                     help='These are the basic types of prompting we handle')
 DEFAULT_MODEL = "text-davinci-003"
 parser.add_argument('--model', default=DEFAULT_MODEL,
                     help='which openai model to use')
+parser.add_argument('--do_lines', action='store_true',
+                    help='whether to also try semantically-equivalent line numbers')
 args = parser.parse_args()
 
 print("args=", args)
 print(datetime.now())
 
 def find_line_num(part, lines, included_term=None):
-    rv = None  # line number of correct answer
+    rv = None  # returns line number of correct answer
     for idx_line, line in enumerate(lines):
         if part.term.lower() in line and (included_term is None or included_term in line):
             assert rv is None, "Should only appear once"
@@ -48,6 +51,9 @@ histogram_wrong = Counter() # keeps histogram of the subsection where wrong
 histogram_relative_loc = Counter()
 histogram_absolute_loc = Counter()
 histogram_errors = Counter()
+count_list_calls = 0 # used only with --do_lines
+count_list_wrong = 0 # used only with --do_lines
+
 
 for idx_run in range(args.numruns):
     print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ idx_run=", idx_run)
@@ -57,16 +63,7 @@ for idx_run in range(args.numruns):
     abst = generate_synstat.generate_abstract(nonce_list, args.depth, args.width)
 
     if idx_run == 0:
-        max_depth, max_width, count_leaves, \
-        count_nonleaves, total_depth_leaves, total_branching_nonleaves = \
-            generate_synstat.get_stats_recursive(abst)
-        print("max_depth=", max_depth, "\t\t",
-              "max_width=", max_width, "\t\t",
-              "count_leaves=", count_leaves, "\t\t",
-              "count_nonleaves=", count_nonleaves, "\t\t",
-              "average_leaf_depth={:.2f}".format(float(total_depth_leaves) / count_leaves), "\t\t",
-              "total_branching_nonleaves=", total_branching_nonleaves, "\t\t"
-              "average_branching={:.2f}".format(total_branching_nonleaves/float(count_nonleaves)))
+        print_stats(abst)
 
     # sec_num = statute_random.randint(1010, 9999)
 
@@ -83,6 +80,11 @@ for idx_run in range(args.numruns):
         dict_terms[part.term.lower()] = part
 
     print(curr_statute)
+
+    line_formatted = None
+    if args.do_lines: # we do a comparison to simply having the text with line numbers
+        line_formatted = reformat_with_lines(curr_statute)
+        print(line_formatted)
 
     for leaf in leaves_only:
         question = "What is the exact text at " + leaf.stat_used + "?"
@@ -174,7 +176,7 @@ for idx_run in range(args.numruns):
             # analyze the type of error
             minimal_error = None # there can be multiple items returned; choose the closest
             for incorrect_cite in returned_cites:
-                errors = generate_synstat.analyze_error(leaf.stat_used, incorrect_cite)
+                errors = analyze_error(leaf.stat_used, incorrect_cite)
                 if minimal_error is None:
                     minimal_error = errors
                 elif minimal_error == NOT_PARALLEL and errors != NOT_PARALLEL:
@@ -192,6 +194,26 @@ for idx_run in range(args.numruns):
                 minimal_error_text = ",".join(sorted(minimal_error))
             print("minimal error: ", minimal_error_text)
             histogram_errors.update([minimal_error_text])
+
+        if args.do_lines:
+            # find the line label corresponding to this leaf
+            matching_line = None
+            for line in line_formatted.split("\n"):
+                if leaf.term.lower() in line:
+                    assert matching_line is None, "should not be two for leaves"
+                    matching_line = line
+            assert matching_line is not None
+            line_label = matching_line[0: matching_line.find(":")]
+            question = "What is the exact text at line " + line_label + "?"
+            query = line_formatted + "\n\n" + question
+            messages = [{"role": "user", "content": query}]
+            print(question)
+            count_list_calls +=1
+            statute_response = utils.call_gpt_withlogging(messages, args.model, max_tokens=1000)
+            print("response:", statute_response.strip())
+            if leaf.term.lower() not in statute_response:
+                print("WRONG on list!")
+                count_list_wrong +=1
 
     print("count_overinclusive=", count_overinclusive)
     print("count_wrong_and_overinclusive=", count_wrong_and_overinclusive)
@@ -226,7 +248,17 @@ for idx_run in range(args.numruns):
     print("****** count_wrong =", count_wrong, " of ", count_calls,
           " accuracy = {:.2f}".format(float((count_calls-count_wrong)/count_calls)))
 
+    if args.do_lines:
+        print("*** LIST STATS: count_list_wrong=",count_list_wrong,
+              "count_list_calls=",count_list_calls,
+              "accuracy = ", (count_list_calls-count_list_wrong)/float(count_list_calls))
+
 print(datetime.now())
 
-print("Suggested filename: textat_d" + str(args.depth) + "w" + str(args.width) +
-      "n" + str(args.numruns) + "_" + args.model + ".txt")
+sugg_filename = "textat_d" + str(args.depth) + "w" + str(args.width) + \
+      "n" + str(args.numruns) + "_" + args.model
+if args.do_lines:
+    sugg_filename += "_dolines"
+sugg_filename += ".txt"
+
+print("Suggested filename:", sugg_filename)
