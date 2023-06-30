@@ -1,7 +1,5 @@
 # This tests on the simple question of what term is defined at a particular cite
 
-QUESTION_TEXT = "What is the term defined at "
-
 import generate_synstat
 from synthetic_stat_utils import NOT_PARALLEL, NOT_FOUND, \
     print_stats, reformat_with_lines, analyze_error
@@ -70,7 +68,8 @@ for idx_run in range(args.numruns):
         if args.skip_first > 0 and count_calls <= args.skip_first:
             continue # this implements the skip_first, which is used to extend a set of experiments
 
-        question = QUESTION_TEXT + parent.stat_defined + "?"
+        question = utils.DEFINED_AT_STRING + parent.stat_defined + "?"
+        assert "section" in question, "Should be included"
         query = curr_statute + "\n\n" + question
 
         messages = [{"role": "user", "content": query}]

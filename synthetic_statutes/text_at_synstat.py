@@ -87,7 +87,7 @@ for idx_run in range(args.numruns):
         print(line_formatted)
 
     for leaf in leaves_only:
-        question = "What is the exact text at " + leaf.stat_used + "?"
+        question = utils.TEXT_AT_STRING + leaf.stat_used + "?"
         query = curr_statute + "\n\n" + question
 
         messages = [{"role": "user", "content": query}]
