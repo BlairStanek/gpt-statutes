@@ -190,12 +190,14 @@ def parse_xml_statute(x:ET.Element, statlines:list, assert_no_subdivisions = Fal
 
     return x_is_leaf, leaves
 
-def load_leaves(min_depth:int) -> list:
-    list_leaves = []  # list of tuples of (statutory text:str, Leaf)
+# returns a 2-tuple:  a list of leaves, and a list of lists of StatLines
+def load_statutes(min_depth:int):
+    list_leaves = []  # list of Leaf's
+    list_list_statlines = [] # list of list of StatLine's (each list corresponds to a statute)
     print("Loading Titles ", end="")
-    for title in range(1, 55):
-    # for title in range(26, 27):  # DEBUG
-        print( title, end=" ", flush=True)
+    # for title in range(1, 55):
+    for title in range(26, 27):  # for debug
+        print(title, end=" ", flush=True)
         prefix = ""
         if title < 10:
             prefix = "0"
@@ -216,23 +218,29 @@ def load_leaves(min_depth:int) -> list:
                     s.attrib.get("identifier", "").startswith("/us/usc/t"):
                 tables = s.iter("{http://www.w3.org/1999/xhtml}table") # HTML-style tables within US Code XML
                 layouttables = s.iter(usc_ns_str+"layout") # XML-style tables wtihin US Code XML, called <layout>
-                if len(list(tables)) == 0 and len(list(layouttables)) == 0: # skip all sections with tables
+                if len(list(tables)) == 0 and len(list(layouttables)) == 0: # skip ALL sections with tables; they make queries ill-defined
                     statlines = []
-                    _, leaves = parse_xml_statute(s, statlines)
-
-                    # Here we calculate the leaf percentiles
-                    if len(leaves) > 1:  # ignore leaves from sections with just one leaf
-                        for idx_leaf, leaf in enumerate(leaves):
-                            leaf.percentile = float(idx_leaf) / (len(leaves) - 1)
+                    _, leaves_raw = parse_xml_statute(s, statlines)
+                    list_list_statlines.append(statlines) # save the statute
 
                     # for line in statlines:
                     #     print("{:32s} |".format(line.identifier), line.text)
                     #     if "\n" in line.text:
                     #         print("+++++++++ Newline above")
-                    if len(leaves) > 1: # ignore leaves from sections with just one valid leaf
-                        for leaf in leaves:
+
+                    if len(leaves_raw) > 1: # ignore leaves from sections with just one valid leaf
+                        # first filter by min-depth
+                        filtered_leaves = []
+                        for leaf in leaves_raw:
                             if leaf.level >= min_depth:
-                                list_leaves.append(leaf)
+                                filtered_leaves.append(leaf)
+                        # ignore leaves from sections with zero or one leaf sufficiently deep
+                        if len(filtered_leaves) > 1:
+                            # calculate leaf percentiles
+                            for idx_leaf, leaf in enumerate(filtered_leaves):
+                                leaf.percentile = float(idx_leaf) / (len(filtered_leaves) - 1)
+                            list_leaves.extend(filtered_leaves) # actually add to the list we return
 
     print("len(list_leaves)=", len(list_leaves))
-    return list_leaves
+    print("len(list_list_statlines)=", len(list_list_statlines))
+    return list_leaves, list_list_statlines

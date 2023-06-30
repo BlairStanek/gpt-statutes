@@ -1,7 +1,7 @@
 # Takes a particular section of a real statute and calls GPT-* to see if it can
 # identify the text.
 from real_stat_utils import subdivision_types, usc_ns_str, ns, \
-    usc_ns_str_curly, StatLine, FLUSH_LANGUAGE, load_leaves
+    usc_ns_str_curly, StatLine, FLUSH_LANGUAGE, load_statutes
 from collections import Counter
 import tiktoken
 import argparse, random, sys, re, os, numpy, datetime
@@ -112,7 +112,7 @@ def is_statute_in_response(statute_raw:str, response_raw:str, print_wrong=False)
 
 
 def run_tests():
-    list_leaves = load_leaves(args.mindepth)
+    list_leaves, _ = load_statutes(args.mindepth)
     order_random.shuffle(list_leaves)
     list_wrong_statutes = []
     list_charlen_correct = []
@@ -145,7 +145,7 @@ def run_tests():
             statute_text = "Section 1001.  Key provisions." + statute_text[idx_first_newline:]
             cite_text = "1001" + cite_text[idx_first_paren:]
 
-        question = "What is the exact text at section " + cite_text + "?"
+        question = utils.TEXT_AT_STRING + cite_text + "?"
         query = statute_text + "\n" + question
 
         # This test ensures comparability of GPT-4 and GPT-3, despite different-sized token windows
@@ -241,7 +241,7 @@ def run_tests():
             histogram_errors.update([error_text])
 
         # print detailed error information only if there was just an error found or we are at end
-        if has_error or count_calls == (args.numcalls-1):
+        if has_error or count_calls == args.numcalls:
             print("percentile errors: -------------------")
             for decile in range(10):
                 if decile == 9:
